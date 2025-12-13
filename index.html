@@ -7,23 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { 
-            background-color: #f8f9fa; 
+            background-color: #f4f6f9; 
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
         .container { flex: 1; }
         
-        /* 顶部大搜索框背景 */
         .hero-section {
             background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
-            padding: 3rem 0 5rem 0; /* 增加底部内边距 */
-            margin-bottom: -3rem; /* 让卡片重叠更多 */
+            padding: 3rem 0 5rem 0;
+            margin-bottom: -3rem;
             color: white;
             text-align: center;
         }
 
-        /* 分类卡片样式 */
         .category-card {
             border: none;
             border-radius: 12px;
@@ -44,19 +42,11 @@
             letter-spacing: 1px;
         }
         
-        /* 列表区域样式 */
-        .content-section {
-            margin-top: 2rem;
-        }
-        .hover-row:hover {
-            background-color: #f1f3f5;
-            cursor: pointer;
-        }
-
-        .count-badge {
-            font-size: 0.75rem;
-            opacity: 0.7;
-        }
+        .content-section { margin-top: 2rem; }
+        .hover-row:hover { background-color: #f1f3f5; cursor: pointer; }
+        
+        /* 侧边栏计数徽章 (保持淡色) */
+        .count-badge { font-size: 0.75rem; opacity: 0.7; }
         
         footer {
             background-color: #2c3e50;
@@ -64,35 +54,85 @@
             padding: 3rem 0;
             margin-top: 5rem;
         }
-
-        /* 选中的分类按钮样式 */
+        
         .list-group-item.active-cat {
             background-color: #e9ecef;
             color: #000;
             font-weight: bold;
             border-left: 4px solid #4ca1af;
         }
+
+        /* === 🎵 新增：乐谱分类专属颜色标签 === */
+        .badge-custom {
+            font-weight: normal;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        /* 🔴 歌剧咏叹调：红色 */
+        .badge-opera { background-color: #e63946; color: white; }
+        
+        /* 🔵 艺术歌曲：蓝色 */
+        .badge-artsong { background-color: #457b9d; color: white; }
+        
+        /* 🟣 宗教咏叹调 (清唱剧/康塔塔)：紫色 */
+        .badge-sacred { background-color: #7b2cbf; color: white; }
+        
+        /* 🌈 重唱：彩色渐变 (橘红到紫) */
+        .badge-ensemble { 
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+            color: white; 
+            border: none;
+            font-weight: bold;
+        }
+        
+        /* 🟢 合唱：绿色 */
+        .badge-choral { background-color: #2a9d8f; color: white; }
+        
+        /* 🟠 器乐：橙色 */
+        .badge-inst { background-color: #fb8500; color: white; }
+        
+        /* ⚫ 总谱：深色 */
+        .badge-score { background-color: #343a40; color: white; }
+        
+        /* ⚪ 其他：灰色 */
+        .badge-other { background-color: #6c757d; color: white; }
+
     </style>
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" style="background: linear-gradient(to right, #2c3e50, #4ca1af); z-index: 100;">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1 fw-bold">🎹 于茂同的乐谱库</span>
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-light rounded-pill" onclick="showLogModal()">
+                    🔔 网站动态
+                </button>
+                <div class="text-end">
+                    <span class="badge bg-warning text-dark me-2">Beta v3.5</span>
+                    <span class="navbar-text text-white-50 small d-none d-md-block" style="font-size: 0.8rem;">
+                        By Yu Maotong
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="hero-section shadow-sm">
         <div class="container">
-            <h1 class="fw-bold mb-2">🎹 于茂同的乐谱库</h1>
-            <p class="text-white-50 mb-4">Beta v3.1 | 专业的私人乐谱典藏</p>
-            
+            <h1 class="fw-bold mb-2">欢迎来到我的乐谱典藏</h1>
+            <p class="text-white-50 mb-4">Sharing music, preserving art.</p>
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <div class="input-group input-group-lg shadow">
                         <span class="input-group-text bg-white border-0">🔍</span>
                         <input type="text" id="searchInput" class="form-control border-0" placeholder="搜索曲名、作品号、作曲家..." style="box-shadow: none;">
                     </div>
-                    
                     <div class="mt-4 d-flex flex-column align-items-center gap-2">
                         <button class="btn btn-outline-light rounded-pill px-4 shadow-sm" onclick="resetFilters()">
                             🌟 查看完整乐谱列表 (View All)
                         </button>
-                        
                         <div class="d-flex gap-3 text-white-50 mt-2 small">
                             <span>📚 收录：<span id="statTotal" class="text-white fw-bold">0</span> 首</span>
                             <span>👤 作曲家：<span id="statComposer" class="text-white fw-bold">0</span> 位</span>
@@ -181,12 +221,18 @@
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('协奏曲总谱', this)">
                             协奏曲总谱 <span class="badge bg-secondary bg-opacity-10 text-dark count-badge" data-cat="协奏曲总谱">0</span>
                         </button>
-                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教/声乐总谱', this)">
-                            宗教/声乐总谱 <span class="badge bg-secondary bg-opacity-10 text-dark count-badge" data-cat="宗教/声乐总谱">0</span>
+                        
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教声乐作品总谱', this)">
+                            <div>
+                                宗教声乐作品总谱
+                                <div class="small text-muted" style="font-size: 0.65rem; font-weight: normal; margin-top: 2px; line-height: 1.2;">
+                                    (清唱剧、康塔塔、弥撒、安魂曲等)
+                                </div>
+                            </div>
+                            <span class="badge bg-secondary bg-opacity-10 text-dark count-badge" data-cat="宗教声乐作品总谱">0</span>
                         </button>
-                    </div>
-                    
-                    <div class="mt-3 list-group list-group-flush category-group">
+                        </div>
+                     <div class="mt-3 list-group list-group-flush category-group">
                          <div class="p-1 bg-light text-center small text-muted fw-bold border-top border-bottom">其他</div>
                          <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('其他', this)">
                             📚 其他 <span class="badge bg-secondary bg-opacity-10 text-dark count-badge" data-cat="其他">0</span>
@@ -207,8 +253,12 @@
                         🌪️ 二级筛选:
                     </div>
                     <div class="col-md-3">
-                        <input class="form-control form-control-sm" list="composerOptions" id="composerInput" placeholder="输入作曲家..." oninput="applyFilters()">
+                        <input class="form-control form-control-sm" list="composerOptions" id="composerInput" placeholder="作曲家 (如: Mozart)..." oninput="applyFilters()">
                         <datalist id="composerOptions"></datalist>
+                    </div>
+                    <div class="col-md-3">
+                        <input class="form-control form-control-sm" list="voiceOptions" id="voiceInput" placeholder="编制/乐器 (如: Soprano)..." oninput="applyFilters()">
+                        <datalist id="voiceOptions"></datalist>
                     </div>
                     <div class="col-md-2">
                         <select id="languageSelect" class="form-select form-select-sm" onchange="applyFilters()">
@@ -226,8 +276,7 @@
             <div class="col-12">
                 <div id="recentSection" class="mb-5">
                     <h5 class="mb-3 text-primary border-bottom pb-2">🆕 最近入库</h5>
-                    <div class="row row-cols-1 row-cols-md-3 g-3" id="recentList">
-                        </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-3" id="recentList"></div>
                 </div>
 
                 <div id="listSection">
@@ -291,6 +340,7 @@
                                 <ul class="list-group list-group-flush small">
                                     <li class="list-group-item">👤 <strong>作曲家：</strong> <span id="mComposer"></span></li>
                                     <li class="list-group-item">🗣️ <strong>语言：</strong> <span id="mLanguage"></span></li>
+                                    <li class="list-group-item">🎹 <strong>调性：</strong> <span id="mTonality"></span></li>
                                     <li class="list-group-item">👥 <strong>编制：</strong> <span id="mVoice"></span></li>
                                     <li class="list-group-item">📅 <strong>收录日期：</strong> <span id="mDate"></span></li>
                                 </ul>
@@ -313,11 +363,26 @@
         </div>
     </div>
 
+    <div class="modal fade" id="logModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">🔔 网站近期动态</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="logBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/data.js"></script>
     
     <script>
-        let filters = { category: 'all', composer: '', language: 'all', search: '' };
+        let filters = { category: 'all', composer: '', language: 'all', voice: '', search: '' };
 
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof musicData === 'undefined') {
@@ -342,13 +407,17 @@
             document.getElementById('statTotal').innerText = musicData.length;
             const composers = [...new Set(musicData.map(m => m.composer).filter(c => c))].sort((a, b) => a.localeCompare(b));
             const languages = [...new Set(musicData.map(m => m.language).filter(l => l))].sort();
+            const voiceTypes = [...new Set(musicData.map(m => m.voice_types).filter(v => v))].sort();
+
             document.getElementById('statComposer').innerText = composers.length;
             
             const composerDataList = document.getElementById('composerOptions');
             composers.forEach(c => { composerDataList.innerHTML += `<option value="${c}">`; });
             const langSelect = document.getElementById('languageSelect');
             languages.forEach(l => { langSelect.innerHTML += `<option value="${l}">${l}</option>`; });
-            
+            const voiceDataList = document.getElementById('voiceOptions');
+            voiceTypes.forEach(v => { voiceDataList.innerHTML += `<option value="${v}">`; });
+
             document.querySelectorAll('.count-badge').forEach(badge => {
                 const cat = badge.getAttribute('data-cat');
                 const count = musicData.filter(m => m.category === cat).length;
@@ -360,17 +429,20 @@
         function applyFilters() {
             filters.composer = document.getElementById('composerInput').value;
             filters.language = document.getElementById('languageSelect').value;
+            filters.voice = document.getElementById('voiceInput').value;
+
             const result = musicData.filter(item => {
                 const matchCat = filters.category === 'all' || item.category === filters.category;
                 const matchComp = filters.composer === '' || item.composer.toLowerCase().includes(filters.composer.toLowerCase());
                 const matchLang = filters.language === 'all' || item.language === filters.language;
+                const matchVoice = filters.voice === '' || (item.voice_types && item.voice_types.toLowerCase().includes(filters.voice.toLowerCase()));
                 const matchSearch = item.title.toLowerCase().includes(filters.search) || 
                                     item.composer.toLowerCase().includes(filters.search) ||
                                     (item.work && item.work.toLowerCase().includes(filters.search));
-                return matchCat && matchComp && matchLang && matchSearch;
+                return matchCat && matchComp && matchLang && matchVoice && matchSearch;
             });
             renderTable(result);
-            const isFiltering = filters.search || filters.composer || filters.language !== 'all' || filters.category !== 'all';
+            const isFiltering = filters.search || filters.composer || filters.language !== 'all' || filters.voice || filters.category !== 'all';
             document.getElementById('recentSection').style.display = isFiltering ? 'none' : 'block';
         }
 
@@ -387,23 +459,40 @@
 
             let html = '';
             data.forEach(item => {
-                let badgeClass = 'bg-light text-dark border';
-                if(item.category.includes('歌剧')) badgeClass = 'bg-danger bg-opacity-10 text-danger border-danger border-opacity-25';
-                if(item.category.includes('交响') || item.category.includes('管弦')) badgeClass = 'bg-primary bg-opacity-10 text-primary border-primary border-opacity-25';
-                if(item.category.includes('合唱') || item.category.includes('重唱')) badgeClass = 'bg-success bg-opacity-10 text-success border-success border-opacity-25';
+                // === 核心修改：根据分类分配颜色 Class ===
+                let badgeClass = 'badge-other'; // 默认灰色
+                
+                // 红色系：歌剧咏叹调
+                if(item.category.includes('歌剧咏叹调')) badgeClass = 'badge-opera';
+                // 蓝色系：艺术歌曲
+                else if(item.category.includes('艺术歌曲') && !item.category.includes('重唱')) badgeClass = 'badge-artsong';
+                // 紫色系：宗教/清唱剧/康塔塔的独唱
+                else if(item.category.includes('清唱剧咏叹调') || item.category.includes('康塔塔咏叹调') || item.category.includes('独唱片段')) badgeClass = 'badge-sacred';
+                // 彩色系：任何重唱
+                else if(item.category.includes('重唱')) badgeClass = 'badge-ensemble';
+                // 绿色系：合唱
+                else if(item.category.includes('合唱')) badgeClass = 'badge-choral';
+                // 橙色系：器乐/室内乐
+                else if(item.category.includes('器乐') || item.category.includes('室内乐')) badgeClass = 'badge-inst';
+                // 深色系：总谱
+                else if(item.category.includes('总谱') || item.category.includes('交响')) badgeClass = 'badge-score';
 
+                let tonalityBadge = '';
+                if(item.tonality) tonalityBadge = `<span class="badge bg-warning text-dark ms-2 opacity-75" style="font-size:0.7rem">${item.tonality}</span>`;
                 let voiceBadge = '';
-                if(item.voice_types) voiceBadge = `<span class="badge bg-dark bg-opacity-75 ms-2" style="font-size:0.7rem">${item.voice_types}</span>`;
+                if(item.voice_types) voiceBadge = `<span class="badge bg-dark bg-opacity-75 ms-1" style="font-size:0.7rem">${item.voice_types}</span>`;
 
                 html += `
                 <tr onclick="openDetail(${item.id})" class="hover-row">
                     <td class="ps-4">
-                        <div class="fw-bold text-dark">${item.title} ${voiceBadge}</div>
+                        <div class="fw-bold text-dark">
+                            ${item.title} ${tonalityBadge} ${voiceBadge}
+                        </div>
                         ${item.work ? `<small class="text-muted">《${item.work}》</small>` : ''}
                     </td>
                     <td><span class="fw-medium">${item.composer}</span></td>
                     <td>${item.language ? `<span class="badge bg-secondary bg-opacity-10 text-secondary">${item.language}</span>` : '-'}</td>
-                    <td><span class="badge ${badgeClass}">${item.category}</span></td>
+                    <td><span class="badge badge-custom ${badgeClass}">${item.category}</span></td>
                     <td class="text-end pe-4">
                         <button class="btn btn-sm btn-outline-primary rounded-pill px-3">查看</button>
                     </td>
@@ -433,37 +522,28 @@
 
         window.filterCategory = function(cat, btn) {
             filters.category = cat;
-            
-            // 移除所有按钮的选中状态
             document.querySelectorAll('.category-group button').forEach(b => {
                 b.classList.remove('active-cat');
             });
-
-            // 给当前按钮加状态
             if (cat !== 'all') {
                 btn.classList.add('active-cat');
             }
-
             document.getElementById('listTitle').innerText = cat === 'all' ? '📚 所有资源' : `📂 ${cat}`;
             document.getElementById('mainContentArea').scrollIntoView({ behavior: 'smooth' });
-
             applyFilters();
         }
 
         window.resetFilters = function() {
-            filters = { category: 'all', composer: '', language: 'all', search: '' };
+            filters = { category: 'all', composer: '', language: 'all', voice: '', search: '' };
             document.getElementById('searchInput').value = '';
             document.getElementById('composerInput').value = '';
             document.getElementById('languageSelect').value = 'all';
-            
-            // 清除选中样式
+            document.getElementById('voiceInput').value = '';
             document.querySelectorAll('.category-group button').forEach(b => {
                 b.classList.remove('active-cat');
             });
-            
             document.getElementById('listTitle').innerText = '📚 所有资源';
             document.getElementById('mainContentArea').scrollIntoView({ behavior: 'smooth' });
-
             applyFilters();
         }
 
@@ -476,6 +556,7 @@
             document.getElementById('mCategory').innerText = item.category;
             document.getElementById('mLanguage').innerText = item.language || '-';
             document.getElementById('mDate').innerText = item.date || '-';
+            document.getElementById('mTonality').innerText = item.tonality || '-';
             let voiceInfo = '-';
             if(item.voice_count || item.voice_types) voiceInfo = `${item.voice_count || ''} ${item.voice_types ? '('+item.voice_types+')' : ''}`;
             document.getElementById('mVoice').innerText = voiceInfo;
@@ -492,6 +573,36 @@
                 noPreview.style.display = 'flex';
             }
             new bootstrap.Modal(document.getElementById('detailModal')).show();
+        }
+
+        window.showLogModal = function() {
+            const body = document.getElementById('logBody');
+            if (typeof changeLog === 'undefined' || changeLog.length === 0) {
+                body.innerHTML = '<p class="text-muted text-center my-4">暂无动态记录</p>';
+            } else {
+                let html = '<ul class="list-group list-group-flush">';
+                changeLog.forEach(log => {
+                    let badgeClass = 'bg-secondary';
+                    if (log.type === 'add') badgeClass = 'bg-success';
+                    if (log.type === 'update') badgeClass = 'bg-primary';
+                    if (log.type === 'delete') badgeClass = 'bg-danger';
+                    let typeText = '未知';
+                    if (log.type === 'add') typeText = '新增';
+                    if (log.type === 'update') typeText = '更新';
+                    if (log.type === 'delete') typeText = '删除';
+                    html += `
+                    <li class="list-group-item d-flex justify-content-between align-items-start px-0">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold small text-muted mb-1">${log.date}</div>
+                            ${log.msg}
+                        </div>
+                        <span class="badge ${badgeClass} rounded-pill">${typeText}</span>
+                    </li>`;
+                });
+                html += '</ul>';
+                body.innerHTML = html;
+            }
+            new bootstrap.Modal(document.getElementById('logModal')).show();
         }
     </script>
 </body>

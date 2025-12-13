@@ -1,16 +1,43 @@
 // 最后更新于 2025-12-13
 const musicData = [
     {
+        "id": 8,
+        "title": "Pezzo concertato",
+        "composer": "Gioachino Rossini/罗西尼",
+        "work": "Il viaggio a Reims/兰斯之旅",
+        "language": "意大利语",
+        "category": "歌剧重唱",
+        "voice_count": "十四重唱/Ensemble",
+        "voice_types": "十四重唱/Ensemble",
+        "tonality": "",
+        "filename": "歌剧重唱/Pezzo_concertato_Il_viaggio_a_Reims.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 7,
+        "title": "Pur ti miro",
+        "composer": "Claudio Monteverdi/蒙特威尔第",
+        "work": "L'incoronazione di Poppea",
+        "language": "意大利语",
+        "category": "歌剧重唱",
+        "voice_count": "二重唱",
+        "voice_types": "SA",
+        "tonality": "",
+        "filename": "歌剧重唱/Duet_Pur_ti_miro_Lincoronazione_di_Poppea.pdf",
+        "date": "2025-12-13"
+    },
+    {
         "id": 6,
         "title": "Bella Figlia Dell' Amore",
-        "composer": "Giuseppe Verdi",
-        "work": "Rigoletto Quartet/弄臣",
+        "composer": "Giuseppe Verdi/威尔第",
+        "work": "Rigoletto/弄臣",
         "language": "意大利语",
         "category": "歌剧重唱",
         "voice_count": "四重唱",
         "voice_types": "SATB",
         "filename": "歌剧重唱/Rigoletto_Quartet.pdf",
-        "date": "2025-12-13"
+        "date": "2025-12-13",
+        "tonality": ""
     },
     {
         "id": 5,
@@ -30,7 +57,10 @@ const musicData = [
         "language": "英语",
         "category": "歌剧咏叹调",
         "filename": "歌剧咏叹调/When_I_Fly-_The_Little_Prince.pdf",
-        "date": "2025-12-12"
+        "date": "2025-12-12",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": ""
     },
     {
         "id": 3,
@@ -40,7 +70,10 @@ const musicData = [
         "language": "德语",
         "category": "艺术歌曲",
         "filename": "艺术歌曲/Herr_Oluf_Loewe.pdf",
-        "date": "2025-12-12"
+        "date": "2025-12-12",
+        "voice_count": "",
+        "voice_types": "",
+        "tonality": "e小调"
     },
     {
         "id": 2,
@@ -50,16 +83,49 @@ const musicData = [
         "language": "英语",
         "category": "歌剧咏叹调",
         "filename": "歌剧咏叹调/A_Hundred_Thousand_Stars-Out_of_Darkness.pdf",
-        "date": "2025-12-12"
+        "date": "2025-12-12",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": ""
     },
     {
         "id": 1,
         "title": "E sogno, O realta?/是梦幻，是现实？",
-        "composer": "Giuseppe Verdi",
+        "composer": "Giuseppe Verdi/威尔第",
         "work": "Falstaff（法斯塔夫）",
         "language": "意大利语",
         "category": "歌剧咏叹调",
         "filename": "歌剧咏叹调/E_sogno_O_realta-Falstaff.pdf",
-        "date": "2025-12-12"
+        "date": "2025-12-12",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": ""
+    }
+];
+const changeLog = [
+    {
+        "date": "2025-12-13 09:49",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Pezzo concertato》"
+    },
+    {
+        "date": "2025-12-13 09:47",
+        "type": "add",
+        "msg": "添加了新乐谱：《Pezzo concertato》 (Gioachino Rossini/罗西尼)"
+    },
+    {
+        "date": "2025-12-13 09:44",
+        "type": "update",
+        "msg": "更新了乐谱信息：《E sogno, O realta?/是梦幻，是现实？》"
+    },
+    {
+        "date": "2025-12-13 09:44",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Bella Figlia Dell' Amore》"
+    },
+    {
+        "date": "2025-12-13 09:44",
+        "type": "add",
+        "msg": "添加了新乐谱：《Pur ti miro》 (Claudio Monteverdi/蒙特威尔第)"
     }
 ];
