@@ -1,6 +1,97 @@
 // 最后更新于 2025-12-13
 const musicData = [
     {
+        "id": 21,
+        "title": "Mass No. 2 in G major, D 167/G大调弥撒",
+        "composer": "Franz Schubert/舒伯特",
+        "work": "",
+        "language": "拉丁语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "STB独唱与SATB合唱与管弦乐队及管风琴",
+        "tonality": "G大调",
+        "filename": "宗教声乐作品总谱/Schubert_Mass_in_G_Major.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 20,
+        "title": "Requiem/安魂曲",
+        "composer": "Frederick Delius",
+        "work": "",
+        "language": "德语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "SB独唱与双合唱队与管弦乐队",
+        "tonality": "",
+        "filename": "宗教声乐作品总谱/Delius_Requiem.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 19,
+        "title": "Requiem, Op. 9/安魂曲",
+        "composer": "Maurice Duruflé/杜吕弗莱",
+        "work": "",
+        "language": "拉丁语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "AB独唱与SATB合唱与管风琴或管弦乐队及管风琴",
+        "tonality": "",
+        "filename": "宗教声乐作品总谱/Durufle_Requiem.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 17,
+        "title": "Requiem in D minor, K. 626/安魂曲",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "",
+        "language": "拉丁语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "SATB独唱与SATB合唱与管弦乐队",
+        "tonality": "d 小调",
+        "filename": "宗教声乐作品总谱/Mozart_Requiem.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 16,
+        "title": "Messe de Requiem, Op. 54/安魂曲",
+        "composer": "Saint-Saëns/圣桑",
+        "work": "",
+        "language": "拉丁语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "SATB独唱与SATB合唱与管弦乐队",
+        "tonality": "",
+        "filename": "宗教声乐作品总谱/Saint-Saens_Requiem.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 15,
+        "title": "Requiem in B♭ minor, Op. 89, B. 165/安魂曲",
+        "composer": "Antonín Dvořák/德沃夏克",
+        "work": "",
+        "language": "拉丁语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "SATB独唱与SATB合唱与管弦乐队",
+        "tonality": "降b小调",
+        "filename": "宗教声乐作品总谱/Dvorak_Requiem.pdf",
+        "date": "2025-12-13"
+    },
+    {
+        "id": 14,
+        "title": "Requiem in D Minor, Op. 48/安魂曲",
+        "composer": "Gabriel Fauré/福雷",
+        "work": "",
+        "language": "拉丁语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "SB独唱与SATB合唱与管弦乐队和管风琴",
+        "tonality": "d 小调",
+        "filename": "宗教声乐作品总谱/Faure_Requiem.pdf",
+        "date": "2025-12-13"
+    },
+    {
         "id": 13,
         "title": "Ein deutsches Requiem/德意志安魂曲",
         "composer": "Johannes Brahms/勃拉姆斯",
@@ -8,14 +99,14 @@ const musicData = [
         "language": "德语",
         "category": "宗教声乐作品总谱",
         "voice_count": "",
-        "voice_types": "",
+        "voice_types": "SB独唱与SATB合唱与管弦乐队",
         "tonality": "",
         "filename": "宗教声乐作品总谱/Brahms_Requiem.pdf",
         "date": "2025-12-13"
     },
     {
         "id": 12,
-        "title": "Cantata BWV 82",
+        "title": "Cantata BWV 82/Ich habe genug",
         "composer": "J.S. Bach/巴赫",
         "work": "",
         "language": "德语",
@@ -155,6 +246,121 @@ const musicData = [
     }
 ];
 const changeLog = [
+    {
+        "date": "2025-12-13 13:14",
+        "type": "delete",
+        "msg": "移除了乐谱：《War Requiem, Op. 66/战争安魂曲》 (Benjamin Britten/布里顿)"
+    },
+    {
+        "date": "2025-12-13 13:12",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Ein deutsches Requiem/德意志安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:10",
+        "type": "add",
+        "msg": "添加了新乐谱：《Mass No. 2 in G major, D 167/G大调弥撒》 (Franz Schubert/舒伯特)"
+    },
+    {
+        "date": "2025-12-13 13:07",
+        "type": "add",
+        "msg": "添加了新乐谱：《Requiem/安魂曲》 (Frederick Delius)"
+    },
+    {
+        "date": "2025-12-13 13:05",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in D Minor, Op. 48/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:05",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in B♭ minor, Op. 89, B. 165/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:05",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Messe de Requiem, Op. 54/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:05",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in D minor, K. 626/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:05",
+        "type": "update",
+        "msg": "更新了乐谱信息：《War Requiem, Op. 66/战争安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:05",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem, Op. 9/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 13:04",
+        "type": "add",
+        "msg": "添加了新乐谱：《Requiem, Op. 9》 (Maurice Duruflé)"
+    },
+    {
+        "date": "2025-12-13 13:02",
+        "type": "add",
+        "msg": "添加了新乐谱：《War Requiem, Op. 66/战争安魂曲》 (Benjamin Britten)"
+    },
+    {
+        "date": "2025-12-13 13:00",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Cantata BWV 82/Ich habe genug》"
+    },
+    {
+        "date": "2025-12-13 12:55",
+        "type": "add",
+        "msg": "添加了新乐谱：《Requiem in D minor, K. 626/安魂曲》 (Wolfgang Amadeus Mozart)"
+    },
+    {
+        "date": "2025-12-13 12:54",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in D Minor, Op. 48/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 12:54",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in D Minor, Op. 48/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 12:54",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in B♭ minor, Op. 89, B. 165/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 12:53",
+        "type": "add",
+        "msg": "添加了新乐谱：《Messe de Requiem, Op. 54/安魂曲》 (Saint-Saëns)"
+    },
+    {
+        "date": "2025-12-13 12:52",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in B♭ minor, Op. 89, B. 165/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 12:51",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in B♭ minor, Op. 89, B. 165》"
+    },
+    {
+        "date": "2025-12-13 12:50",
+        "type": "update",
+        "msg": "更新了乐谱信息：《Requiem in D Minor, Op. 48/安魂曲》"
+    },
+    {
+        "date": "2025-12-13 12:48",
+        "type": "add",
+        "msg": "添加了新乐谱：《Requiem in B♭ minor, Op. 89, B. 165》 (Dvořák)"
+    },
+    {
+        "date": "2025-12-13 12:44",
+        "type": "add",
+        "msg": "添加了新乐谱：《Requiem in D Minor/安魂曲》 (Gabriel Fauré)"
+    },
     {
         "date": "2025-12-13 12:22",
         "type": "update",
