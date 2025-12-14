@@ -2,21 +2,40 @@ import os
 import json
 import datetime
 import re
-from flask import Flask, render_template_string, request, redirect, url_for, flash
+import shutil
+import time
+from functools import wraps
+from flask import Flask, render_template_string, request, redirect, url_for, flash, session
 from werkzeug.utils import secure_filename
 
-# === 配置 ===
-SCORES_DIR = 'scores'
-DATA_FILE = 'js/data.js'
+# === ⚙️ 配置区域 (可在此修改) ===
+SCORES_DIR = 'scores'          # 乐谱存放目录
+DATA_FILE = 'js/data.js'       # 数据文件路径
+BACKUP_DIR = 'backup'          # 备份目录
 ALLOWED_EXTENSIONS = {'pdf', 'midi', 'mp3', 'sib', 'musx'}
 
+# 🔐 后台登录账号密码
+ADMIN_USER = 'admin'
+ADMIN_PASS = 'maotong2025'     # 建议修改此密码
+
 app = Flask(__name__)
-app.secret_key = "admin_tool_key"
+app.secret_key = "maotong_secret_key_2025" # 用于加密 Session
 
-if not os.path.exists(SCORES_DIR):
-    os.makedirs(SCORES_DIR)
+# 确保目录存在
+for folder in [SCORES_DIR, BACKUP_DIR, 'js']:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
 
-# --- 数据处理 ---
+# --- 🔐 登录验证装饰器 ---
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'logged_in' not in session:
+            return redirect(url_for('login', next=request.url))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# --- 💾 数据处理与备份 ---
 def load_data_and_log():
     music_data = []
     change_log = []
@@ -34,12 +53,22 @@ def load_data_and_log():
     return music_data, change_log
 
 def save_all(music_data, change_log):
+    # 1. 先进行备份
+    if os.path.exists(DATA_FILE):
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_path = os.path.join(BACKUP_DIR, f"data_backup_{timestamp}.js")
+        shutil.copy(DATA_FILE, backup_path)
+        print(f"备份已创建: {backup_path}")
+
+    # 2. 写入新数据
     music_data.sort(key=lambda x: x['id'], reverse=True)
     json_music = json.dumps(music_data, indent=4, ensure_ascii=False)
     json_log = json.dumps(change_log, indent=4, ensure_ascii=False)
-    js_content = f"// 最后更新于 {datetime.date.today()}\n"
+    
+    js_content = f"// 最后更新于 {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
     js_content += f"const musicData = {json_music};\n"
     js_content += f"const changeLog = {json_log};\n"
+    
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         f.write(js_content)
 
@@ -52,7 +81,44 @@ def add_log(change_log, action_type, message):
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# --- HTML 模板 ---
+# --- 🖥️ HTML 模板 ---
+LOGIN_HTML = """
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>管理员登录</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { background: #f0f2f5; display: flex; align-items: center; justify-content: center; height: 100vh; }
+    .card { width: 100%; max-width: 400px; border: none; shadow: 0 4px 12px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body>
+<div class="card p-4">
+    <h3 class="text-center mb-4">🎹 后台登录</h3>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-danger">{{ messages[0] }}</div>
+        {% endif %}
+    {% endwith %}
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">账号</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">密码</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">进入系统</button>
+    </form>
+</div>
+</body>
+</html>
+"""
+
 HTML_TEMPLATE = """
 <!doctype html>
 <html lang="zh">
@@ -61,13 +127,16 @@ HTML_TEMPLATE = """
     <title>乐谱库后台管理</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { background-color: #f8f9fa; padding-top: 20px; }
+        body { background-color: #f8f9fa; padding-top: 20px; padding-bottom: 50px; }
         .nav-tabs .nav-link.active { font-weight: bold; border-top: 3px solid #0d6efd; }
     </style>
 </head>
 <body>
 <div class="container">
-    <h2 class="mb-4 text-center">🎹 乐谱库后台管理</h2>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>🎹 乐谱库后台管理</h2>
+        <a href="/logout" class="btn btn-outline-danger btn-sm">退出登录</a>
+    </div>
     
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -263,6 +332,10 @@ CATEGORY_SELECT_HTML = """
             <option value="----------" disabled>----------</option>
             <option value="合唱作品" {{ 'selected' if current == '合唱作品' else '' }}>合唱作品</option>
         </optgroup>
+        <optgroup label="📚 曲集与套曲 (Collections)">
+            <option value="声乐套曲" {{ 'selected' if current == '声乐套曲' else '' }}>声乐套曲 (Song Cycles)</option>
+            <option value="乐谱书/曲集" {{ 'selected' if current == '乐谱书/曲集' else '' }}>乐谱书/曲集 (Songbooks/Anthologies)</option>
+        </optgroup>
         <optgroup label="🎻 器乐作品 (Instrumental)">
             <option value="器乐独奏" {{ 'selected' if current == '器乐独奏' else '' }}>器乐独奏</option>
             <option value="室内乐" {{ 'selected' if current == '室内乐' else '' }}>室内乐</option>
@@ -278,7 +351,25 @@ CATEGORY_SELECT_HTML = """
 </div>
 """
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if username == ADMIN_USER and password == ADMIN_PASS:
+            session['logged_in'] = True
+            return redirect(request.args.get('next') or url_for('index'))
+        else:
+            flash('账号或密码错误')
+    return render_template_string(LOGIN_HTML)
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    return redirect(url_for('login'))
+
 @app.route('/', methods=['GET', 'POST'])
+@login_required
 def index():
     if request.method == 'POST':
         file = request.files['file']
@@ -295,14 +386,16 @@ def index():
             category_dir = os.path.join(SCORES_DIR, category)
             if not os.path.exists(category_dir): os.makedirs(category_dir)
             
-            filename = secure_filename(file.filename)
-            if not filename: filename = f"file_{datetime.datetime.now().strftime('%H%M%S')}.pdf"
-            file.save(os.path.join(category_dir, filename))
+            ext = file.filename.rsplit('.', 1)[1].lower()
+            safe_name = secure_filename(file.filename)
+            timestamp_name = f"{int(time.time())}_{safe_name}" if safe_name else f"{int(time.time())}.{ext}"
+            
+            file.save(os.path.join(category_dir, timestamp_name))
 
             music_data, change_log = load_data_and_log()
             
             new_id = 1 if not music_data else max(i['id'] for i in music_data) + 1
-            file_path = f"{category}/{filename}"
+            file_path = f"{category}/{timestamp_name}"
             
             music_data.append({
                 "id": new_id, "title": title, "composer": composer,
@@ -321,6 +414,7 @@ def index():
     return render_template_string(HTML_TEMPLATE.replace("{% include 'category_select.html' %}", CATEGORY_SELECT_HTML), active_tab='upload', item=None)
 
 @app.route('/manage')
+@login_required
 def manage():
     query = request.args.get('q', '').lower()
     music_data, _ = load_data_and_log()
@@ -329,6 +423,7 @@ def manage():
     return render_template_string(HTML_TEMPLATE, active_tab='manage', items=music_data, query=query)
 
 @app.route('/edit/<int:item_id>', methods=['GET', 'POST'])
+@login_required
 def edit(item_id):
     music_data, change_log = load_data_and_log()
     item = next((i for i in music_data if i['id'] == item_id), None)
@@ -352,6 +447,7 @@ def edit(item_id):
     return render_template_string(HTML_TEMPLATE.replace("{% include 'category_select.html' %}", CATEGORY_SELECT_HTML), active_tab='edit', item=item)
 
 @app.route('/delete/<int:item_id>')
+@login_required
 def delete(item_id):
     music_data, change_log = load_data_and_log()
     target = next((i for i in music_data if i['id'] == item_id), None)
@@ -364,4 +460,5 @@ def delete(item_id):
 
 if __name__ == '__main__':
     print("后台管理启动: http://127.0.0.1:5000")
+    print("请使用浏览器访问，默认账号: admin，密码: maotong2025")
     app.run(debug=True)
