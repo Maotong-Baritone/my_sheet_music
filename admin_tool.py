@@ -154,7 +154,6 @@ HTML_TEMPLATE = """
                     <tr>
                         <th class="ps-3">曲名 / 调性</th>
                         <th>作曲家</th>
-                        <th>编制</th>
                         <th>分类</th>
                         <th>操作</th>
                     </tr>
@@ -169,9 +168,6 @@ HTML_TEMPLATE = """
                             {% endif %}
                         </td>
                         <td>{{ item.composer }}</td>
-                        <td>
-                            {% if item.voice_types %}<span class="badge bg-secondary">{{ item.voice_types }}</span>{% endif %}
-                        </td>
                         <td><small class="text-muted">{{ item.category }}</small></td>
                         <td>
                             <a href="/edit/{{ item.id }}" class="btn btn-sm btn-outline-primary">✏️</a>
@@ -179,7 +175,7 @@ HTML_TEMPLATE = """
                         </td>
                     </tr>
                     {% else %}
-                    <tr><td colspan="5" class="text-center p-4">没有找到数据</td></tr>
+                    <tr><td colspan="4" class="text-center p-4">没有找到数据</td></tr>
                     {% endfor %}
                 </tbody>
             </table>
@@ -260,7 +256,7 @@ CATEGORY_SELECT_HTML = """
             <option value="音乐剧选段" {{ 'selected' if current == '音乐剧选段' else '' }}>音乐剧选段 (Musical)</option>
             <option value="独唱片段/选段" {{ 'selected' if current == '独唱片段/选段' else '' }}>独唱片段/选段 (Solo Excerpts)</option>
             <option value="----------" disabled>----------</option>
-            <option value="歌剧重唱" {{ 'selected' if current == '歌剧重唱' else '' }}>歌剧重唱 (Opera Ensembles)</option>
+            <option value="歌剧重唱" {{ 'selected' if current == '歌剧重唱' else '' }}>歌剧重唱 (Ensembles)</option>
             <option value="音乐剧重唱" {{ 'selected' if current == '音乐剧重唱' else '' }}>音乐剧重唱 (Musical Ensembles)</option>
             <option value="清唱剧重唱" {{ 'selected' if current == '清唱剧重唱' else '' }}>清唱剧重唱</option>
             <option value="艺术歌曲重唱" {{ 'selected' if current == '艺术歌曲重唱' else '' }}>艺术歌曲重唱 (Duets/Trios)</option>

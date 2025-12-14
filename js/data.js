@@ -1,5 +1,44 @@
-// 最后更新于 2025-12-13
+// 最后更新于 2025-12-14
 const musicData = [
+    {
+        "id": 24,
+        "title": "Der Feuerreiter/火焰骑士",
+        "composer": "Hugo Wolf/沃尔夫",
+        "work": "Mörike-Lieder",
+        "language": "德语",
+        "category": "艺术歌曲",
+        "voice_count": "",
+        "voice_types": "",
+        "tonality": "g小调",
+        "filename": "艺术歌曲/Der_Feuerreiter.pdf",
+        "date": "2025-12-14"
+    },
+    {
+        "id": 23,
+        "title": "Messiah, HWV 56/弥赛亚",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "",
+        "language": "英语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "SATB独唱与SATB合唱与管弦乐队",
+        "tonality": "",
+        "filename": "宗教声乐作品总谱/Messiah_HWV_56_Handel.pdf",
+        "date": "2025-12-14"
+    },
+    {
+        "id": 22,
+        "title": "War Requiem, Op. 66/战争安魂曲",
+        "composer": "Benjamin Britten",
+        "work": "",
+        "language": "拉丁语/英语",
+        "category": "宗教声乐作品总谱",
+        "voice_count": "",
+        "voice_types": "STB独唱与SATB合唱与男童声合唱与管弦乐队及管风琴",
+        "tonality": "",
+        "filename": "宗教声乐作品总谱/Britten_War_Requiem.pdf",
+        "date": "2025-12-14"
+    },
     {
         "id": 21,
         "title": "Mass No. 2 in G major, D 167/G大调弥撒",
@@ -246,6 +285,21 @@ const musicData = [
     }
 ];
 const changeLog = [
+    {
+        "date": "2025-12-14 00:36",
+        "type": "add",
+        "msg": "添加了新乐谱：《Der Feuerreiter/火焰骑士》 (Hugo Wolf/沃尔夫)"
+    },
+    {
+        "date": "2025-12-14 00:29",
+        "type": "add",
+        "msg": "添加了新乐谱：《Messiah, HWV 56/弥赛亚》 (Georg Friedrich Händel/亨德尔)"
+    },
+    {
+        "date": "2025-12-14 00:21",
+        "type": "add",
+        "msg": "添加了新乐谱：《War Requiem, Op. 66/战争安魂曲》 (Benjamin Britten)"
+    },
     {
         "date": "2025-12-13 13:14",
         "type": "delete",
