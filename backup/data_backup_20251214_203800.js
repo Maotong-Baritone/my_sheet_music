@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-14 20:38:00
+// 最后更新于 2025-12-14 20:36:08
 const musicData = [
     {
         "id": 84,
@@ -58,7 +58,7 @@ const musicData = [
     },
     {
         "id": 80,
-        "title": "A Shropshire Lad/什罗普郡小伙子",
+        "title": "A Shropshire Lad",
         "composer": "George Butterworth",
         "work": "",
         "language": "英语",
@@ -1074,11 +1074,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-14 20:38",
-        "type": "update",
-        "msg": "更新: A Shropshire Lad/什罗普郡小伙子"
-    },
-    {
         "date": "2025-12-14 20:36",
         "type": "add",
         "msg": "添加: A Sea Symphony/大海交响曲"
@@ -1322,5 +1317,10 @@ const changeLog = [
         "date": "2025-12-14 01:21",
         "type": "add",
         "msg": "添加了新乐谱：《Hai gia vinta la causa/你已赢得了诉讼》 (Wolfgang Amadeus Mozart/莫扎特)"
+    },
+    {
+        "date": "2025-12-14 01:19",
+        "type": "add",
+        "msg": "添加了新乐谱：《Ha! welch ein Augenblick》 (Ludwig van Beethoven/贝多芬)"
     }
 ];
