@@ -8,7 +8,7 @@ from functools import wraps
 from flask import Flask, render_template_string, request, redirect, url_for, flash, session
 from werkzeug.utils import secure_filename
 
-# === ⚙️ 配置区域 ===
+# ===⚙️ 配置区域 ===
 SCORES_DIR = 'scores'
 LYRICS_DIR = 'lyrics'          # 新增：歌词存放目录
 DATA_FILE = 'js/data.js'
@@ -210,10 +210,27 @@ HTML_TEMPLATE = """
 </div></body></html>
 """
 
+# admin_tool.py 中
+
+# admin_tool.py 中的 CATEGORY_SELECT_HTML 部分
+
 CATEGORY_SELECT_HTML = """
 <div class="mb-3"><label class="form-label">分类</label><select class="form-select" name="category">
 {% set current = item.category if item else '' %}
-<optgroup label="🎤 声乐"><option value="歌剧咏叹调" {{ 'selected' if current == '歌剧咏叹调' }}>歌剧咏叹调</option><option value="艺术歌曲" {{ 'selected' if current == '艺术歌曲' }}>艺术歌曲</option><option value="清唱剧咏叹调" {{ 'selected' if current == '清唱剧咏叹调' }}>清唱剧咏叹调</option><option value="康塔塔咏叹调" {{ 'selected' if current == '康塔塔咏叹调' }}>康塔塔咏叹调</option><option value="音乐剧选段" {{ 'selected' if current == '音乐剧选段' }}>音乐剧选段</option><option value="独唱片段/选段" {{ 'selected' if current == '独唱片段/选段' }}>独唱片段</option><option value="歌剧重唱" {{ 'selected' if current == '歌剧重唱' }}>歌剧重唱</option><option value="艺术歌曲重唱" {{ 'selected' if current == '艺术歌曲重唱' }}>艺术歌曲重唱</option><option value="合唱作品" {{ 'selected' if current == '合唱作品' }}>合唱</option></optgroup>
+<optgroup label="🎤 声乐">
+    <option value="歌剧咏叹调" {{ 'selected' if current == '歌剧咏叹调' }}>歌剧咏叹调</option>
+    <option value="歌剧重唱" {{ 'selected' if current == '歌剧重唱' }}>歌剧重唱</option>
+    <option value="宗教声乐作品" {{ 'selected' if current == '宗教声乐作品' }}>宗教声乐作品 (Sacred Vocal Music)</option>
+    <option value="艺术歌曲" {{ 'selected' if current == '艺术歌曲' }}>艺术歌曲</option>
+    <option value="艺术歌曲重唱" {{ 'selected' if current == '艺术歌曲重唱' }}>艺术歌曲重唱</option>
+    <option value="音乐剧选段" {{ 'selected' if current == '音乐剧选段' }}>音乐剧选段</option>
+    <option value="音乐剧重唱" {{ 'selected' if current == '音乐剧重唱' }}>音乐剧重唱</option>
+    <option value="独唱片段/选段" {{ 'selected' if current == '独唱片段/选段' }}>独唱片段/选段</option>
+    <option value="合唱作品" {{ 'selected' if current == '合唱作品' }}>合唱作品</option>
+</optgroup>
+<optgroup label="✨ 特殊/世俗康塔塔">
+    <option value="音乐会咏叹调/世俗康塔塔" {{ 'selected' if current == '音乐会咏叹调/世俗康塔塔' }}>音乐会咏叹调/世俗康塔塔</option>
+</optgroup>
 <optgroup label="📚 曲集"><option value="声乐套曲" {{ 'selected' if current == '声乐套曲' }}>声乐套曲</option><option value="乐谱书/曲集" {{ 'selected' if current == '乐谱书/曲集' }}>乐谱书/曲集</option></optgroup>
 <optgroup label="🎻 器乐"><option value="器乐独奏" {{ 'selected' if current == '器乐独奏' }}>器乐独奏</option><option value="室内乐" {{ 'selected' if current == '室内乐' }}>室内乐</option></optgroup>
 <optgroup label="🎼 总谱"><option value="歌剧总谱" {{ 'selected' if current == '歌剧总谱' }}>歌剧总谱</option><option value="管弦乐/交响曲" {{ 'selected' if current == '管弦乐/交响曲' }}>管弦乐/交响曲</option><option value="协奏曲总谱" {{ 'selected' if current == '协奏曲总谱' }}>协奏曲总谱</option><option value="宗教声乐作品总谱" {{ 'selected' if current == '宗教声乐作品总谱' }}>宗教声乐总谱</option></optgroup>

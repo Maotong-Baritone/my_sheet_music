@@ -150,11 +150,11 @@ const musicData = [
         "composer": "Georg Friedrich Händel/亨德尔",
         "work": "Joshua/约书亚",
         "language": "英语",
-        "category": "清唱剧咏叹调",
+        "category": "宗教声乐作品",
         "voice_count": "",
         "voice_types": "Bass-Baritone/低男中音",
         "tonality": "",
-        "filename": "清唱剧咏叹调/See_the_raging_flames_arise-Joshua.pdf",
+        "filename": "宗教声乐作品/See_the_raging_flames_arise-Joshua.pdf",
         "date": "2025-12-14"
     },
     {
@@ -709,11 +709,11 @@ const musicData = [
         "composer": "J.S. Bach/巴赫",
         "work": "Cantata BWV 82",
         "language": "德语",
-        "category": "康塔塔咏叹调",
+        "category": "宗教声乐作品",
         "voice_count": "",
         "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
         "tonality": "",
-        "filename": "康塔塔咏叹调/Ich_habe_genung-bwv_82.pdf",
+        "filename": "宗教声乐作品/Ich_habe_genung-bwv_82.pdf",
         "date": "2025-12-14"
     },
     {
@@ -882,7 +882,7 @@ const musicData = [
         "voice_count": "二重唱",
         "voice_types": "TB",
         "tonality": "",
-        "filename": "音乐剧重唱/-_.pdf",
+        "filename": "音乐剧重唱/confrontation.pdf",
         "date": "2025-12-13"
     },
     {
@@ -891,11 +891,11 @@ const musicData = [
         "composer": "Carl Orff/奥尔夫",
         "work": "Carmina Burana/布兰诗歌",
         "language": "拉丁语",
-        "category": "清唱剧咏叹调",
+        "category": "宗教声乐作品",
         "voice_count": "",
         "voice_types": "Baritone/男中音",
         "tonality": "",
-        "filename": "清唱剧咏叹调/Estuans_interius-.pdf",
+        "filename": "宗教声乐作品/Estuans_interius-.pdf",
         "date": "2025-12-13"
     },
     {
