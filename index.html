@@ -18,7 +18,6 @@
             --text-main: #2b2d42;
         }
 
-        /* 全局字体 */
         body { 
             background-color: var(--bg-color); 
             font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif; 
@@ -29,14 +28,12 @@
         .font-serif { font-family: 'Playfair Display', 'Noto Serif SC', serif; }
         .container { flex: 1; }
         
-        /* 导航栏 */
         .navbar {
             background: rgba(38, 70, 83, 0.95) !important;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Hero 区域 */
         .hero-section {
             background: linear-gradient(135deg, #264653 0%, #2a9d8f 100%);
             padding: 4rem 0 6rem 0;
@@ -53,7 +50,6 @@
             pointer-events: none;
         }
 
-        /* 搜索框 */
         .search-container {
             background: rgba(255, 255, 255, 0.95);
             padding: 8px; border-radius: 50px;
@@ -61,7 +57,6 @@
             backdrop-filter: blur(5px);
         }
 
-        /* 分类卡片 */
         .category-card {
             border: none; border-radius: 16px; transition: all 0.3s ease;
             height: 100%; background: var(--card-bg); 
@@ -85,7 +80,6 @@
 
         .content-section { margin-top: 3rem; }
         
-        /* 表格样式 */
         .table-custom thead th {
             border-top: none; border-bottom: 2px solid #e9ecef;
             font-family: 'Noto Serif SC', serif; color: #6c757d; font-weight: 700;
@@ -97,8 +91,8 @@
             background-color: #264653; color: #a8b2d1; padding: 4rem 0; margin-top: 5rem; font-family: 'Noto Serif SC', serif;
         }
 
-        /* 标签颜色映射 */
         .badge-custom { font-weight: 500; border-radius: 4px; padding: 0.4em 0.6em; }
+        
         .bg-opera { background-color: #d00000; color: white; }
         .bg-opera-ens { background-color: #6a040f; color: white; }
         .bg-oratorio { background-color: #7209b7; color: white; }
@@ -131,7 +125,7 @@
             <div class="d-flex align-items-center gap-3">
                 <button class="btn btn-sm btn-outline-light rounded-pill px-3" onclick="showLogModal()">🔔 动态记录</button>
                 <div class="text-end">
-                    <span class="badge bg-warning text-dark me-2">v0.1</span>
+                    <span class="badge bg-warning text-dark me-2">v0.2</span>
                 </div>
             </div>
         </div>
@@ -160,7 +154,7 @@
         </div>
     </div>
 
-    <div style="height: 60px; overflow: hidden; margin-top: -50px; position: relative; z-index: 1;">
+<div class="d-none d-md-block" style="height: 60px; overflow: hidden; margin-top: -50px; position: relative; z-index: 1;">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
             <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: var(--bg-color);"></path>
         </svg>
@@ -260,7 +254,10 @@
                             </table>
                         </div>
                     </div>
-                    <nav aria-label="Page navigation" class="mt-5" id="paginationNav"><ul class="pagination justify-content-center" id="paginationUl"></ul></nav>
+                    <nav aria-label="Page navigation" class="mt-5" id="paginationNav">
+                        <ul class="pagination justify-content-center" id="paginationUl">
+                            </ul>
+                    </nav>
                     <div id="noResult" class="text-center p-5 text-muted" style="display:none;"><div class="fs-1 mb-3">🧐</div><h4 class="font-serif">未找到相关乐谱</h4><p>请尝试调整筛选条件或搜索关键词。</p></div>
                 </div>
             </div>
@@ -418,7 +415,7 @@
             let result = musicData.filter(item => {
                 const itemTitle = normalizeStr(item.title); const itemComposer = normalizeStr(item.composer); const itemWork = normalizeStr(item.work); const itemVoice = normalizeStr(item.voice_types); const itemDesc = normalizeStr(item.description);
                 let composerKeywords = itemComposer; if (composerAliases[item.composer]) { composerKeywords += " " + normalizeStr(composerAliases[item.composer]); }
-                // 搜索范围：标题、作曲家、作品号、编制、简介
+                // 搜索描述、标题、作曲家
                 const fullSearchableText = `${itemTitle} ${composerKeywords} ${itemWork} ${itemDesc}`;
                 return (filters.category === 'all' || item.category === filters.category) && (filters.language === 'all' || item.language === filters.language) && (filters.composer === '' || composerKeywords.includes(searchComposer)) && (filters.voice === '' || (item.voice_types && itemVoice.includes(searchVoice))) && (filters.search === '' || fullSearchableText.includes(searchBase));
             });
@@ -453,9 +450,72 @@
             tbody.innerHTML = html; renderPaginationControls(pages);
         }
 
+        // 分页控件生成
+// 渲染分页控件 (带跳转功能版)
         function renderPaginationControls(pages) {
-            const ul = document.getElementById('paginationUl'); let html = `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage - 1}); return false;">上一页</a></li><li class="page-item disabled"><span class="page-link border-0 bg-transparent fw-bold text-dark">${currentPage} / ${pages}</span></li><li class="page-item ${currentPage === pages ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage + 1}); return false;">下一页</a></li>`; ul.innerHTML = html;
+            const ul = document.getElementById('paginationUl');
+            let html = '';
+            
+            // [首页]
+            html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(1); return false;">首页</a>
+                     </li>`;
+            
+            // [上一页]
+            html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage - 1}); return false;">上一页</a>
+                     </li>`;
+            
+            // [页码显示]
+            html += `<li class="page-item disabled">
+                        <span class="page-link border-0 bg-transparent fw-bold text-dark" style="white-space: nowrap;">
+                            ${currentPage} / ${pages}
+                        </span>
+                     </li>`;
+
+            // [下一页]
+            html += `<li class="page-item ${currentPage === pages ? 'disabled' : ''}">
+                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage + 1}); return false;">下一页</a>
+                     </li>`;
+            
+            // [尾页]
+            html += `<li class="page-item ${currentPage === pages ? 'disabled' : ''}">
+                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${pages}); return false;">尾页</a>
+                     </li>`;
+
+            // === ✨ 新增：跳转输入框 ===
+            if (pages > 1) { // 只有页数大于1时才显示跳转
+                html += `
+                <li class="page-item ms-3 d-flex align-items-center">
+                    <input type="number" id="jumpInput" class="form-control form-control-sm text-center" 
+                           style="width: 50px; border-top-right-radius: 0; border-bottom-right-radius: 0;" 
+                           min="1" max="${pages}" placeholder="页"
+                           onkeypress="if(event.key==='Enter') jumpToPage()">
+                    <button class="btn btn-sm btn-outline-secondary" 
+                            style="border-top-left-radius: 0; border-bottom-left-radius: 0;"
+                            onclick="jumpToPage()">Go</button>
+                </li>`;
+            }
+
+            ul.innerHTML = html;
         }
+
+// 新增：跳转功能的逻辑
+        window.jumpToPage = function() {
+            const input = document.getElementById('jumpInput');
+            if (!input) return;
+            
+            let page = parseInt(input.value);
+            
+            // 简单验证：如果是数字且大于0，就尝试跳转
+            // (changePage 函数内部会自动修正超过最大页数的情况，所以这里不用太担心上限)
+            if (!isNaN(page) && page > 0) {
+                changePage(page);
+            } else {
+                alert("请输入有效的页码！");
+            }
+        }
+
         window.changePage = (p) => { currentPage = p; applyFilters(); document.getElementById('listSection').scrollIntoView({ behavior: 'smooth' }); };
         function renderRecent() {
             const list = document.getElementById('recentList'); const recents = musicData.slice(0, 3); let html = '';
@@ -487,7 +547,7 @@
             let voiceInfo = '-'; if(item.voice_count || item.voice_types) voiceInfo = `${item.voice_count || ''} ${item.voice_types ? '('+item.voice_types+')' : ''}`; document.getElementById('mVoice').innerText = voiceInfo;
             document.getElementById('mDownload').href = `scores/${item.filename}`;
             
-            // 显示简介 (如果存在)
+            // 显示简介
             const descCard = document.getElementById('descCard');
             const descText = document.getElementById('mDescription');
             if (item.description && item.description.trim() !== '') {
@@ -497,6 +557,7 @@
                 descCard.style.display = 'none';
             }
 
+            // 歌词按钮
             const btn = document.getElementById('btnReadLyrics');
             if (item.has_lyrics) {
                 btn.style.display = 'block';
