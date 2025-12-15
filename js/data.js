@@ -1,5 +1,75 @@
-// 最后更新于 2025-12-14 12:16:37
+// 最后更新于 2025-12-14 20:36:08
 const musicData = [
+    {
+        "id": 84,
+        "title": "A Sea Symphony/大海交响曲",
+        "composer": "Ralph Vaughan Williams/沃恩·威廉姆斯",
+        "work": "",
+        "language": "英语",
+        "category": "管弦乐/交响曲",
+        "voice_count": "",
+        "voice_types": "SB独唱与SATB合唱与管弦乐队",
+        "tonality": "",
+        "filename": "管弦乐/交响曲/1765769768.pdf",
+        "date": "2025-12-14",
+        "has_lyrics": false
+    },
+    {
+        "id": 83,
+        "title": "Sonata No.3 Op.25/奏鸣曲",
+        "composer": "Erich Wolfgang Korngold/科恩戈尔德",
+        "work": "",
+        "language": "",
+        "category": "器乐独奏",
+        "voice_count": "",
+        "voice_types": "钢琴独奏",
+        "tonality": "C大调",
+        "filename": "器乐独奏/1765769408.pdf",
+        "date": "2025-12-14",
+        "has_lyrics": false
+    },
+    {
+        "id": 82,
+        "title": "Ave Verum Corpus, K.618",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "",
+        "language": "拉丁语",
+        "category": "合唱作品",
+        "voice_count": "",
+        "voice_types": "SATB",
+        "tonality": "D大调",
+        "filename": "合唱作品/1765769228.pdf",
+        "date": "2025-12-14",
+        "has_lyrics": false
+    },
+    {
+        "id": 81,
+        "title": "罗忠镕艺术歌曲集",
+        "composer": "罗忠镕",
+        "work": "",
+        "language": "汉语",
+        "category": "乐谱书/曲集",
+        "voice_count": "",
+        "voice_types": "",
+        "tonality": "",
+        "filename": "乐谱书/曲集/1765768954.pdf",
+        "date": "2025-12-14",
+        "has_lyrics": false
+    },
+    {
+        "id": 80,
+        "title": "A Shropshire Lad",
+        "composer": "George Butterworth",
+        "work": "",
+        "language": "英语",
+        "category": "声乐套曲",
+        "voice_count": "",
+        "voice_types": "",
+        "tonality": "",
+        "filename": "声乐套曲/1765768898.pdf",
+        "date": "2025-12-14",
+        "has_lyrics": false
+    },
     {
         "id": 79,
         "title": "Le Nozze di Figaro, K.492/费加罗的婚礼",
@@ -616,14 +686,15 @@ const musicData = [
         "id": 32,
         "title": "Come paride vezzoso",
         "composer": "Domenico Gaetano Donizetti/多尼采蒂",
-        "work": "L’Elisir d'Amore/爱的甘醇",
+        "work": "L'Elisir d'Amore/爱的甘醇",
         "language": "意大利语",
         "category": "歌剧咏叹调",
         "voice_count": "",
         "voice_types": "Baritone/男中音",
         "tonality": "",
         "filename": "歌剧咏叹调/Come_paride_vezzoso-LElisir_dAmore.pdf",
-        "date": "2025-12-14"
+        "date": "2025-12-14",
+        "has_lyrics": false
     },
     {
         "id": 31,
@@ -878,11 +949,11 @@ const musicData = [
         "composer": "Claude-Michel Schönberg",
         "work": "Les Misérables/悲惨世界",
         "language": "英语",
-        "category": "音乐剧重唱",
+        "category": "音乐剧选段",
         "voice_count": "二重唱",
         "voice_types": "TB",
         "tonality": "",
-        "filename": "音乐剧重唱/confrontation.pdf",
+        "filename": "音乐剧选段/confrontation.pdf",
         "date": "2025-12-13"
     },
     {
@@ -891,12 +962,13 @@ const musicData = [
         "composer": "Carl Orff/奥尔夫",
         "work": "Carmina Burana/布兰诗歌",
         "language": "拉丁语",
-        "category": "宗教声乐作品",
+        "category": "音乐会咏叹调/世俗康塔塔",
         "voice_count": "",
         "voice_types": "Baritone/男中音",
         "tonality": "",
         "filename": "宗教声乐作品/Estuans_interius-.pdf",
-        "date": "2025-12-13"
+        "date": "2025-12-13",
+        "has_lyrics": false
     },
     {
         "id": 8,
@@ -1001,6 +1073,56 @@ const musicData = [
     }
 ];
 const changeLog = [
+    {
+        "date": "2025-12-14 20:36",
+        "type": "add",
+        "msg": "添加: A Sea Symphony/大海交响曲"
+    },
+    {
+        "date": "2025-12-14 20:32",
+        "type": "update",
+        "msg": "更新: Sonata No.3 Op.25/奏鸣曲"
+    },
+    {
+        "date": "2025-12-14 20:31",
+        "type": "update",
+        "msg": "更新: Sonata Op.25/奏鸣曲"
+    },
+    {
+        "date": "2025-12-14 20:31",
+        "type": "update",
+        "msg": "更新: Sonata op.25/奏鸣曲"
+    },
+    {
+        "date": "2025-12-14 20:30",
+        "type": "add",
+        "msg": "添加: Sonata op.25/奏鸣曲"
+    },
+    {
+        "date": "2025-12-14 20:27",
+        "type": "add",
+        "msg": "添加: Ave Verum Corpus, K.618"
+    },
+    {
+        "date": "2025-12-14 20:22",
+        "type": "add",
+        "msg": "添加: 罗忠镕艺术歌曲集"
+    },
+    {
+        "date": "2025-12-14 20:21",
+        "type": "add",
+        "msg": "添加: A Shropshire Lad"
+    },
+    {
+        "date": "2025-12-14 20:19",
+        "type": "update",
+        "msg": "更新: Estuans interius"
+    },
+    {
+        "date": "2025-12-14 20:17",
+        "type": "update",
+        "msg": "更新: Come paride vezzoso"
+    },
     {
         "date": "2025-12-14 12:16",
         "type": "update",
@@ -1200,55 +1322,5 @@ const changeLog = [
         "date": "2025-12-14 01:19",
         "type": "add",
         "msg": "添加了新乐谱：《Ha! welch ein Augenblick》 (Ludwig van Beethoven/贝多芬)"
-    },
-    {
-        "date": "2025-12-14 01:18",
-        "type": "update",
-        "msg": "更新了乐谱信息：《Fleuris sait une rose》"
-    },
-    {
-        "date": "2025-12-14 01:18",
-        "type": "update",
-        "msg": "更新了乐谱信息：《A quoi bon l'economie》"
-    },
-    {
-        "date": "2025-12-14 01:18",
-        "type": "add",
-        "msg": "添加了新乐谱：《Fleuris sait une rose》 (Jules Massenet/马斯奈)"
-    },
-    {
-        "date": "2025-12-14 01:16",
-        "type": "update",
-        "msg": "更新了乐谱信息：《Aprite un po quegli occhi/睁开你们的眼睛》"
-    },
-    {
-        "date": "2025-12-14 01:15",
-        "type": "update",
-        "msg": "更新了乐谱信息：《Deh vieni alla finestra/请你到窗前来》"
-    },
-    {
-        "date": "2025-12-14 01:15",
-        "type": "add",
-        "msg": "添加了新乐谱：《Fin ch'han dal vino/让大家痛饮，让大家狂欢》 (Wolfgang Amadeus Mozart/莫扎特)"
-    },
-    {
-        "date": "2025-12-14 01:14",
-        "type": "add",
-        "msg": "添加了新乐谱：《Eri tu/你玷污了我的灵魂》 (Giuseppe Verdi/威尔第)"
-    },
-    {
-        "date": "2025-12-14 01:13",
-        "type": "add",
-        "msg": "添加了新乐谱：《Era eguale la voce》 (Giacomo Puccini/普契尼)"
-    },
-    {
-        "date": "2025-12-14 01:11",
-        "type": "update",
-        "msg": "更新了乐谱信息：《Ein Madchen oder Weibchen/愿姑娘或大嫂》"
-    },
-    {
-        "date": "2025-12-14 01:11",
-        "type": "update",
-        "msg": "更新了乐谱信息：《Der Vogelfänger bin ich ja/我是一个捕鸟人》"
     }
 ];

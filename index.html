@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>于茂同的乐谱库 | Maotong's Scores</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
@@ -18,14 +18,16 @@
             --text-main: #2b2d42;
         }
 
+        /* 全局字体优化：中文使用 Noto Sans */
         body { 
             background-color: var(--bg-color); 
-            font-family: 'Lato', sans-serif; 
+            font-family: 'Noto Sans SC', system-ui, -apple-system, sans-serif; 
             color: var(--text-main);
             display: flex; flex-direction: column; min-height: 100vh; 
         }
 
-        .font-serif { font-family: 'Playfair Display', serif; }
+        /* 标题字体：中文使用 Noto Serif */
+        .font-serif { font-family: 'Playfair Display', 'Noto Serif SC', serif; }
         .container { flex: 1; }
         
         /* 导航栏 */
@@ -69,7 +71,7 @@
         }
         .category-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .cat-header { 
-            padding: 1.2rem; font-family: 'Playfair Display', serif; font-weight: 700; 
+            padding: 1.2rem; font-family: 'Noto Serif SC', serif; font-weight: 700; 
             font-size: 1.1rem; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.03);
         }
         
@@ -86,36 +88,52 @@
         
         .table-custom thead th {
             border-top: none; border-bottom: 2px solid #e9ecef;
-            font-family: 'Playfair Display', serif; color: #6c757d; font-weight: 700;
+            font-family: 'Noto Serif SC', serif; color: #6c757d; font-weight: 700;
         }
         .hover-row { transition: background 0.2s; border-radius: 8px; }
         .hover-row:hover { background-color: #fffcf5; cursor: pointer; }
         
         footer { 
-            background-color: #264653; color: #a8b2d1; padding: 4rem 0; margin-top: 5rem; font-family: 'Playfair Display', serif;
+            background-color: #264653; color: #a8b2d1; padding: 4rem 0; margin-top: 5rem; font-family: 'Noto Serif SC', serif;
         }
 
-        /* 标签颜色 */
+        /* 标签颜色配置 */
         .badge-custom { font-weight: 500; border-radius: 4px; padding: 0.4em 0.6em; }
+        
+        /* 歌剧 */
         .bg-opera { background-color: #d00000; color: white; }
-        .bg-oratorio { background-color: #7209b7; color: white; }
-        .bg-cantata { background-color: #3f37c9; color: white; }
+        .bg-opera-ens { background-color: #6a040f; color: white; }
+        
+        /* 宗教 (合并后) */
+        .bg-oratorio { background-color: #7209b7; color: white; } /* 紫色系 */
+        .bg-sacred-ens { background-color: #3a0ca3; color: white; } 
+
+        /* 艺术歌曲 */
         .bg-artsong { background-color: #4895ef; color: white; }
+        .bg-artsong-ens { background-color: #bde0fe; color: #264653; }
+        
+        /* 音乐剧 */
         .bg-musical { background-color: #f72585; color: white; }
+        .bg-musical-ens { background-color: #560bad; color: white; }
+        
+        /* 世俗康塔塔/独唱 */
         .bg-solo { background-color: #f48c06; color: white; }
+        
+        /* 曲集/合唱 */
         .bg-cycle { background-color: #0096c7; color: white; }
         .bg-book { background-color: #9d6b53; color: white; }
-        .bg-opera-ens { background-color: #6a040f; color: white; }
-        .bg-musical-ens { background-color: #560bad; color: white; }
-        .bg-sacred-ens { background-color: #3a0ca3; color: white; }
-        .bg-artsong-ens { background-color: #bde0fe; color: #264653; }
         .bg-choral { background-color: #2a9d8f; color: white; }
+        
+        /* 器乐 */
         .bg-inst-solo { background-color: #e9c46a; color: #333; }
         .bg-chamber { background-color: #606c38; color: white; }
+        
+        /* 总谱 */
         .bg-score-opera { background-color: #212529; color: #f8f9fa; }
         .bg-score-orch { background-color: #343a40; color: #f8f9fa; }
         .bg-score-con { background-color: #495057; color: white; }
         .bg-score-sac { background-color: #6c757d; color: white; }
+        
         .bg-other { background-color: #e9ecef; color: #495057; }
 
         .btn-primary { background-color: #2a9d8f; border-color: #2a9d8f; }
@@ -124,24 +142,15 @@
         .btn-outline-primary:hover { background-color: #2a9d8f; border-color: #2a9d8f; color: white; }
 
         /* === 📖 剧本阅读器样式 === */
-        #readerContent {
-            white-space: pre-wrap; /* 保持段落换行 */
-            line-height: 1.8;
-        }
-        .reader-text-col {
-            padding: 2rem;
-            font-size: 1.05rem;
-        }
+        #readerContent { white-space: pre-wrap; line-height: 1.8; }
+        .reader-text-col { padding: 2rem; font-size: 1.05rem; }
         .reader-original {
-            background-color: #fff;
-            border-right: 1px solid #eee;
-            color: #333;
-            font-family: 'Playfair Display', serif; /* 原文用衬线体更优雅 */
+            background-color: #fff; border-right: 1px solid #eee; color: #333;
+            font-family: 'Playfair Display', serif; /* 原文保留西文衬线 */
         }
         .reader-translation {
-            background-color: #fafafa;
-            color: #555;
-            font-family: 'Lato', sans-serif;
+            background-color: #fafafa; color: #555;
+            font-family: 'Noto Sans SC', sans-serif; /* 译文用中文无衬线 */
         }
     </style>
 </head>
@@ -151,7 +160,7 @@
         <div class="container">
             <span class="navbar-brand mb-0 h1 fw-bold font-serif fs-3">🎹 于茂同的乐谱库</span>
             <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-sm btn-outline-light rounded-pill px-3" onclick="showLogModal()">🔔 动态</button>
+                <button class="btn btn-sm btn-outline-light rounded-pill px-3" onclick="showLogModal()">🔔 动态记录</button>
                 <div class="text-end">
                     <span class="badge bg-warning text-dark me-2">v0.1</span>
                 </div>
@@ -161,20 +170,20 @@
 
     <div class="hero-section">
         <div class="container position-relative" style="z-index: 2;">
-            <h1 class="font-serif display-4 fw-bold mb-3">Music Collection</h1>
-            <p class="text-white-50 mb-5 font-serif fst-italic fs-5">"Sharing music, preserving art."</p>
+            <h1 class="font-serif display-4 fw-bold mb-3">于茂同的乐谱收藏</h1>
+            <p class="text-white-50 mb-5 font-serif fst-italic fs-5">"分享音乐 · 传承艺术"</p>
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <div class="input-group input-group-lg search-container">
                         <span class="input-group-text bg-transparent border-0 ps-3 text-muted">🔍</span>
-                        <input type="text" id="searchInput" class="form-control border-0 bg-transparent" placeholder="Search title, composer, opus..." style="box-shadow: none;">
+                        <input type="text" id="searchInput" class="form-control border-0 bg-transparent" placeholder="搜索曲名、作曲家、作品号..." style="box-shadow: none;">
                         <button class="btn btn-primary rounded-pill px-4 fw-bold" type="button" onclick="performSearch()">搜索</button>
                     </div>
                     <div class="mt-4 d-flex flex-column align-items-center gap-2">
-                        <button class="btn btn-link text-white text-decoration-none opacity-75 hover-opacity-100" onclick="resetFilters()">🌟 查看完整列表 (View All)</button>
+                        <button class="btn btn-link text-white text-decoration-none opacity-75 hover-opacity-100" onclick="resetFilters()">🌟 查看完整乐谱列表</button>
                         <div class="d-flex gap-4 text-white-50 mt-1 small font-serif">
-                            <span>📚 Total: <span id="statTotal" class="text-white fw-bold">0</span></span>
-                            <span>👤 Composers: <span id="statComposer" class="text-white fw-bold">0</span></span>
+                            <span>📚 总藏量: <span id="statTotal" class="text-white fw-bold">0</span></span>
+                            <span>👤 作曲家: <span id="statComposer" class="text-white fw-bold">0</span></span>
                         </div>
                     </div>
                 </div>
@@ -192,48 +201,51 @@
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
                 <div class="category-card">
-                    <div class="cat-header text-primary bg-light bg-opacity-50">🎤 声乐作品 <span class="small text-muted fw-normal d-block mt-1" style="font-size:0.8rem">Vocal Music</span></div>
-<div class="list-group list-group-flush category-group">
-    <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧咏叹调', this)">歌剧咏叹调 <span class="badge bg-light text-dark count-badge" data-cat="歌剧咏叹调">0</span></button>
-    <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧重唱', this)">歌剧重唱 <span class="badge bg-light text-dark count-badge" data-cat="歌剧重唱">0</span></button>
-    
-    <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教声乐作品', this)">
-        宗教声乐作品 
-        <span class="badge bg-light text-dark count-badge" data-cat="宗教声乐作品">0</span>
-    </button>
-    
-    <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('艺术歌曲', this)">艺术歌曲 <span class="badge bg-light text-dark count-badge" data-cat="艺术歌曲">0</span></button>
-    <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('音乐剧选段', this)">音乐剧选段 <span class="badge bg-light text-dark count-badge" data-cat="音乐剧选段">0</span></button>
-    </div>
+                    <div class="cat-header text-primary bg-light bg-opacity-50">🎤 声乐作品</div>
+                    <div class="list-group list-group-flush category-group">
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧咏叹调', this)">歌剧咏叹调 <span class="badge bg-light text-dark count-badge" data-cat="歌剧咏叹调">0</span></button>
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧重唱', this)">歌剧重唱 <span class="badge bg-light text-dark count-badge" data-cat="歌剧重唱">0</span></button>
+                        
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教声乐作品', this)">宗教声乐作品 <span class="badge bg-light text-dark count-badge" data-cat="宗教声乐作品">0</span></button>
+                        
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('艺术歌曲', this)">艺术歌曲 <span class="badge bg-light text-dark count-badge" data-cat="艺术歌曲">0</span></button>
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('音乐剧选段', this)">音乐剧选段 <span class="badge bg-light text-dark count-badge" data-cat="音乐剧选段">0</span></button>
+                        
+                        <div class="py-2 bg-light text-center small text-muted fw-bold border-top border-bottom font-serif">其他分类</div>
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('合唱作品', this)">合唱作品 <span class="badge bg-light text-dark count-badge" data-cat="合唱作品">0</span></button>
+                    </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6">
                 <div class="category-card">
-                    <div class="cat-header text-success bg-light bg-opacity-50">📚 曲集与器乐 <span class="small text-muted fw-normal d-block mt-1" style="font-size:0.8rem">Collections & Inst.</span></div>
+                    <div class="cat-header text-success bg-light bg-opacity-50">📚 曲集与器乐</div>
                     <div class="list-group list-group-flush category-group">
-                        <div class="py-2 bg-light text-center small text-muted fw-bold border-bottom font-serif">COLLECTIONS</div>
+                        <div class="py-2 bg-light text-center small text-muted fw-bold border-bottom font-serif">套曲与曲集</div>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('声乐套曲', this)">声乐套曲 <span class="badge bg-light text-dark count-badge" data-cat="声乐套曲">0</span></button>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('乐谱书/曲集', this)">乐谱书/曲集 <span class="badge bg-light text-dark count-badge" data-cat="乐谱书/曲集">0</span></button>
                     </div>
                     <div class="list-group list-group-flush category-group mt-3">
-                         <div class="py-2 bg-light text-center small text-muted fw-bold border-top border-bottom font-serif">INSTRUMENTAL</div>
+                         <div class="py-2 bg-light text-center small text-muted fw-bold border-top border-bottom font-serif">器乐作品</div>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('器乐独奏', this)">器乐独奏 <span class="badge bg-light text-dark count-badge" data-cat="器乐独奏">0</span></button>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('室内乐', this)">室内乐 <span class="badge bg-light text-dark count-badge" data-cat="室内乐">0</span></button>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6">
                 <div class="category-card">
-                    <div class="cat-header text-danger bg-light bg-opacity-50">🎼 总谱 <span class="small text-muted fw-normal d-block mt-1" style="font-size:0.8rem">Full Scores</span></div>
+                    <div class="cat-header text-danger bg-light bg-opacity-50">🎼 总谱与特殊</div>
                     <div class="list-group list-group-flush category-group">
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧总谱', this)">歌剧总谱 <span class="badge bg-light text-dark count-badge" data-cat="歌剧总谱">0</span></button>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('管弦乐/交响曲', this)">管弦乐/交响曲 <span class="badge bg-light text-dark count-badge" data-cat="管弦乐/交响曲">0</span></button>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('协奏曲总谱', this)">协奏曲总谱 <span class="badge bg-light text-dark count-badge" data-cat="协奏曲总谱">0</span></button>
-                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教声乐作品总谱', this)"><div>宗教声乐作品总谱</div><span class="badge bg-light text-dark count-badge" data-cat="宗教声乐作品总谱">0</span></button>
+                        <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教声乐作品总谱', this)">宗教声乐总谱 <span class="badge bg-light text-dark count-badge" data-cat="宗教声乐作品总谱">0</span></button>
                     </div>
                      <div class="mt-3 list-group list-group-flush category-group">
-                         <div class="py-2 bg-light text-center small text-muted fw-bold border-top border-bottom font-serif">OTHERS</div>
-                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('其他', this)">📚 其他 <span class="badge bg-light text-dark count-badge" data-cat="其他">0</span></button>
+                         <div class="py-2 bg-light text-center small text-muted fw-bold border-top border-bottom font-serif">其他</div>
+                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('音乐会咏叹调/世俗康塔塔', this)">音乐会咏叹调/世俗康塔塔 <span class="badge bg-light text-dark count-badge" data-cat="音乐会咏叹调/世俗康塔塔">0</span></button>
+                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('其他', this)">其他 <span class="badge bg-light text-dark count-badge" data-cat="其他">0</span></button>
                     </div>
                 </div>
             </div>
@@ -244,11 +256,18 @@
         <div class="card shadow-sm border-0 mb-4" style="background: white; border-radius: 12px;">
             <div class="card-body py-3">
                 <div class="row align-items-center g-3">
-                    <div class="col-md-2"><input class="form-control form-control-sm border-0 bg-light" list="composerOptions" id="composerInput" placeholder="👤 作曲家 Composer" oninput="applyFilters()"><datalist id="composerOptions"></datalist></div>
-                    <div class="col-md-2"><input class="form-control form-control-sm border-0 bg-light" list="voiceOptions" id="voiceInput" placeholder="🎻 编制/声部 Voice" oninput="applyFilters()"><datalist id="voiceOptions"></datalist></div>
-                    <div class="col-md-2"><select id="languageSelect" class="form-select form-select-sm border-0 bg-light" onchange="applyFilters()"><option value="all">🌐 所有语言 Language</option></select></div>
-                    <div class="col-md-3 border-start ps-4"><select id="sortSelect" class="form-select form-select-sm fw-bold text-primary border-0" onchange="applyFilters()"><option value="date_desc">📅 上传时间 (Newest)</option><option value="date_asc">📅 上传时间 (Oldest)</option><option value="title_asc">🔤 按曲名 (A-Z)</option><option value="composer_asc">👤 按作曲家 (A-Z)</option></select></div>
-                    <div class="col-md-auto ms-auto"><button class="btn btn-sm btn-outline-secondary rounded-pill px-3" onclick="resetFilters()">🔄 重置 Reset</button></div>
+                    <div class="col-md-2"><input class="form-control form-control-sm border-0 bg-light" list="composerOptions" id="composerInput" placeholder="👤 作曲家" oninput="applyFilters()"><datalist id="composerOptions"></datalist></div>
+                    <div class="col-md-2"><input class="form-control form-control-sm border-0 bg-light" list="voiceOptions" id="voiceInput" placeholder="🎻 声部/编制" oninput="applyFilters()"><datalist id="voiceOptions"></datalist></div>
+                    <div class="col-md-2"><select id="languageSelect" class="form-select form-select-sm border-0 bg-light" onchange="applyFilters()"><option value="all">🌐 所有语言</option></select></div>
+                    <div class="col-md-3 border-start ps-4">
+                        <select id="sortSelect" class="form-select form-select-sm fw-bold text-primary border-0" onchange="applyFilters()">
+                            <option value="date_desc">📅 上传时间 (最新在前)</option>
+                            <option value="date_asc">📅 上传时间 (最早在前)</option>
+                            <option value="title_asc">🔤 按曲名 (A-Z)</option>
+                            <option value="composer_asc">👤 按作曲家 (A-Z)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-auto ms-auto"><button class="btn btn-sm btn-outline-secondary rounded-pill px-3" onclick="resetFilters()">🔄 重置筛选</button></div>
                 </div>
             </div>
         </div>
@@ -256,38 +275,38 @@
         <div class="row">
             <div class="col-12">
                 <div id="recentSection" class="mb-5">
-                    <h5 class="mb-4 font-serif fw-bold" style="color: #264653; border-left: 4px solid #e76f51; padding-left: 10px;">🆕 Recent Additions</h5>
+                    <h5 class="mb-4 font-serif fw-bold" style="color: #264653; border-left: 4px solid #e76f51; padding-left: 10px;">🆕 最新上传</h5>
                     <div class="row row-cols-1 row-cols-md-3 g-4" id="recentList"></div>
                 </div>
                 <div id="listSection">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h4 id="listTitle" class="fw-bold font-serif display-6" style="font-size: 1.5rem;">📚 Catalogue</h4>
-                        <span class="badge rounded-pill" style="background-color: #e9c46a; color: #333;" id="filteredCount">0 Scores</span>
+                        <h4 id="listTitle" class="fw-bold font-serif display-6" style="font-size: 1.5rem;">📚 乐谱目录</h4>
+                        <span class="badge rounded-pill" style="background-color: #e9c46a; color: #333;" id="filteredCount">0 首乐谱</span>
                     </div>
                     <div class="card shadow-sm border-0" style="border-radius: 12px; overflow: hidden;">
                         <div class="table-responsive">
                             <table class="table table-hover align-middle mb-0 table-custom">
-                                <thead class="bg-light"><tr><th width="40%" class="ps-4 py-3">Title / Work</th><th width="20%">Composer</th><th width="10%">Lang</th><th width="15%">Category</th><th class="text-end pe-4">Action</th></tr></thead>
+                                <thead class="bg-light"><tr><th width="40%" class="ps-4 py-3">标题 / 作品出处</th><th width="20%">作曲家</th><th width="10%">语言</th><th width="15%">分类</th><th class="text-end pe-4">操作</th></tr></thead>
                                 <tbody id="mainTableBody" class="bg-white"></tbody>
                             </table>
                         </div>
                     </div>
                     <nav aria-label="Page navigation" class="mt-5" id="paginationNav"><ul class="pagination justify-content-center" id="paginationUl"></ul></nav>
-                    <div id="noResult" class="text-center p-5 text-muted" style="display:none;"><div class="fs-1 mb-3">🧐</div><h4 class="font-serif">No scores found</h4><p>Try adjusting your filters.</p></div>
+                    <div id="noResult" class="text-center p-5 text-muted" style="display:none;"><div class="fs-1 mb-3">🧐</div><h4 class="font-serif">未找到相关乐谱</h4><p>请尝试调整筛选条件。</p></div>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="container text-center"><h4 class="text-white mb-3 font-serif">Maotong's Library</h4><p class="mb-4 text-white-50 small">Designed for classical vocalists & musicians.</p><div class="d-inline-block border-top border-secondary pt-4 mt-2"><p class="small text-muted mb-0">&copy; 2023-2025 Yu Maotong. All Rights Reserved.<br><span style="font-size: 0.8em; opacity: 0.5;">For educational purposes only.</span></p></div></div>
+        <div class="container text-center"><h4 class="text-white mb-3 font-serif">于茂同的声乐典藏</h4><p class="mb-4 text-white-50 small">为专业声乐歌者与音乐家打造</p><div class="d-inline-block border-top border-secondary pt-4 mt-2"><p class="small text-muted mb-0">&copy; 2023-2025 Yu Maotong. All Rights Reserved.<br><span style="font-size: 0.8em; opacity: 0.5;">仅供学习使用，请勿商用</span></p></div></div>
     </footer>
 
     <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content" style="height: 90vh; border-radius: 16px; overflow: hidden;">
                 <div class="modal-header border-0 bg-light">
-                    <h5 class="modal-title fw-bold font-serif">Score Details</h5>
+                    <h5 class="modal-title fw-bold font-serif">乐谱详情</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
@@ -298,24 +317,24 @@
                             <p class="mb-4 text-muted fst-italic"><span id="mWork" class="fs-6">-</span></p>
                             <div class="card mb-4 border-0 bg-light rounded-3 p-3">
                                 <ul class="list-unstyled mb-0 small gap-2 d-flex flex-column">
-                                    <li>👤 <strong>Composer:</strong> <span id="mComposer"></span></li>
-                                    <li>🗣️ <strong>Language:</strong> <span id="mLanguage"></span></li>
-                                    <li>🎹 <strong>Key:</strong> <span id="mTonality"></span></li>
-                                    <li>👥 <strong>Voice:</strong> <span id="mVoice"></span></li>
-                                    <li>📅 <strong>Added:</strong> <span id="mDate"></span></li>
+                                    <li>👤 <strong>作曲家:</strong> <span id="mComposer"></span></li>
+                                    <li>🗣️ <strong>语言:</strong> <span id="mLanguage"></span></li>
+                                    <li>🎹 <strong>调性:</strong> <span id="mTonality"></span></li>
+                                    <li>👥 <strong>编制:</strong> <span id="mVoice"></span></li>
+                                    <li>📅 <strong>上传日期:</strong> <span id="mDate"></span></li>
                                 </ul>
                             </div>
                             
                             <button id="btnReadLyrics" class="btn btn-outline-dark w-100 py-2 mb-3 shadow-sm rounded-pill fw-bold" style="display:none;" onclick="openLyricsReader()">
-                                📖 Read Libretto / 剧本
+                                📖 阅读歌词 / 剧本
                             </button>
 
-                            <a id="mDownload" href="#" class="btn btn-primary w-100 py-2 shadow-sm rounded-pill" download>⬇️ Download PDF</a>
-                            <div class="mt-4 pt-3 border-top text-center text-muted small">Please delete within 24 hours after study.</div>
+                            <a id="mDownload" href="#" class="btn btn-primary w-100 py-2 shadow-sm rounded-pill" download>⬇️ 下载 PDF</a>
+                            <div class="mt-4 pt-3 border-top text-center text-muted small">仅供学习交流，请于下载后24小时内删除。</div>
                         </div>
                         <div class="col-md-9 bg-secondary position-relative">
                             <iframe id="mPreview" src="" width="100%" height="100%" style="border:none;"></iframe>
-                            <div id="noPreview" class="d-flex flex-column align-items-center justify-content-center h-100 text-white" style="display:none;"><div class="fs-1 mb-3">📄</div><p class="fs-5">No Preview Available</p></div>
+                            <div id="noPreview" class="d-flex flex-column align-items-center justify-content-center h-100 text-white" style="display:none;"><div class="fs-1 mb-3">📄</div><p class="fs-5">暂无预览</p></div>
                         </div>
                     </div>
                 </div>
@@ -328,7 +347,7 @@
             <div class="modal-content">
                 <div class="modal-header border-bottom shadow-sm">
                     <div class="d-flex align-items-center">
-                         <h5 class="modal-title fw-bold font-serif me-3" id="readerTitle">Libretto Reader</h5>
+                         <h5 class="modal-title fw-bold font-serif me-3" id="readerTitle">剧本阅读器</h5>
                          <span class="badge bg-secondary" id="readerComposer"></span>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -337,12 +356,12 @@
                     <div class="container h-100">
                         <div class="row h-100">
                             <div class="col-md-6 h-100 overflow-auto reader-text-col reader-original">
-                                <h6 class="text-muted text-uppercase small fw-bold mb-4 border-bottom pb-2">Original Text</h6>
-                                <div id="readerOriginalText">Loading...</div>
+                                <h6 class="text-muted text-uppercase small fw-bold mb-4 border-bottom pb-2">原文 (Original)</h6>
+                                <div id="readerOriginalText">加载中...</div>
                             </div>
                             <div class="col-md-6 h-100 overflow-auto reader-text-col reader-translation">
-                                <h6 class="text-muted text-uppercase small fw-bold mb-4 border-bottom pb-2">Chinese Translation</h6>
-                                <div id="readerTransText">Loading...</div>
+                                <h6 class="text-muted text-uppercase small fw-bold mb-4 border-bottom pb-2">中文翻译 (Translation)</h6>
+                                <div id="readerTransText">加载中...</div>
                             </div>
                         </div>
                     </div>
@@ -351,7 +370,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="logModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content" style="border-radius: 12px;"><div class="modal-header border-0"><h5 class="modal-title fw-bold font-serif">Recent Updates</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body" id="logBody"></div></div></div></div>
+    <div class="modal fade" id="logModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content" style="border-radius: 12px;"><div class="modal-header border-0"><h5 class="modal-title fw-bold font-serif">最近动态</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body" id="logBody"></div></div></div></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>document.write('<script src="js/data.js?v=' + new Date().getTime() + '"><\/script>');</script>
@@ -360,44 +379,46 @@
         let sortType = 'date_desc';
         let currentPage = 1;
         const itemsPerPage = 15;
-        let currentLyricsId = null; // 记录当前正在查看的歌词ID
+        let currentLyricsId = null;
 
-        // 别名与颜色配置
         const composerAliases = {
             "Mozart": "莫扎特 Wolfgang Amadeus 沃尔夫冈 阿玛迪乌斯", "Dvořák": "Dvorak 德沃夏克 Antonin 安东宁",
             "Bach": "巴赫 J.S.Bach Johann Sebastian", "Beethoven": "贝多芬 Ludwig van 路德维希",
             "Schubert": "舒伯特 Franz 弗朗茨", "Schumann": "舒曼 Robert 罗伯特",
             "Tchaikovsky": "柴可夫斯基 Pyotr Ilyich", "Rachmaninoff": "拉赫玛尼诺夫 Rachmaninov Sergey",
-            "Fauré": "Faure 佛瑞 Gabriel", "Debussy": "德彪西 Claude", "Verdi": "威尔第 Giuseppe",
+            "Fauré": "Faure 福雷 Gabriel", "Debussy": "德彪西 Claude", "Verdi": "威尔第 Giuseppe",
             "Puccini": "普契尼 Giacomo", "Wagner": "瓦格纳 Richard", "Mahler": "马勒 Gustav", "Strauss": "施特劳斯 Richard Johann"
         };
-// index.html 中的 categoryMap
-const categoryMap = { 
-    '歌剧咏叹调': 'bg-opera', 
-    '歌剧重唱': 'bg-opera-ens',
-    
-    // ✅ 新增映射
-    '宗教声乐作品': 'bg-oratorio', 
-    '音乐会咏叹调/世俗康塔塔': 'bg-solo', // 给世俗康塔塔一个颜色，或者复用 bg-solo
-    
-    '艺术歌曲': 'bg-artsong', 
-    '艺术歌曲重唱': 'bg-artsong-ens',
-    '音乐剧选段': 'bg-musical',
-    '音乐剧重唱': 'bg-musical-ens',
-    '合唱作品': 'bg-choral', 
-    '声乐套曲': 'bg-cycle', 
-    '乐谱书': 'bg-book', 
-    '乐谱书/曲集': 'bg-book',
-    '器乐独奏': 'bg-inst-solo', 
-    '室内乐': 'bg-chamber', 
-    '歌剧总谱': 'bg-score-opera', 
-    '管弦乐/交响曲': 'bg-score-orch', 
-    '协奏曲总谱': 'bg-score-con', 
-    '宗教声乐作品总谱': 'bg-score-sac',
-    '其他': 'bg-other'
-};
+        
+        // 更新后的分类颜色映射
+        const categoryMap = { 
+            '歌剧咏叹调': 'bg-opera', 
+            '歌剧重唱': 'bg-opera-ens',
+            
+            // ✅ 新增/合并的分类
+            '宗教声乐作品': 'bg-oratorio', 
+            '音乐会咏叹调/世俗康塔塔': 'bg-solo',
+            
+            '艺术歌曲': 'bg-artsong', 
+            '艺术歌曲重唱': 'bg-artsong-ens',
+            '音乐剧选段': 'bg-musical',
+            '音乐剧重唱': 'bg-musical-ens',
+            '独唱片段/选段': 'bg-solo',
+            '合唱作品': 'bg-choral', 
+            '声乐套曲': 'bg-cycle', 
+            '乐谱书': 'bg-book', 
+            '乐谱书/曲集': 'bg-book',
+            '器乐独奏': 'bg-inst-solo', 
+            '室内乐': 'bg-chamber', 
+            '歌剧总谱': 'bg-score-opera', 
+            '管弦乐/交响曲': 'bg-score-orch', 
+            '协奏曲总谱': 'bg-score-con', 
+            '宗教声乐作品总谱': 'bg-score-sac',
+            '其他': 'bg-other'
+        };
+
         window.addEventListener('load', () => {
-            if (typeof musicData === 'undefined') { document.getElementById('recentList').innerHTML = '<div class="alert alert-light w-100 text-center font-serif">Loading library data...</div>'; return; }
+            if (typeof musicData === 'undefined') { document.getElementById('recentList').innerHTML = '<div class="alert alert-light w-100 text-center font-serif">正在加载数据...</div>'; return; }
             initStatsAndDropdowns(); renderRecent(); applyFilters();
             document.getElementById('searchInput').addEventListener('keypress', (e) => { if(e.key === 'Enter') performSearch(); });
         });
@@ -443,7 +464,7 @@ const categoryMap = {
             const total = data.length; const pages = Math.ceil(total / itemsPerPage);
             if (currentPage > pages) currentPage = pages || 1; if (currentPage < 1) currentPage = 1;
             const start = (currentPage - 1) * itemsPerPage; const pageData = data.slice(start, start + itemsPerPage);
-            const tbody = document.getElementById('mainTableBody'); document.getElementById('filteredCount').innerText = total + ' Scores';
+            const tbody = document.getElementById('mainTableBody'); document.getElementById('filteredCount').innerText = total + ' 首乐谱';
             if (total === 0) { tbody.innerHTML = ''; document.getElementById('noResult').style.display = 'block'; document.getElementById('paginationNav').style.display = 'none'; return; }
             document.getElementById('noResult').style.display = 'none'; document.getElementById('paginationNav').style.display = 'block';
 
@@ -452,38 +473,52 @@ const categoryMap = {
                 let badgeClass = getCategoryClass(item.category);
                 let tonalityBadge = item.tonality ? `<span class="badge bg-light text-dark border ms-2" style="font-size:0.7rem; opacity: 0.7;">${item.tonality}</span>` : '';
                 let voiceBadge = item.voice_types ? `<span class="badge bg-secondary ms-1" style="font-size:0.7rem; opacity: 0.8;">${item.voice_types}</span>` : '';
-                // 如果有歌词，显示一个小图标
-                let lyricIcon = item.has_lyrics ? `<span class="badge bg-info text-dark ms-1" style="font-size:0.6rem" title="Contains Libretto">📖</span>` : '';
+                let lyricIcon = item.has_lyrics ? `<span class="badge bg-info text-dark ms-1" style="font-size:0.6rem" title="包含歌词/剧本">📖</span>` : '';
 
-                html += `<tr onclick="openDetail(${item.id})" class="hover-row"><td class="ps-4"><div class="fw-bold text-dark" style="font-family: 'Lato', sans-serif;">${item.title} ${tonalityBadge} ${voiceBadge} ${lyricIcon}</div>${item.work ? `<small class="text-muted fst-italic">from ${item.work}</small>` : ''}</td><td><span class="fw-medium text-secondary">${item.composer}</span></td><td>${item.language ? `<span class="text-muted small">${item.language}</span>` : '-'}</td><td><span class="badge badge-custom ${badgeClass}">${item.category}</span></td><td class="text-end pe-4"><button class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">View</button></td></tr>`;
+                html += `<tr onclick="openDetail(${item.id})" class="hover-row"><td class="ps-4"><div class="fw-bold text-dark" style="font-family: 'Noto Sans SC', sans-serif;">${item.title} ${tonalityBadge} ${voiceBadge} ${lyricIcon}</div>${item.work ? `<small class="text-muted fst-italic">选自: ${item.work}</small>` : ''}</td><td><span class="fw-medium text-secondary">${item.composer}</span></td><td>${item.language ? `<span class="text-muted small">${item.language}</span>` : '-'}</td><td><span class="badge badge-custom ${badgeClass}">${item.category}</span></td><td class="text-end pe-4"><button class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">查看</button></td></tr>`;
             });
             tbody.innerHTML = html; renderPaginationControls(pages);
         }
 
         function renderPaginationControls(pages) {
-            const ul = document.getElementById('paginationUl'); let html = `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage - 1}); return false;">Prev</a></li><li class="page-item disabled"><span class="page-link border-0 bg-transparent fw-bold text-dark">${currentPage} / ${pages}</span></li><li class="page-item ${currentPage === pages ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage + 1}); return false;">Next</a></li>`; ul.innerHTML = html;
+            const ul = document.getElementById('paginationUl'); let html = `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage - 1}); return false;">上一页</a></li><li class="page-item disabled"><span class="page-link border-0 bg-transparent fw-bold text-dark">${currentPage} / ${pages}</span></li><li class="page-item ${currentPage === pages ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage + 1}); return false;">下一页</a></li>`; ul.innerHTML = html;
         }
         window.changePage = (p) => { currentPage = p; applyFilters(); document.getElementById('listSection').scrollIntoView({ behavior: 'smooth' }); };
         function renderRecent() {
             const list = document.getElementById('recentList'); const recents = musicData.slice(0, 3); let html = '';
-            recents.forEach(item => { html += `<div class="col"><div class="card h-100 border-0 shadow-sm cursor-pointer hover-card" style="border-radius: 12px; overflow:hidden;" onclick="openDetail(${item.id})"><div class="card-body bg-white"><span class="badge bg-light text-muted mb-2 border">${item.category}</span><h6 class="card-title text-truncate fw-bold text-dark font-serif" style="font-size: 1.1rem;">${item.title}</h6><p class="card-text small text-secondary mb-0">${item.composer}</p></div><div class="card-footer bg-white border-0 pt-0"><small class="text-muted" style="font-size: 0.75rem">Added: ${item.date}</small></div></div></div>`; }); list.innerHTML = html;
+            recents.forEach(item => { html += `<div class="col"><div class="card h-100 border-0 shadow-sm cursor-pointer hover-card" style="border-radius: 12px; overflow:hidden;" onclick="openDetail(${item.id})"><div class="card-body bg-white"><span class="badge bg-light text-muted mb-2 border">${item.category}</span><h6 class="card-title text-truncate fw-bold text-dark font-serif" style="font-size: 1.1rem;">${item.title}</h6><p class="card-text small text-secondary mb-0">${item.composer}</p></div><div class="card-footer bg-white border-0 pt-0"><small class="text-muted" style="font-size: 0.75rem">上传于: ${item.date}</small></div></div></div>`; }); list.innerHTML = html;
         }
-        window.filterCategory = (cat, btn) => { currentPage = 1; filters.category = cat; document.querySelectorAll('.category-group button').forEach(b => b.classList.remove('active-cat')); if (cat !== 'all') btn.classList.add('active-cat'); document.getElementById('listTitle').innerText = cat === 'all' ? '📚 Catalogue' : `📂 ${cat}`; document.getElementById('mainContentArea').scrollIntoView({ behavior: 'smooth' }); applyFilters(); };
-        window.resetFilters = () => { currentPage = 1; filters = { category: 'all', composer: '', language: 'all', voice: '', search: '' }; document.getElementById('searchInput').value = ''; document.getElementById('composerInput').value = ''; document.getElementById('languageSelect').value = 'all'; document.getElementById('voiceInput').value = ''; document.querySelectorAll('.category-group button').forEach(b => b.classList.remove('active-cat')); document.getElementById('listTitle').innerText = '📚 Catalogue'; document.getElementById('mainContentArea').scrollIntoView({ behavior: 'smooth' }); applyFilters(); };
-        window.showLogModal = () => { const body = document.getElementById('logBody'); if (typeof changeLog === 'undefined' || changeLog.length === 0) { body.innerHTML = '<p class="text-muted text-center my-4">暂无动态记录</p>'; } else { let html = '<ul class="list-group list-group-flush">'; changeLog.forEach(log => { let badgeClass = log.type === 'add' ? 'bg-success' : (log.type === 'update' ? 'bg-primary' : 'bg-danger'); let typeText = log.type === 'add' ? 'Added' : (log.type === 'update' ? 'Edited' : 'Deleted'); html += `<li class="list-group-item d-flex justify-content-between align-items-start px-0"><div class="ms-2 me-auto"><div class="fw-bold small text-muted mb-1">${log.date}</div>${log.msg}</div><span class="badge ${badgeClass} rounded-pill">${typeText}</span></li>`; }); html += '</ul>'; body.innerHTML = html; } new bootstrap.Modal(document.getElementById('logModal')).show(); };
+        
+        // 修改：将标题改为中文
+        window.filterCategory = (cat, btn) => { 
+            currentPage = 1; filters.category = cat; 
+            document.querySelectorAll('.category-group button').forEach(b => b.classList.remove('active-cat')); 
+            if (cat !== 'all') btn.classList.add('active-cat'); 
+            document.getElementById('listTitle').innerText = cat === 'all' ? '📚 乐谱目录' : `📂 ${cat}`; 
+            document.getElementById('mainContentArea').scrollIntoView({ behavior: 'smooth' }); applyFilters(); 
+        };
+        
+        window.resetFilters = () => { 
+            currentPage = 1; filters = { category: 'all', composer: '', language: 'all', voice: '', search: '' }; 
+            document.getElementById('searchInput').value = ''; document.getElementById('composerInput').value = ''; 
+            document.getElementById('languageSelect').value = 'all'; document.getElementById('voiceInput').value = ''; 
+            document.querySelectorAll('.category-group button').forEach(b => b.classList.remove('active-cat')); 
+            document.getElementById('listTitle').innerText = '📚 乐谱目录'; 
+            document.getElementById('mainContentArea').scrollIntoView({ behavior: 'smooth' }); applyFilters(); 
+        };
+        
+        window.showLogModal = () => { const body = document.getElementById('logBody'); if (typeof changeLog === 'undefined' || changeLog.length === 0) { body.innerHTML = '<p class="text-muted text-center my-4">暂无动态记录</p>'; } else { let html = '<ul class="list-group list-group-flush">'; changeLog.forEach(log => { let badgeClass = log.type === 'add' ? 'bg-success' : (log.type === 'update' ? 'bg-primary' : 'bg-danger'); let typeText = log.type === 'add' ? '添加' : (log.type === 'update' ? '更新' : '删除'); html += `<li class="list-group-item d-flex justify-content-between align-items-start px-0"><div class="ms-2 me-auto"><div class="fw-bold small text-muted mb-1">${log.date}</div>${log.msg}</div><span class="badge ${badgeClass} rounded-pill">${typeText}</span></li>`; }); html += '</ul>'; body.innerHTML = html; } new bootstrap.Modal(document.getElementById('logModal')).show(); };
 
-        // === 详情页与歌词逻辑 ===
         window.openDetail = function(id) {
             const item = musicData.find(m => m.id === id); if (!item) return;
             document.getElementById('mTitle').innerText = item.title; document.getElementById('mWork').innerText = item.work || '-'; document.getElementById('mComposer').innerText = item.composer; document.getElementById('mCategory').innerText = item.category; document.getElementById('mLanguage').innerText = item.language || '-'; document.getElementById('mDate').innerText = item.date || '-'; document.getElementById('mTonality').innerText = item.tonality || '-';
             let voiceInfo = '-'; if(item.voice_count || item.voice_types) voiceInfo = `${item.voice_count || ''} ${item.voice_types ? '('+item.voice_types+')' : ''}`; document.getElementById('mVoice').innerText = voiceInfo;
             document.getElementById('mDownload').href = `scores/${item.filename}`;
             
-            // 歌词按钮逻辑
             const btn = document.getElementById('btnReadLyrics');
             if (item.has_lyrics) {
                 btn.style.display = 'block';
-                currentLyricsId = id; // 保存当前ID供读取使用
+                currentLyricsId = id;
             } else {
                 btn.style.display = 'none';
                 currentLyricsId = null;
@@ -494,35 +529,23 @@ const categoryMap = {
             new bootstrap.Modal(document.getElementById('detailModal')).show();
         }
 
-        // 打开歌词阅读器
         window.openLyricsReader = function() {
             if (!currentLyricsId) return;
-            
-            // 1. 获取基本信息填充标题
             const item = musicData.find(m => m.id === currentLyricsId);
             document.getElementById('readerTitle').innerText = item.title;
             document.getElementById('readerComposer').innerText = item.composer;
-
-            // 2. 显示Loading
-            document.getElementById('readerOriginalText').innerText = 'Loading...';
-            document.getElementById('readerTransText').innerText = 'Loading...';
-
-            // 3. 打开全屏模态框
+            document.getElementById('readerOriginalText').innerText = '加载中...';
+            document.getElementById('readerTransText').innerText = '加载中...';
             new bootstrap.Modal(document.getElementById('readerModal')).show();
 
-            // 4. 异步获取歌词内容
-            // 加上时间戳防止缓存
             fetch(`lyrics/${currentLyricsId}.json?v=${new Date().getTime()}`)
-                .then(response => {
-                    if (!response.ok) throw new Error("Lyrics not found");
-                    return response.json();
-                })
+                .then(response => { if (!response.ok) throw new Error("Lyrics not found"); return response.json(); })
                 .then(data => {
-                    document.getElementById('readerOriginalText').innerText = data.original || 'No original text provided.';
-                    document.getElementById('readerTransText').innerText = data.translation || 'No translation provided.';
+                    document.getElementById('readerOriginalText').innerText = data.original || '暂无原文。';
+                    document.getElementById('readerTransText').innerText = data.translation || '暂无翻译。';
                 })
                 .catch(err => {
-                    document.getElementById('readerOriginalText').innerText = 'Error loading lyrics.';
+                    document.getElementById('readerOriginalText').innerText = '无法加载内容。';
                     document.getElementById('readerTransText').innerText = '';
                 });
         }
