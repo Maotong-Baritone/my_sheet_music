@@ -119,13 +119,40 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm sticky-top">
         <div class="container">
             <span class="navbar-brand mb-0 h1 fw-bold font-serif fs-3">🎹 于茂同的乐谱库</span>
-            <div class="d-flex align-items-center gap-3">
-                <button class="btn btn-sm btn-outline-light rounded-pill px-3" onclick="showLogModal()">🔔 动态记录</button>
-                <div class="text-end">
-                    <span class="badge bg-warning text-dark me-2">v0.2</span>
+            
+            <div class="d-flex align-items-center gap-2">
+                
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-light rounded-pill px-3 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        🌍 常用链接
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="min-width: 200px;">
+                        <li><h6 class="dropdown-header text-muted small fw-bold">乐谱总库</h6></li>
+                        <li><a class="dropdown-item" href="https://imslp.org/" target="_blank">🎼 IMSLP (海量公版乐谱)</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><h6 class="dropdown-header text-muted small fw-bold">声乐/歌剧资料</h6></li>
+                        <li><a class="dropdown-item" href="https://www.oxfordsong.org/" target="_blank">📜 Oxford Song (大量免费IPA及歌曲歌词信息)</a></li>
+                        <li><a class="dropdown-item" href="https://www.opera-arias.com/" target="_blank">🎭 Opera-Arias (大量歌剧、咏叹调信息)</a></li>
+                        <li><a class="dropdown-item" href="https://www.operabase.com/" target="_blank">🌍 Operabase (全球演出信息)</a></li>
+                        <li><a class="dropdown-item" href="http://www.theoperadatabase.com/" target="_blank">📂 The Opera Database (大量咏叹调乐谱)</a></li>
+                        <li><a class="dropdown-item" href="https://www.yaptracker.com/" target="_blank">🔔 Yap Tracker (大量声乐歌剧面试、比赛信息)</a></li>
+                    </ul>
+                </div>
+
+                <a href="contact.html" class="btn btn-sm btn-outline-light rounded-pill border-0 px-2" title="联系我">
+                    👋 联系
+                </a>
+
+                <button class="btn btn-sm btn-outline-light rounded-pill border-0 px-2" onclick="showLogModal()" title="查看更新日志">
+                    🔔 动态
+                </button>
+                
+                <div class="text-end ms-1 d-none d-md-block">
+                    <span class="badge bg-warning text-dark">v0.2测试版</span>
                 </div>
             </div>
         </div>
@@ -265,7 +292,7 @@
     </div>
 
     <footer>
-        <div class="container text-center"><h4 class="text-white mb-3 font-serif">于茂同的声乐典藏</h4><p class="mb-4 text-white-50 small">为专业声乐歌者与音乐家打造</p><div class="d-inline-block border-top border-secondary pt-4 mt-2"><p class="small text-muted mb-0">&copy; 2023-2025 Yu Maotong. All Rights Reserved.<br><span style="font-size: 0.8em; opacity: 0.5;">仅供学习使用，请勿商用</span></p></div></div>
+        <div class="container text-center"><h4 class="text-white mb-3 font-serif">于茂同的乐谱收藏</h4><p class="mb-4 text-white-50 small">分享音乐·传承艺术</p><div class="d-inline-block border-top border-secondary pt-4 mt-2"><p class="small text-muted mb-0">&copy; 2023-2025 Yu Maotong. All Rights Reserved.<br><span style="font-size: 0.8em; opacity: 0.5;">仅供学习使用，请勿商用</span></p></div></div>
     </footer>
 
     <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
