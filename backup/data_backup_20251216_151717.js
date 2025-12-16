@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-16 15:17:44
+// 最后更新于 2025-12-16 15:17:09
 const musicData = [
     {
         "id": 202,
@@ -2607,10 +2607,7 @@ const musicData = [
         "voice_types": "SATB独唱与SATB合唱与管弦乐队",
         "tonality": "",
         "filename": "宗教声乐作品总谱/Saint-Saens_Requiem.pdf",
-        "date": "2025-12-13",
-        "sub_category": "安魂曲",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-13"
     },
     {
         "id": 15,
@@ -2623,10 +2620,7 @@ const musicData = [
         "voice_types": "SATB独唱与SATB合唱与管弦乐队",
         "tonality": "降b小调",
         "filename": "宗教声乐作品总谱/Dvorak_Requiem.pdf",
-        "date": "2025-12-13",
-        "sub_category": "安魂曲",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-13"
     },
     {
         "id": 14,
@@ -2639,10 +2633,7 @@ const musicData = [
         "voice_types": "SB独唱与SATB合唱与管弦乐队和管风琴",
         "tonality": "d 小调",
         "filename": "宗教声乐作品总谱/Faure_Requiem.pdf",
-        "date": "2025-12-13",
-        "sub_category": "安魂曲",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-13"
     },
     {
         "id": 13,
@@ -2655,10 +2646,7 @@ const musicData = [
         "voice_types": "SB独唱与SATB合唱与管弦乐队",
         "tonality": "",
         "filename": "宗教声乐作品总谱/Brahms_Requiem.pdf",
-        "date": "2025-12-13",
-        "sub_category": "安魂曲",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-13"
     },
     {
         "id": 12,
@@ -2671,10 +2659,7 @@ const musicData = [
         "voice_types": "",
         "tonality": "",
         "filename": "宗教声乐作品总谱/BWV_82_.pdf",
-        "date": "2025-12-13",
-        "sub_category": "康塔塔",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-13"
     },
     {
         "id": 10,
@@ -2808,31 +2793,6 @@ const musicData = [
     }
 ];
 const changeLog = [
-    {
-        "date": "2025-12-16 15:17",
-        "type": "update",
-        "msg": "更新: Ein deutsches Requiem/德意志安魂曲"
-    },
-    {
-        "date": "2025-12-16 15:17",
-        "type": "update",
-        "msg": "更新: Cantata BWV 82/Ich habe genug"
-    },
-    {
-        "date": "2025-12-16 15:17",
-        "type": "update",
-        "msg": "更新: Requiem in D Minor, Op. 48/安魂曲"
-    },
-    {
-        "date": "2025-12-16 15:17",
-        "type": "update",
-        "msg": "更新: Requiem in B♭ minor, Op. 89, B. 165/安魂曲"
-    },
-    {
-        "date": "2025-12-16 15:17",
-        "type": "update",
-        "msg": "更新: Messe de Requiem, Op. 54/安魂曲"
-    },
     {
         "date": "2025-12-16 15:17",
         "type": "update",
@@ -3057,5 +3017,30 @@ const changeLog = [
         "date": "2025-12-16 14:18",
         "type": "add",
         "msg": "添加: Sibilar gli angui d'Aletto/听那复仇女神的蛇在嘶鸣/复仇女神的嘶鸣"
+    },
+    {
+        "date": "2025-12-16 14:15",
+        "type": "add",
+        "msg": "添加: Shall I in Mamre's fertile plain/我要在幔利肥沃的平原上"
+    },
+    {
+        "date": "2025-12-16 14:14",
+        "type": "add",
+        "msg": "添加: See the raging flames arise / 看那烈火升腾"
+    },
+    {
+        "date": "2025-12-16 14:12",
+        "type": "add",
+        "msg": "添加: Bacchus, ever fair and young/酒神永远青春而美丽"
+    },
+    {
+        "date": "2025-12-16 14:11",
+        "type": "add",
+        "msg": "添加: Revenge, Timotheus cries/复仇，提摩太在呼唤"
+    },
+    {
+        "date": "2025-12-16 14:09",
+        "type": "delete",
+        "msg": "删除: O ruddier than the cherry/比樱桃更红"
     }
 ];

@@ -205,29 +205,83 @@ HTML_TEMPLATE = """
     </div></div>
     {% endif %}
 
-    {% if active_tab == 'manage' %}
+{% if active_tab == 'manage' %}
     <div class="card shadow">
-        <div class="card-header bg-white">
-            <form class="d-flex" action="/manage"><input class="form-control me-2" type="search" name="q" value="{{ query }}" placeholder="搜索..."><button class="btn btn-primary">搜</button></form>
+        <div class="card-header bg-white p-3">
+            <form class="row g-2 align-items-center" action="/manage">
+                <div class="col-md-3">
+                    <input class="form-control" type="search" name="keyword" value="{{ keyword }}" placeholder="🔍 搜曲名/作品号/简介...">
+                </div>
+                
+                <div class="col-md-3">
+                    <input class="form-control" type="search" name="composer" value="{{ composer_filter }}" placeholder="👤 搜作曲家...">
+                </div>
+                
+                <div class="col-md-3">
+                    <select class="form-select" name="category">
+                        <option value="all">📂 所有分类</option>
+                        <option value="歌剧咏叹调" {{ 'selected' if category_filter == '歌剧咏叹调' }}>歌剧咏叹调</option>
+                        <option value="歌剧重唱" {{ 'selected' if category_filter == '歌剧重唱' }}>歌剧重唱</option>
+                        <option value="宗教声乐作品" {{ 'selected' if category_filter == '宗教声乐作品' }}>宗教声乐作品</option>
+                        <option value="艺术歌曲" {{ 'selected' if category_filter == '艺术歌曲' }}>艺术歌曲</option>
+                        <option value="音乐剧选段" {{ 'selected' if category_filter == '音乐剧选段' }}>音乐剧选段</option>
+                        <option value="合唱作品" {{ 'selected' if category_filter == '合唱作品' }}>合唱作品</option>
+                        <option value="声乐套曲" {{ 'selected' if category_filter == '声乐套曲' }}>声乐套曲</option>
+                        <option value="乐谱书/曲集" {{ 'selected' if category_filter == '乐谱书/曲集' }}>乐谱书/曲集</option>
+                        <option value="器乐独奏" {{ 'selected' if category_filter == '器乐独奏' }}>器乐独奏</option>
+                        <option value="室内乐" {{ 'selected' if category_filter == '室内乐' }}>室内乐</option>
+                        <option value="歌剧总谱" {{ 'selected' if category_filter == '歌剧总谱' }}>歌剧总谱</option>
+                        <option value="管弦乐/交响曲" {{ 'selected' if category_filter == '管弦乐/交响曲' }}>管弦乐/交响曲</option>
+                        <option value="协奏曲总谱" {{ 'selected' if category_filter == '协奏曲总谱' }}>协奏曲总谱</option>
+                        <option value="宗教声乐作品总谱" {{ 'selected' if category_filter == '宗教声乐作品总谱' }}>宗教声乐作品总谱</option>
+                        <option value="音乐会咏叹调/世俗康塔塔" {{ 'selected' if category_filter == '音乐会咏叹调/世俗康塔塔' }}>音乐会咏叹调/世俗康塔塔</option>
+                        <option value="其他" {{ 'selected' if category_filter == '其他' }}>其他</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-3 d-flex gap-2">
+                    <button class="btn btn-primary w-100">筛选</button>
+                    <a href="/manage" class="btn btn-outline-secondary w-50 text-center text-decoration-none" style="line-height: 2.3;">重置</a>
+                </div>
+            </form>
         </div>
-        <table class="table table-striped table-hover mb-0">
-            <thead><tr><th>曲名</th><th>作曲家</th><th>分类</th><th>操作</th></tr></thead>
-            <tbody>
-                {% for item in items %}
-                <tr>
-                    <td>{{ item.title }} {% if item.has_lyrics %}<span class="badge bg-info text-dark">📖 词</span>{% endif %}</td>
-                    <td>{{ item.composer }}</td>
-                    <td>
-                        {{ item.category }}
-                        {% if item.sub_category %}
-                            <br><span class="badge bg-light text-secondary border">{{ item.sub_category }}</span>
-                        {% endif %}
-                    </td>
-                    <td><a href="/edit/{{ item.id }}" class="btn btn-sm btn-outline-primary">✏️</a> <a href="/delete/{{ item.id }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('删？')">🗑️</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        
+        <div class="table-responsive">
+            <table class="table table-striped table-hover mb-0 align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>曲名</th>
+                        <th>作曲家</th>
+                        <th>分类/体裁</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td class="fw-bold">
+                            {{ item.title }} 
+                            {% if item.has_lyrics %}<span class="badge bg-info text-dark" style="font-size:0.6rem">词</span>{% endif %}
+                            <br><small class="text-muted fw-normal">{{ item.work }}</small>
+                        </td>
+                        <td>{{ item.composer }}</td>
+                        <td>
+                            <span class="badge bg-light text-dark border">{{ item.category }}</span>
+                            {% if item.sub_category %}
+                                <br><span class="badge bg-secondary" style="font-size:0.6rem; opacity:0.8">{{ item.sub_category }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="/edit/{{ item.id }}" class="btn btn-sm btn-outline-primary">✏️</a> 
+                            <a href="/delete/{{ item.id }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('确定删除《{{ item.title }}》吗？')">🗑️</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="4" class="text-center p-5 text-muted">没有找到符合条件的乐谱<br><small>请尝试调整筛选条件</small></td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
     {% endif %}
 
@@ -299,11 +353,30 @@ def index():
 @app.route('/manage')
 @login_required
 def manage():
-    q = request.args.get('q', '').lower()
+    # 获取筛选参数
+    keyword = request.args.get('keyword', '').strip().lower()
+    composer_filter = request.args.get('composer', '').strip().lower()
+    category_filter = request.args.get('category', 'all')
+    
     data, _ = load_data_and_log()
-    if q: data = [i for i in data if q in i['title'].lower() or q in i['composer'].lower()]
-    return render_template_string(HTML_TEMPLATE, active_tab='manage', items=data, query=q)
-
+    
+    # 1. 关键词筛选 (匹配曲名、作品号、简介)
+    if keyword:
+        data = [i for i in data if 
+                keyword in i['title'].lower() or 
+                keyword in (i.get('work') or '').lower() or
+                keyword in (i.get('description') or '').lower()]
+    
+    # 2. 作曲家筛选 (独立匹配)
+    if composer_filter:
+        data = [i for i in data if composer_filter in i['composer'].lower()]
+        
+    # 3. 分类筛选 (精确匹配)
+    if category_filter and category_filter != 'all':
+        data = [i for i in data if i['category'] == category_filter]
+        
+    return render_template_string(HTML_TEMPLATE, active_tab='manage', items=data, 
+                                  keyword=keyword, composer_filter=composer_filter, category_filter=category_filter)
 @app.route('/edit/<int:item_id>', methods=['GET', 'POST'])
 @login_required
 def edit(item_id):
