@@ -133,7 +133,6 @@
         .btn-outline-primary { color: #2a9d8f; border-color: #2a9d8f; }
         .btn-outline-primary:hover { background-color: #2a9d8f; border-color: #2a9d8f; color: white; }
 
-        /* === 剧本阅读器样式 === */
         .reader-text-col { padding: 2rem; font-size: 1.05rem; line-height: 1.8; }
         .reader-original { background-color: #fff; border-right: 1px solid #eee; color: #333; font-family: 'Playfair Display', serif; }
         .reader-translation { background-color: #fafafa; color: #555; font-family: 'Noto Sans SC', sans-serif; }
@@ -143,55 +142,19 @@
             .reader-translation { height: 50% !important; }
         }
 
-        /* === 🚀 关键修复：响应式详情弹窗 CSS === */
-        /* 默认（手机端）：自然高度，允许页面滚动 */
-        .responsive-modal-content {
-            height: auto !important; 
-            min-height: auto !important;
-            overflow: visible !important;
-            border-radius: 16px;
-        }
-        .responsive-modal-body {
-            height: auto !important;
-        }
-        .responsive-row {
-            height: auto !important;
-            display: flex;
-            flex-direction: column; /* 手机端强制垂直排列 */
-        }
-        .responsive-col-left {
-            height: auto !important;
-            overflow: visible !important;
-            border-right: none !important;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .responsive-col-right {
-            height: 60vh !important; /* 手机上预览区固定高度 */
-            min-height: 400px;
-        }
+        /* 响应式 Modal CSS */
+        .responsive-modal-content { height: auto !important; min-height: auto !important; overflow: visible !important; border-radius: 16px; }
+        .responsive-modal-body { height: auto !important; }
+        .responsive-row { height: auto !important; display: flex; flex-direction: column; }
+        .responsive-col-left { height: auto !important; overflow: visible !important; border-right: none !important; border-bottom: 1px solid #dee2e6; }
+        .responsive-col-right { height: 60vh !important; min-height: 400px; }
 
-        /* 电脑端 (>= 992px)：切回高级分栏模式 */
         @media (min-width: 992px) {
-            .responsive-modal-content {
-                height: 90vh !important;
-                overflow: hidden !important;
-            }
-            .responsive-modal-body {
-                height: 100% !important;
-            }
-            .responsive-row {
-                height: 100% !important;
-                flex-direction: row; /* 电脑端水平排列 */
-            }
-            .responsive-col-left {
-                height: 100% !important;
-                overflow-y: auto !important; /* 左侧独立滚动 */
-                border-right: 1px solid #dee2e6 !important;
-                border-bottom: none !important;
-            }
-            .responsive-col-right {
-                height: 100% !important;
-            }
+            .responsive-modal-content { height: 90vh !important; overflow: hidden !important; }
+            .responsive-modal-body { height: 100% !important; }
+            .responsive-row { height: 100% !important; flex-direction: row; }
+            .responsive-col-left { height: 100% !important; overflow-y: auto !important; border-right: 1px solid #dee2e6 !important; border-bottom: none !important; }
+            .responsive-col-right { height: 100% !important; }
         }
     </style>
 </head>
@@ -213,14 +176,14 @@
                         </a>
                         <ul class="dropdown-menu shadow border-0" style="min-width: 200px;">
                             <li><h6 class="dropdown-header text-muted small fw-bold">乐谱总库</h6></li>
-                            <li><a class="dropdown-item" href="https://imslp.org/" target="_blank">🎼 IMSLP (公版乐谱)</a></li>
+                            <li><a class="dropdown-item" href="https://imslp.org/" target="_blank">🎼 IMSLP (海量乐谱)</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><h6 class="dropdown-header text-muted small fw-bold">声乐/歌剧资料</h6></li>
                             <li><a class="dropdown-item" href="https://www.oxfordsong.org/" target="_blank">📜 Oxford Song (免费IPA、大量艺术歌曲信息)</a></li>
-                            <li><a class="dropdown-item" href="https://www.opera-arias.com/" target="_blank">🎭 Opera-Arias（海量歌剧信息查询）</a></li>
+                            <li><a class="dropdown-item" href="https://www.opera-arias.com/" target="_blank">🎭 Opera-Arias (海量歌剧信息查询)</a></li>
                             <li><a class="dropdown-item" href="https://www.operabase.com/" target="_blank">🌍 Operabase (全球范围演出信息)</a></li>
-                            <li><a class="dropdown-item" href="http://www.theoperadatabase.com/" target="_blank">📂 The Opera Database（大量咏叹调乐谱）</a></li>
-                            <li><a class="dropdown-item" href="https://www.yaptracker.com/" target="_blank">🔔 Yap Tracker(大量声乐歌剧面试、比赛信息）</a></li>
+                            <li><a class="dropdown-item" href="http://www.theoperadatabase.com/" target="_blank">📂 The Opera Database (大量咏叹调乐谱)</a></li>
+                            <li><a class="dropdown-item" href="https://www.yaptracker.com/" target="_blank">🔔 Yap Tracker (大量声乐歌剧面试、比赛信息)</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -248,6 +211,7 @@
                         <input type="text" id="searchInput" class="form-control border-0 bg-transparent" placeholder="搜曲名、作曲家、目录内容..." style="box-shadow: none;">
                         <button class="btn btn-primary rounded-pill px-4 fw-bold" style="background-color:#2a9d8f; border:none;" type="button" onclick="performSearch()">搜索</button>
                     </div>
+                    
                     <div class="mt-4 d-flex flex-column align-items-center gap-2">
                         <button class="btn btn-link text-white text-decoration-none opacity-75 hover-opacity-100" onclick="resetFilters()">🌟 查看完整乐谱列表</button>
                         <div class="d-flex gap-4 text-white-50 mt-1 small font-serif">
@@ -274,14 +238,18 @@
                     <div class="list-group list-group-flush category-group">
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧咏叹调', this)">歌剧咏叹调 <span class="badge bg-light text-dark count-badge" data-cat="歌剧咏叹调">0</span></button>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('歌剧重唱', this)">歌剧重唱 <span class="badge bg-light text-dark count-badge" data-cat="歌剧重唱">0</span></button>
+                        
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('宗教声乐作品', this)">宗教声乐作品 <span class="badge bg-light text-dark count-badge" data-cat="宗教声乐作品">0</span></button>
+                        
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('艺术歌曲', this)">艺术歌曲 <span class="badge bg-light text-dark count-badge" data-cat="艺术歌曲">0</span></button>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('音乐剧选段', this)">音乐剧选段 <span class="badge bg-light text-dark count-badge" data-cat="音乐剧选段">0</span></button>
+                        
                         <div class="py-2 bg-light text-center small text-muted fw-bold border-top border-bottom font-serif">其他分类</div>
                         <button class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" onclick="filterCategory('合唱作品', this)">合唱作品 <span class="badge bg-light text-dark count-badge" data-cat="合唱作品">0</span></button>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6">
                 <div class="category-card">
                     <div class="cat-header text-success bg-light bg-opacity-50">📚 曲集与器乐</div>
@@ -297,6 +265,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6">
                 <div class="category-card">
                     <div class="cat-header text-danger bg-light bg-opacity-50">🎼 总谱与特殊</div>
@@ -370,32 +339,14 @@
                         </div>
                     </div>
                     <nav aria-label="Page navigation" class="mt-5" id="paginationNav"><ul class="pagination justify-content-center" id="paginationUl"></ul></nav>
-<div id="noResult" class="text-center p-5 text-muted" style="display:none;">
-                        <div class="fs-1 mb-3">🧐</div>
-                        <h4 class="font-serif">本地暂无相关乐谱</h4>
-                        
-                        <div id="externalSearchLinks" class="mt-4 p-4 bg-light rounded-3 d-inline-block shadow-sm" style="display:none; max-width: 600px;">
-                            <p class="mb-3">没关系！您可以尝试点击下方按钮，直接去国际乐谱库搜索关键词：<br><strong><span id="searchKeyword" class="text-primary"></span></strong></p>
-                            
-                            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                                <a id="linkImslp" href="#" target="_blank" class="btn btn-outline-dark rounded-pill px-4">
-                                    🎼 搜 IMSLP
-                                </a>
-                                <a id="linkOxford" href="#" target="_blank" class="btn btn-outline-success rounded-pill px-4">
-                                    📜 搜 Oxford Song
-                                </a>
-                                <a id="linkGoogle" href="#" target="_blank" class="btn btn-outline-primary rounded-pill px-4">
-                                    🔍 搜 Google
-                                </a>
-                            </div>
-                            <div class="mt-3 small text-muted">
-                                💡 提示：使用作品原名或作品号 (如 K.626) 搜索成功率更高
-                            </div>
-                        </div>
-                    </div>    </div>
+                    <div id="noResult" class="text-center p-5 text-muted" style="display:none;"><div class="fs-1 mb-3">🧐</div><h4 class="font-serif">未找到相关乐谱</h4><p>请尝试调整筛选条件。</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <div class="container text-center"><h4 class="text-white mb-3 font-serif">于茂同的乐谱收藏</h4><p class="mb-4 text-white-50 small">"分享音乐 · 传承艺术"</p><div class="d-inline-block border-top border-secondary pt-4 mt-2"><p class="small text-muted mb-0">&copy; 2025 Yu Maotong. All Rights Reserved.<br><span style="font-size: 0.8em; opacity: 0.5;">仅供学习使用，请勿商用</span></p></div></div>
+        <div class="container text-center"><h4 class="text-white mb-3 font-serif">于茂同的乐谱收藏</h4><p class="mb-4 text-white-50 small">"分享音乐 · 传承艺术"</p><div class="d-inline-block border-top border-secondary pt-4 mt-2"><p class="small text-muted mb-0">&copy; 2023-2025 Yu Maotong. All Rights Reserved.<br><span style="font-size: 0.8em; opacity: 0.5;">仅供学习使用，请勿商用</span></p></div></div>
     </footer>
 
     <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
@@ -406,7 +357,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0 responsive-modal-body">
-                    <div class="row g-0 responsive-row">
+                    <div class="row h-100 g-0 responsive-row">
                         <div class="col-lg-3 col-12 p-4 bg-white responsive-col-left">
                             <span class="badge bg-primary mb-3" id="mCategory" style="background-color: #264653 !important;"></span>
                             <h3 id="mTitle" class="mb-2 fw-bold text-dark font-serif"></h3>
@@ -417,7 +368,7 @@
                                     <li>🗣️ <strong>语言:</strong> <span id="mLanguage"></span></li>
                                     <li>🎹 <strong>调性:</strong> <span id="mTonality"></span></li>
                                     <li>👥 <strong>编制:</strong> <span id="mVoice"></span></li>
-                                    <li>📅 <strong>上传日期:</strong> <span id="mDate"></span></li>
+                                    <li>🎵 <strong>体裁:</strong> <span id="mSubCat"></span></li> <li>📅 <strong>上传日期:</strong> <span id="mDate"></span></li>
                                 </ul>
                             </div>
                             
@@ -435,7 +386,6 @@
                             <a id="mDownload" href="#" class="btn btn-primary w-100 py-2 shadow-sm rounded-pill" style="background-color:#2a9d8f; border:none;" download>⬇️ 下载 PDF</a>
                             <div class="mt-4 pt-3 border-top text-center text-muted small">仅供学习交流，请于下载后24小时内删除。</div>
                         </div>
-                        
                         <div class="col-lg-9 col-12 bg-secondary position-relative responsive-col-right">
                             <iframe id="mPreview" src="" width="100%" height="100%" style="border:none;"></iframe>
                             <div id="noPreview" class="d-flex flex-column align-items-center justify-content-center h-100 text-white" style="display:none;"><div class="fs-1 mb-3">📄</div><p class="fs-5">暂无预览</p></div>
@@ -560,74 +510,43 @@
 
         function getCategoryClass(cat) { for (const key in categoryMap) { if (cat.includes(key)) return categoryMap[key]; } return 'bg-other'; }
 
-// 渲染分页表格 (修复了跳转链接的版本)
         function renderPaginationTable(data) {
-            const totalItems = data.length;
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            if (currentPage > totalPages) currentPage = totalPages || 1;
-            if (currentPage < 1) currentPage = 1;
-
-            const startIndex = (currentPage - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const pageData = data.slice(startIndex, endIndex);
-
-            const tbody = document.getElementById('mainTableBody');
+            const total = data.length; const pages = Math.ceil(total / itemsPerPage);
+            if (currentPage > pages) currentPage = pages || 1; if (currentPage < 1) currentPage = 1;
+            const start = (currentPage - 1) * itemsPerPage; const pageData = data.slice(start, start + itemsPerPage);
+            const tbody = document.getElementById('mainTableBody'); document.getElementById('filteredCount').innerText = total + ' 首乐谱';
+            
+            // 修复搜索链接
             const noResult = document.getElementById('noResult');
-            document.getElementById('filteredCount').innerText = totalItems + ' 首乐谱';
-
-            // === 1. 如果没有结果 (显示跳转按钮) ===
-            if (totalItems === 0) {
-                tbody.innerHTML = '';
-                document.getElementById('paginationNav').style.display = 'none';
-                noResult.style.display = 'block';
-
-                // 获取搜索关键词
-                const searchVal = document.getElementById('searchInput').value.trim();
+            const nav = document.getElementById('paginationNav');
+            
+            if (total === 0) { 
+                tbody.innerHTML = ''; 
+                nav.style.display = 'none'; 
+                noResult.style.display = 'block'; 
                 
-                // 如果用户输入了关键词，生成高级跳转按钮
+                const searchVal = document.getElementById('searchInput').value.trim();
                 if (searchVal) {
+                    const exactSearch = `"${searchVal}"`;
                     noResult.innerHTML = `
                         <div class="fs-1 mb-3">🧐</div>
                         <h4 class="font-serif mb-3">本地暂无相关乐谱</h4>
                         <p class="text-muted mb-4">您可以尝试点击下方按钮，去国际数据库搜索 "<strong>${searchVal}</strong>"：</p>
-                        
                         <div class="d-flex justify-content-center flex-wrap gap-3" style="max-width: 800px; margin: 0 auto;">
-                            <a href="https://imslp.org/index.php?title=Special:Search&fulltext=Search&search=${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-dark rounded-pill px-4 shadow-sm">
-                                🎼 搜 IMSLP
-                            </a>
-                            
-                            <a href="https://www.google.com/search?q=site:opera-arias.com+${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-danger rounded-pill px-4 shadow-sm">
-                                🎭 搜 Opera-Arias
-                            </a>
-
-                            <a href="https://www.google.com/search?q=site:theoperadatabase.com+${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-info rounded-pill px-4 shadow-sm">
-                                📂 搜 Opera Database
-                            </a>
-
-                            <a href="https://www.oxfordsong.org/search?q=${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-success rounded-pill px-4 shadow-sm">
-                                📜 搜 Oxford Song
-                            </a>
-
-                            <a href="https://www.google.com/search?q=${encodeURIComponent(searchVal + ' sheet music pdf')}" target="_blank" class="btn btn-outline-primary rounded-pill px-4 shadow-sm">
-                                🔍 搜 Google
-                            </a>
+                            <a href="https://imslp.org/index.php?title=Special:Search&fulltext=Search&search=${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-dark rounded-pill px-4 shadow-sm">🎼 搜 IMSLP</a>
+                            <a href="https://www.google.com/search?q=site:opera-arias.com+${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-danger rounded-pill px-4 shadow-sm">🎭 搜 Opera-Arias</a>
+                            <a href="https://www.google.com/search?q=site:theoperadatabase.com+${encodeURIComponent(searchVal)}+filetype:pdf" target="_blank" class="btn btn-outline-info rounded-pill px-4 shadow-sm">📂 搜 Opera Database</a>
+                            <a href="https://www.oxfordsong.org/search?q=${encodeURIComponent(searchVal)}" target="_blank" class="btn btn-outline-success rounded-pill px-4 shadow-sm">📜 搜 Oxford Song</a>
+                            <a href="https://www.google.com/search?q=${encodeURIComponent(searchVal)}+filetype:pdf" target="_blank" class="btn btn-outline-primary rounded-pill px-4 shadow-sm">🔍 搜 Google (PDF)</a>
                         </div>
-                        <p class="mt-4 small text-muted">💡 提示：使用作品原名 (如 <i>Nessun dorma</i>) 搜索成功率更高</p>
+                        <p class="mt-4 small text-muted">💡 提示：使用作品原名搜索成功率更高</p>
                     `;
                 } else {
-                    // 没输入字时的默认提示
-                    noResult.innerHTML = `
-                        <div class="fs-1 mb-3">🧐</div>
-                        <h4 class="font-serif">该分类下暂无乐谱</h4>
-                        <p>请尝试调整筛选条件。</p>
-                    `;
+                    noResult.innerHTML = '<div class="fs-1 mb-3">🧐</div><h4 class="font-serif">未找到相关乐谱</h4><p>请尝试调整筛选条件。</p>';
                 }
-                return;
+                return; 
             }
-            
-            // === 2. 如果有结果 (正常渲染列表) ===
-            noResult.style.display = 'none';
-            document.getElementById('paginationNav').style.display = 'block';
+            noResult.style.display = 'none'; nav.style.display = 'block';
 
             let html = '';
             pageData.forEach(item => {
@@ -635,43 +554,26 @@
                 let tonalityBadge = item.tonality ? `<span class="badge bg-light text-dark border ms-2" style="font-size:0.7rem; opacity: 0.7;">${item.tonality}</span>` : '';
                 let voiceBadge = item.voice_types ? `<span class="badge bg-secondary ms-1" style="font-size:0.7rem; opacity: 0.8;">${item.voice_types}</span>` : '';
                 let lyricIcon = item.has_lyrics ? `<span class="badge bg-info text-dark ms-1" style="font-size:0.6rem" title="包含歌词/剧本">📖</span>` : '';
+                
+                // 新增：子分类徽章
+                let subBadge = item.sub_category ? `<span class="badge bg-light text-secondary border ms-1" style="font-size:0.7rem;">${item.sub_category}</span>` : '';
 
-                html += `<tr onclick="openDetail(${item.id})" class="hover-row"><td class="ps-4"><div class="fw-bold text-dark" style="font-family: 'Noto Sans SC', sans-serif;">${item.title} ${tonalityBadge} ${voiceBadge} ${lyricIcon}</div>${item.work ? `<small class="text-muted fst-italic">选自: ${item.work}</small>` : ''}</td><td><span class="fw-medium text-secondary">${item.composer}</span></td><td>${item.language ? `<span class="text-muted small">${item.language}</span>` : '-'}</td><td><span class="badge badge-custom ${badgeClass}">${item.category}</span></td><td class="text-end pe-4"><button class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">查看</button></td></tr>`;
+                html += `<tr onclick="openDetail(${item.id})" class="hover-row"><td class="ps-4"><div class="fw-bold text-dark" style="font-family: 'Noto Sans SC', sans-serif;">${item.title} ${tonalityBadge} ${voiceBadge} ${lyricIcon}</div>${item.work ? `<small class="text-muted fst-italic">选自: ${item.work}</small>` : ''}</td><td><span class="fw-medium text-secondary">${item.composer}</span></td><td>${item.language ? `<span class="text-muted small">${item.language}</span>` : '-'}</td><td><span class="badge badge-custom ${badgeClass}">${item.category}</span>${subBadge}</td><td class="text-end pe-4"><button class="btn btn-sm btn-outline-primary rounded-pill px-3 shadow-sm">查看</button></td></tr>`;
             });
-            tbody.innerHTML = html;
-            renderPaginationControls(totalPages);
+            tbody.innerHTML = html; renderPaginationControls(pages);
         }
 
-        // 分页控件
+        // 分页控件 (带跳转功能)
         function renderPaginationControls(pages) {
             const ul = document.getElementById('paginationUl');
             let html = '';
-            
-            html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(1); return false;">首页</a>
-                     </li>`;
-            html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage - 1}); return false;">上一页</a>
-                     </li>`;
+            html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(1); return false;">首页</a></li>`;
+            html += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage - 1}); return false;">上一页</a></li>`;
             html += `<li class="page-item disabled"><span class="page-link border-0 bg-transparent fw-bold text-dark" style="white-space: nowrap;">${currentPage} / ${pages}</span></li>`;
-            html += `<li class="page-item ${currentPage === pages ? 'disabled' : ''}">
-                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage + 1}); return false;">下一页</a>
-                     </li>`;
-            html += `<li class="page-item ${currentPage === pages ? 'disabled' : ''}">
-                        <a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${pages}); return false;">尾页</a>
-                     </li>`;
-
+            html += `<li class="page-item ${currentPage === pages ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${currentPage + 1}); return false;">下一页</a></li>`;
+            html += `<li class="page-item ${currentPage === pages ? 'disabled' : ''}"><a class="page-link border-0 bg-transparent" href="#" onclick="changePage(${pages}); return false;">尾页</a></li>`;
             if (pages > 1) {
-                html += `
-                <li class="page-item ms-3 d-flex align-items-center">
-                    <input type="number" id="jumpInput" class="form-control form-control-sm text-center" 
-                           style="width: 50px; border-top-right-radius: 0; border-bottom-right-radius: 0;" 
-                           min="1" max="${pages}" placeholder="页"
-                           onkeypress="if(event.key==='Enter') jumpToPage()">
-                    <button class="btn btn-sm btn-outline-secondary" 
-                            style="border-top-left-radius: 0; border-bottom-left-radius: 0;"
-                            onclick="jumpToPage()">Go</button>
-                </li>`;
+                html += `<li class="page-item ms-3 d-flex align-items-center"><input type="number" id="jumpInput" class="form-control form-control-sm text-center" style="width: 50px; border-top-right-radius: 0; border-bottom-right-radius: 0;" min="1" max="${pages}" placeholder="页" onkeypress="if(event.key==='Enter') jumpToPage()"><button class="btn btn-sm btn-outline-secondary" style="border-top-left-radius: 0; border-bottom-left-radius: 0;" onclick="jumpToPage()">Go</button></li>`;
             }
             ul.innerHTML = html;
         }
@@ -712,6 +614,7 @@
             const item = musicData.find(m => m.id === id); if (!item) return;
             document.getElementById('mTitle').innerText = item.title; document.getElementById('mWork').innerText = item.work || '-'; document.getElementById('mComposer').innerText = item.composer; document.getElementById('mCategory').innerText = item.category; document.getElementById('mLanguage').innerText = item.language || '-'; document.getElementById('mDate').innerText = item.date || '-'; document.getElementById('mTonality').innerText = item.tonality || '-';
             let voiceInfo = '-'; if(item.voice_count || item.voice_types) voiceInfo = `${item.voice_count || ''} ${item.voice_types ? '('+item.voice_types+')' : ''}`; document.getElementById('mVoice').innerText = voiceInfo;
+            document.getElementById('mSubCat').innerText = item.sub_category || '-'; // 新增
             document.getElementById('mDownload').href = `scores/${item.filename}`;
             
             const descCard = document.getElementById('descCard');

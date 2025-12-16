@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-16 15:01:57
+// 最后更新于 2025-12-16 15:01:42
 const musicData = [
     {
         "id": 202,
@@ -2482,10 +2482,7 @@ const musicData = [
         "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
         "tonality": "",
         "filename": "宗教声乐作品/Ich_habe_genung-bwv_82.pdf",
-        "date": "2025-12-14",
-        "sub_category": "康塔塔",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-14"
     },
     {
         "id": 24,
@@ -2777,11 +2774,6 @@ const musicData = [
 const changeLog = [
     {
         "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Ich habe genung"
-    },
-    {
-        "date": "2025-12-16 15:01",
         "type": "delete",
         "msg": "删除: See the raging flames arise"
     },
@@ -3024,5 +3016,10 @@ const changeLog = [
         "date": "2025-12-16 14:03",
         "type": "add",
         "msg": "添加: Thy glorious deeds inspired my tongue"
+    },
+    {
+        "date": "2025-12-16 14:03",
+        "type": "add",
+        "msg": "添加: How willing my paternal love"
     }
 ];

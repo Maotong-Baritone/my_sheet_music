@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-16 15:01:57
+// 最后更新于 2025-12-16 15:00:39
 const musicData = [
     {
         "id": 202,
@@ -571,8 +571,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916467.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "受难曲"
+        "has_lyrics": false
     },
     {
         "id": 164,
@@ -587,8 +586,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916444.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "受难曲"
+        "has_lyrics": false
     },
     {
         "id": 163,
@@ -603,8 +601,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916400.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "受难曲"
+        "has_lyrics": false
     },
     {
         "id": 162,
@@ -619,8 +616,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916249.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "弥撒"
+        "has_lyrics": false
     },
     {
         "id": 161,
@@ -1925,6 +1921,19 @@ const musicData = [
         "date": "2025-12-14"
     },
     {
+        "id": 68,
+        "title": "See the raging flames arise",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Joshua/约书亚",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass-Baritone/低男中音",
+        "tonality": "",
+        "filename": "宗教声乐作品/See_the_raging_flames_arise-Joshua.pdf",
+        "date": "2025-12-14"
+    },
+    {
         "id": 67,
         "title": "Scintille diamant",
         "composer": "Jacques Offenbach/奥芬巴赫",
@@ -2482,10 +2491,7 @@ const musicData = [
         "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
         "tonality": "",
         "filename": "宗教声乐作品/Ich_habe_genung-bwv_82.pdf",
-        "date": "2025-12-14",
-        "sub_category": "康塔塔",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-14"
     },
     {
         "id": 24,
@@ -2776,41 +2782,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Ich habe genung"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "delete",
-        "msg": "删除: See the raging flames arise"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: See the raging flames arise"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Et in Spritm Sanctum"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Gebt mir meinen Jesum wieder"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Komm Süßes Kreuz"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Mache dich mein herze rein"
-    },
-    {
         "date": "2025-12-16 15:00",
         "type": "update",
         "msg": "更新: And God Made The Firmament"
@@ -3024,5 +2995,40 @@ const changeLog = [
         "date": "2025-12-16 14:03",
         "type": "add",
         "msg": "添加: Thy glorious deeds inspired my tongue"
+    },
+    {
+        "date": "2025-12-16 14:03",
+        "type": "add",
+        "msg": "添加: How willing my paternal love"
+    },
+    {
+        "date": "2025-12-16 14:02",
+        "type": "update",
+        "msg": "更新: Loathsome urns disclose your treasure"
+    },
+    {
+        "date": "2025-12-16 14:02",
+        "type": "add",
+        "msg": "添加: Honor and Arms/荣誉与武装"
+    },
+    {
+        "date": "2025-12-16 14:00",
+        "type": "add",
+        "msg": "添加: Loathsome urns disclose your treasure"
+    },
+    {
+        "date": "2025-12-16 13:59",
+        "type": "add",
+        "msg": "添加: False destructive ways of pleasure"
+    },
+    {
+        "date": "2025-12-16 13:55",
+        "type": "add",
+        "msg": "添加: Cease to beauty to be suing"
+    },
+    {
+        "date": "2025-12-16 13:53",
+        "type": "add",
+        "msg": "添加: O del mio dolce ardor/我怀着满腔热情"
     }
 ];

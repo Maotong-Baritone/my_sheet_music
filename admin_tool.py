@@ -144,8 +144,12 @@ FORM_HTML = """
     <div class="col-md-4"><label class="form-label">调性</label><input type="text" class="form-control" name="tonality" value="{{ item.tonality if item else '' }}"></div>
 </div>
 <div class="row mb-3 p-3 bg-light rounded border mx-0">
-    <div class="col-md-6"><label class="form-label small">编制 (声部/乐器)</label><input type="text" class="form-control" name="voice_types" value="{{ item.voice_types if item else '' }}" placeholder="如: Soprano, SATB"></div>
-    <div class="col-md-6"><label class="form-label small">数量/类型补充</label><input type="text" class="form-control" name="voice_count" value="{{ item.voice_count if item else '' }}" placeholder="如: 二重唱"></div>
+    <div class="col-md-4"><label class="form-label small">编制 (声部/乐器)</label><input type="text" class="form-control" name="voice_types" value="{{ item.voice_types if item else '' }}" placeholder="如: SATB"></div>
+    <div class="col-md-4"><label class="form-label small">数量/类型补充</label><input type="text" class="form-control" name="voice_count" value="{{ item.voice_count if item else '' }}" placeholder="如: 二重唱"></div>
+    <div class="col-md-4">
+        <label class="form-label small fw-bold text-primary">体裁/子分类 (Sub-Genre)</label>
+        <input type="text" class="form-control" name="sub_category" value="{{ item.sub_category if item else '' }}" placeholder="如: 弥撒, 康塔塔, 受难曲">
+    </div>
 </div>
 
 """ + CATEGORY_SELECT_HTML + """
@@ -213,7 +217,12 @@ HTML_TEMPLATE = """
                 <tr>
                     <td>{{ item.title }} {% if item.has_lyrics %}<span class="badge bg-info text-dark">📖 词</span>{% endif %}</td>
                     <td>{{ item.composer }}</td>
-                    <td>{{ item.category }}</td>
+                    <td>
+                        {{ item.category }}
+                        {% if item.sub_category %}
+                            <br><span class="badge bg-light text-secondary border">{{ item.sub_category }}</span>
+                        {% endif %}
+                    </td>
                     <td><a href="/edit/{{ item.id }}" class="btn btn-sm btn-outline-primary">✏️</a> <a href="/delete/{{ item.id }}" class="btn btn-sm btn-outline-danger" onclick="return confirm('删？')">🗑️</a></td>
                 </tr>
                 {% endfor %}
@@ -272,7 +281,9 @@ def index():
             music_data.append({
                 "id": new_id, "title": request.form['title'], "composer": request.form['composer'],
                 "work": request.form.get('work',''), "language": request.form.get('language',''),
-                "category": request.form['category'], "voice_count": request.form.get('voice_count',''),
+                "category": request.form['category'], 
+                "sub_category": request.form.get('sub_category',''), # 新增：保存子分类
+                "voice_count": request.form.get('voice_count',''),
                 "voice_types": request.form.get('voice_types',''), "tonality": request.form.get('tonality',''),
                 "description": request.form.get('description',''),
                 "filename": f"{request.form['category']}/{filename}", 
@@ -304,7 +315,9 @@ def edit(item_id):
         item.update({
             "title": request.form['title'], "composer": request.form['composer'],
             "work": request.form.get('work',''), "language": request.form.get('language',''),
-            "category": request.form['category'], "voice_count": request.form.get('voice_count',''),
+            "category": request.form['category'], 
+            "sub_category": request.form.get('sub_category',''), # 新增：更新子分类
+            "voice_count": request.form.get('voice_count',''),
             "voice_types": request.form.get('voice_types',''), "tonality": request.form.get('tonality',''),
             "description": request.form.get('description','')
         })

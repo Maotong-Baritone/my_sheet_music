@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-16 15:01:57
+// 最后更新于 2025-12-16 14:58:52
 const musicData = [
     {
         "id": 202,
@@ -196,8 +196,7 @@ const musicData = [
         "description": "清唱剧选段",
         "filename": "宗教声乐作品/1765919759.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 189,
@@ -212,8 +211,7 @@ const musicData = [
         "description": "清唱剧选段",
         "filename": "宗教声乐作品/1765919688.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 188,
@@ -228,8 +226,7 @@ const musicData = [
         "description": "清唱剧选段",
         "filename": "宗教声乐作品/1765919548.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 187,
@@ -244,8 +241,7 @@ const musicData = [
         "description": "清唱剧选段",
         "filename": "宗教声乐作品/1765919467.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 186,
@@ -290,8 +286,7 @@ const musicData = [
         "description": "清唱剧选段",
         "filename": "宗教声乐作品/1765919037.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 182,
@@ -306,8 +301,7 @@ const musicData = [
         "description": "清唱剧选段",
         "filename": "宗教声乐作品/1765919004.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 181,
@@ -322,8 +316,7 @@ const musicData = [
         "description": "清唱剧选段，标题中的\"Honor\" 是美式拼写，也是乐谱中最常见的写法；英式为 Honour，但在亨德尔的谱子中通常遵循出版习惯。",
         "filename": "宗教声乐作品/1765918950.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 180,
@@ -338,8 +331,7 @@ const musicData = [
         "description": "清唱剧选段，这部作品经历了三个版本：最初是意大利语（Il trionfo del Tempo e del Disinganno），后来亨德尔将其改编为英语版本。",
         "filename": "歌剧咏叹调/1765918824.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 179,
@@ -354,8 +346,7 @@ const musicData = [
         "description": "清唱剧选段，这部作品经历了三个版本：最初是意大利语（Il trionfo del Tempo e del Disinganno），后来亨德尔将其改编为英语版本。",
         "filename": "宗教声乐作品/1765918766.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 178,
@@ -460,8 +451,7 @@ const musicData = [
         "description": "清唱剧以利亚选段",
         "filename": "宗教声乐作品/1765917284.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 171,
@@ -476,8 +466,7 @@ const musicData = [
         "description": "清唱剧以利亚选段",
         "filename": "宗教声乐作品/1765917136.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 170,
@@ -492,8 +481,7 @@ const musicData = [
         "description": "清唱剧四季选段",
         "filename": "宗教声乐作品/1765916891.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 169,
@@ -508,8 +496,7 @@ const musicData = [
         "description": "清唱剧四季选段",
         "filename": "宗教声乐作品/1765916813.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 168,
@@ -524,8 +511,7 @@ const musicData = [
         "description": "清唱剧创世纪选段",
         "filename": "宗教声乐作品/1765916728.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 167,
@@ -540,8 +526,7 @@ const musicData = [
         "description": "清唱剧创世纪选段",
         "filename": "宗教声乐作品/1765916689.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "清唱剧"
+        "has_lyrics": false
     },
     {
         "id": 166,
@@ -571,8 +556,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916467.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "受难曲"
+        "has_lyrics": false
     },
     {
         "id": 164,
@@ -587,8 +571,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916444.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "受难曲"
+        "has_lyrics": false
     },
     {
         "id": 163,
@@ -603,8 +586,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916400.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "受难曲"
+        "has_lyrics": false
     },
     {
         "id": 162,
@@ -619,8 +601,7 @@ const musicData = [
         "description": "",
         "filename": "宗教声乐作品/1765916249.pdf",
         "date": "2025-12-16",
-        "has_lyrics": false,
-        "sub_category": "弥撒"
+        "has_lyrics": false
     },
     {
         "id": 161,
@@ -1925,6 +1906,19 @@ const musicData = [
         "date": "2025-12-14"
     },
     {
+        "id": 68,
+        "title": "See the raging flames arise",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Joshua/约书亚",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass-Baritone/低男中音",
+        "tonality": "",
+        "filename": "宗教声乐作品/See_the_raging_flames_arise-Joshua.pdf",
+        "date": "2025-12-14"
+    },
+    {
         "id": 67,
         "title": "Scintille diamant",
         "composer": "Jacques Offenbach/奥芬巴赫",
@@ -2482,10 +2476,7 @@ const musicData = [
         "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
         "tonality": "",
         "filename": "宗教声乐作品/Ich_habe_genung-bwv_82.pdf",
-        "date": "2025-12-14",
-        "sub_category": "康塔塔",
-        "description": "",
-        "has_lyrics": false
+        "date": "2025-12-14"
     },
     {
         "id": 24,
@@ -2776,116 +2767,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Ich habe genung"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "delete",
-        "msg": "删除: See the raging flames arise"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: See the raging flames arise"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Et in Spritm Sanctum"
-    },
-    {
-        "date": "2025-12-16 15:01",
-        "type": "update",
-        "msg": "更新: Gebt mir meinen Jesum wieder"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Komm Süßes Kreuz"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Mache dich mein herze rein"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: And God Made The Firmament"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Rolling in foaming"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Schon eilet froh der ackersmann"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Seht auf die breiten"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: Es ist genug/It is enough"
-    },
-    {
-        "date": "2025-12-16 15:00",
-        "type": "update",
-        "msg": "更新: So wahr der Herr, der Gott Israels lebet/As God the Lord of Israel Liveth"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: False destructive ways of pleasure"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: Loathsome urns disclose your treasure"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: Honor and Arms/荣誉与武装"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: How willing my paternal love"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: Thy glorious deeds inspired my tongue"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: Revenge, Timotheus cries/复仇，提摩太在呼唤"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: Bacchus, ever fair and young/酒神永远青春而美丽"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: See the raging flames arise / 看那烈火升腾"
-    },
-    {
-        "date": "2025-12-16 14:59",
-        "type": "update",
-        "msg": "更新: Shall I in Mamre's fertile plain/我要在幔利肥沃的平原上"
-    },
-    {
         "date": "2025-12-16 14:58",
         "type": "update",
         "msg": "更新: Tears, such as tender fathers shed/泪水，正如慈父所流/慈父的眼泪"
@@ -3024,5 +2905,115 @@ const changeLog = [
         "date": "2025-12-16 14:03",
         "type": "add",
         "msg": "添加: Thy glorious deeds inspired my tongue"
+    },
+    {
+        "date": "2025-12-16 14:03",
+        "type": "add",
+        "msg": "添加: How willing my paternal love"
+    },
+    {
+        "date": "2025-12-16 14:02",
+        "type": "update",
+        "msg": "更新: Loathsome urns disclose your treasure"
+    },
+    {
+        "date": "2025-12-16 14:02",
+        "type": "add",
+        "msg": "添加: Honor and Arms/荣誉与武装"
+    },
+    {
+        "date": "2025-12-16 14:00",
+        "type": "add",
+        "msg": "添加: Loathsome urns disclose your treasure"
+    },
+    {
+        "date": "2025-12-16 13:59",
+        "type": "add",
+        "msg": "添加: False destructive ways of pleasure"
+    },
+    {
+        "date": "2025-12-16 13:55",
+        "type": "add",
+        "msg": "添加: Cease to beauty to be suing"
+    },
+    {
+        "date": "2025-12-16 13:53",
+        "type": "add",
+        "msg": "添加: O del mio dolce ardor/我怀着满腔热情"
+    },
+    {
+        "date": "2025-12-16 13:50",
+        "type": "add",
+        "msg": "添加: An jenem Tag"
+    },
+    {
+        "date": "2025-12-16 13:48",
+        "type": "delete",
+        "msg": "删除: Dein ist mein ganzes Herz"
+    },
+    {
+        "date": "2025-12-16 13:47",
+        "type": "add",
+        "msg": "添加: Dein ist mein ganzes Herz"
+    },
+    {
+        "date": "2025-12-16 13:46",
+        "type": "add",
+        "msg": "添加: Schweig'! damit dich Niemand warnt/保持沉默"
+    },
+    {
+        "date": "2025-12-16 13:42",
+        "type": "add",
+        "msg": "添加: Ha! Welch ein Augenblick"
+    },
+    {
+        "date": "2025-12-16 13:39",
+        "type": "add",
+        "msg": "添加: Ich Bin Ein Vielgereister Mann/I am a roamer bold and gay"
+    },
+    {
+        "date": "2025-12-16 13:34",
+        "type": "add",
+        "msg": "添加: So wahr der Herr, der Gott Israels lebet/As God the Lord of Israel Liveth"
+    },
+    {
+        "date": "2025-12-16 13:32",
+        "type": "add",
+        "msg": "添加: Es ist genug/It is enough"
+    },
+    {
+        "date": "2025-12-16 13:30",
+        "type": "update",
+        "msg": "更新: Die beiden Grenadiere, WWV 60/两个禁卫军/两个掷弹兵"
+    },
+    {
+        "date": "2025-12-16 13:29",
+        "type": "update",
+        "msg": "更新: Am meer/在海边"
+    },
+    {
+        "date": "2025-12-16 13:29",
+        "type": "update",
+        "msg": "更新: Die beiden Grenadiere, WWV 60/两个禁卫军/两个掷弹兵"
+    },
+    {
+        "date": "2025-12-16 13:28",
+        "type": "update",
+        "msg": "更新: Seht auf die breiten"
+    },
+    {
+        "date": "2025-12-16 13:28",
+        "type": "update",
+        "msg": "更新: Schon eilet froh der ackersmann"
+    },
+    {
+        "date": "2025-12-16 13:28",
+        "type": "add",
+        "msg": "添加: Seht auf die breiten"
+    },
+    {
+        "date": "2025-12-16 13:27",
+        "type": "update",
+        "msg": "更新: And God Made The Firmament"
     }
 ];
