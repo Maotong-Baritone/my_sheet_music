@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-16 14:50:11
+// 最后更新于 2025-12-16 14:46:38
 const musicData = [
     {
         "id": 202,
@@ -1579,15 +1579,14 @@ const musicData = [
         "title": "You rascal, you! I never knew you had a soul",
         "composer": "Samuel Barber",
         "work": "Vanessa",
-        "language": "英语",
+        "language": "English",
         "category": "歌剧咏叹调",
         "voice_count": "",
         "voice_types": "Baritone/男中音",
         "tonality": "",
         "filename": "歌剧咏叹调/1765773474.pdf",
         "date": "2025-12-14",
-        "has_lyrics": false,
-        "description": ""
+        "has_lyrics": false
     },
     {
         "id": 91,
@@ -2764,11 +2763,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-16 14:50",
-        "type": "update",
-        "msg": "更新: You rascal, you! I never knew you had a soul"
-    },
-    {
         "date": "2025-12-16 14:46",
         "type": "add",
         "msg": "添加: Lieben, Hassen, Hoffen, Zagen / 爱着、恨着、希望着、恐惧着/哈莱金的咏叹调"
@@ -3012,5 +3006,10 @@ const changeLog = [
         "date": "2025-12-16 13:25",
         "type": "add",
         "msg": "添加: Rolling in foaming"
+    },
+    {
+        "date": "2025-12-16 13:24",
+        "type": "add",
+        "msg": "添加: And God Made The Firmament"
     }
 ];
