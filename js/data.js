@@ -1,5 +1,605 @@
-// 最后更新于 2025-12-16 10:07:52
+// 最后更新于 2025-12-16 14:46:38
 const musicData = [
+    {
+        "id": 202,
+        "title": "Lieben, Hassen, Hoffen, Zagen / 爱着、恨着、希望着、恐惧着/哈莱金的咏叹调",
+        "composer": "Richard Strauss/理查·施特劳斯",
+        "work": "Ariadne auf Naxos, Op. 60/阿里阿德涅在纳克索斯岛",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "Harlekin的咏叹调",
+        "filename": "歌剧咏叹调/1765921598.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 201,
+        "title": "Mir ist die Ehre widerfahren/我荣幸地承担了这使命/献玫瑰",
+        "composer": "Richard Strauss/理查·施特劳斯",
+        "work": "Der Rosenkavalier, Op. 59/玫瑰骑士",
+        "language": "德语",
+        "category": "歌剧重唱",
+        "voice_count": "二重唱",
+        "voice_types": "Soprano / Soprano",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧重唱/1765921415.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 200,
+        "title": "The trumpet shall sound/号角响起/号角将鸣响",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Messiah, HWV 56/弥赛亚",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "清唱剧选段，附带宣叙调Behold, I tell you a mystery",
+        "filename": "宗教声乐作品/1765921231.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 199,
+        "title": "Si, tra i ceppi/在牢笼中",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Tamerlano, HWV 18/塔梅拉诺",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765921097.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 198,
+        "title": "Ombra mai fu/绿树成荫",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Serse, HWV 40/塞尔斯",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "D大调",
+        "description": "",
+        "filename": "歌剧咏叹调/1765920983.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 197,
+        "title": "Ombra mai fu/绿树成荫",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Serse, HWV 40/塞尔斯",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Soprano/女高音或Mezzo-Soprano/次女高音",
+        "tonality": "G大调",
+        "description": "",
+        "filename": "歌剧咏叹调/1765920914.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 196,
+        "title": "Turn not, O Queen, thy face away/王后啊，请不要转过脸去",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Esther, HWV 50/以斯帖",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段，这是亨德尔在英国创作的第一部清唱剧。",
+        "filename": "宗教声乐作品/1765920397.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 195,
+        "title": "Tu sei il cor di questo core",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Giulio Cesare in Egitto, HWV 17/凯撒大帝/朱里奥·切萨雷/尤利乌斯·凯撒在埃及",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765920317.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 194,
+        "title": "Sorge infausta una procella/刮起一阵不祥的暴风雨/起了一阵不祥的飓风",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Orlando, HWV 31/奥兰多",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765920194.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 193,
+        "title": "Tra caligini profonde/在浓浓的黑暗中",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Orlando, HWV 31/奥兰多",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765920137.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 192,
+        "title": "Tears, such as tender fathers shed/泪水，正如慈父所流/慈父的眼泪",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Deborah, HWV 51/黛博拉",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919986.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 191,
+        "title": "Sibilar gli angui d'Aletto/听那复仇女神的蛇在嘶鸣/复仇女神的嘶鸣",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Rinaldo, HWV 7a/里纳尔多",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765919889.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 190,
+        "title": "Shall I in Mamre's fertile plain/我要在幔利肥沃的平原上",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Joshua, HWV 64/约书亚",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919759.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 189,
+        "title": "See the raging flames arise / 看那烈火升腾",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Joshua, HWV 64/约书亚",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919688.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 188,
+        "title": "Bacchus, ever fair and young/酒神永远青春而美丽",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Alexander's Feast,HWV 75/亚历山大的盛宴",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919548.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 187,
+        "title": "Revenge, Timotheus cries/复仇，提摩太在呼唤",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Alexander's Feast,HWV 75/亚历山大的盛宴",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919467.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 186,
+        "title": "O ruddier than the cherry/比樱桃更红",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Acis and Galatea, HWV 49/阿西斯与嘉拉蒂亚",
+        "language": "英语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "选自亨德尔（George Frideric Handel）的独幕歌剧/田园剧《阿西斯与嘉拉蒂亚》（Acis and Galatea）。虽然该作常被归类为“清唱剧”或“田园剧”，但在乐谱分类中通常放入歌剧咏叹调类。",
+        "filename": "歌剧咏叹调/1765919379.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 184,
+        "title": "Leave me loathsome light",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Semele, HWV 58/塞梅莱/塞默勒",
+        "language": "英语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "亨德尔的Semele虽然在形式上是一部清唱剧，但其内容充满了戏剧性，且现代舞台常将其作为歌剧上演",
+        "filename": "歌剧咏叹调/1765919201.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 183,
+        "title": "Thy glorious deeds inspired my tongue",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Samson, HWV 57/参孙 ",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919037.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 182,
+        "title": "How willing my paternal love",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Samson, HWV 57/参孙 ",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段",
+        "filename": "宗教声乐作品/1765919004.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 181,
+        "title": "Honor and Arms/荣誉与武装",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Samson, HWV 57/参孙 ",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段，标题中的\"Honor\" 是美式拼写，也是乐谱中最常见的写法；英式为 Honour，但在亨德尔的谱子中通常遵循出版习惯。",
+        "filename": "宗教声乐作品/1765918950.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 180,
+        "title": "Loathsome urns disclose your treasure",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "The Triumph of Time and Truth, HWV 71/ 时间与真理的胜利 ",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段，这部作品经历了三个版本：最初是意大利语（Il trionfo del Tempo e del Disinganno），后来亨德尔将其改编为英语版本。",
+        "filename": "歌剧咏叹调/1765918824.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 179,
+        "title": "False destructive ways of pleasure",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "The Triumph of Time and Truth, HWV 71/ 时间与真理的胜利 ",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧选段，这部作品经历了三个版本：最初是意大利语（Il trionfo del Tempo e del Disinganno），后来亨德尔将其改编为英语版本。",
+        "filename": "宗教声乐作品/1765918766.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 178,
+        "title": "Cease to beauty to be suing",
+        "composer": "Georg Friedrich Händel/亨德尔",
+        "work": "Acis and Galatea, HWV 49/阿西斯与嘉拉蒂亚",
+        "language": "英语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "选自亨德尔（George Frideric Handel）的独幕歌剧/田园剧《阿西斯与嘉拉蒂亚》（Acis and Galatea）。虽然该作常被归类为“清唱剧”或“田园剧”，但在乐谱分类中通常放入歌剧咏叹调类。",
+        "filename": "歌剧咏叹调/1765918548.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 177,
+        "title": "O del mio dolce ardor/我怀着满腔热情",
+        "composer": "Christoph Gluck / 格鲁克",
+        "work": "Paride ed Elena, Wq.39/帕里德与艾莱娜",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Soprano / Mezzo-Soprano / Tenor",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765918387.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 176,
+        "title": "An jenem Tag",
+        "composer": "Heinrich Marschner/马施内尔",
+        "work": "Hans Heiling / 汉斯·海林",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "《汉斯·海林》是德国浪漫主义歌剧的代表作之一，马施内尔通过这部作品影响了后来瓦格纳《漂泊的荷兰人》的创作。",
+        "filename": "歌剧咏叹调/1765918202.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 175,
+        "title": "Schweig'! damit dich Niemand warnt/保持沉默",
+        "composer": "Carl Maria von Weber / 韦伯",
+        "work": "Der Freischütz/魔弹射手/自由射手",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765917972.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 174,
+        "title": "Ha! Welch ein Augenblick",
+        "composer": "Ludwig van Beethoven/贝多芬",
+        "work": "Fidelio, Op.72/费德里奥",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1765917768.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 173,
+        "title": "Ich Bin Ein Vielgereister Mann/I am a roamer bold and gay",
+        "composer": "Felix Mendelssohn/门德尔松",
+        "work": "Die Heimkehr aus der Fremde, Op.89",
+        "language": "德语/英语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "《异乡归来》（德语：Die Heimkehr aus der Fremde，意为“从异乡归来”），在英语中通常被称为 Son and Stranger 或 Return of the Roamer，是一部一幕的德语歌唱剧（Singspiel）。该作品由费利克斯·门德尔松于 1829 年创作，剧本为德文，由作曲家的好友、诗人卡尔·克林根曼（Karl Klingemann）撰写——他后来还为清唱剧《以利亚》（Elijah）提供了文本。\r\n英文标题 Son and Stranger 源自门德尔松的朋友、评论家 亨利·乔利（Henry Chorley） 的英译版本，该译本为 1851 年伦敦演出而创作，至今在英语国家对该剧少见的复排中仍被沿用。\r\n该作品在门德尔松去世后出版，作品编号为 Op. 89。",
+        "filename": "歌剧咏叹调/1765917553.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 172,
+        "title": "So wahr der Herr, der Gott Israels lebet/As God the Lord of Israel Liveth",
+        "composer": "Felix Mendelssohn/门德尔松",
+        "work": "Elijah (German: Elias), Op. 70, MWV A 25",
+        "language": "德语/英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "清唱剧以利亚选段",
+        "filename": "宗教声乐作品/1765917284.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 171,
+        "title": "Es ist genug/It is enough",
+        "composer": "Felix Mendelssohn/门德尔松",
+        "work": "Elijah (German: Elias), Op. 70, MWV A 25",
+        "language": "德语/英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "清唱剧以利亚选段",
+        "filename": "宗教声乐作品/1765917136.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 170,
+        "title": "Seht auf die breiten",
+        "composer": "Franz Joseph Haydn/海顿",
+        "work": "Die Jahreszeiten, Hob. XXI:3/ 四季",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧四季选段",
+        "filename": "宗教声乐作品/1765916891.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 169,
+        "title": "Schon eilet froh der ackersmann",
+        "composer": "Franz Joseph Haydn/海顿",
+        "work": " Die Jahreszeiten, Hob. XXI:3/四季",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "清唱剧四季选段",
+        "filename": "宗教声乐作品/1765916813.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 168,
+        "title": "Rolling in foaming",
+        "composer": "Franz Joseph Haydn/海顿",
+        "work": "The Creation, Hob. XXI:2/创世纪",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "清唱剧创世纪选段",
+        "filename": "宗教声乐作品/1765916728.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 167,
+        "title": "And God Made The Firmament",
+        "composer": "Franz Joseph Haydn/海顿",
+        "work": "The Creation, Hob. XXI:2/创世纪",
+        "language": "英语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "清唱剧创世纪选段",
+        "filename": "宗教声乐作品/1765916689.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 166,
+        "title": "Komm, süßer tod, BWV 478",
+        "composer": "J.S. Bach/巴赫",
+        "work": "",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "宗教声乐作品/1765916524.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 165,
+        "title": "Mache dich mein herze rein",
+        "composer": "J.S. Bach/巴赫",
+        "work": "Matthäuspassion, BWV 244/马太受难曲",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "宗教声乐作品/1765916467.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 164,
+        "title": "Komm Süßes Kreuz",
+        "composer": "J.S. Bach/巴赫",
+        "work": "Matthäuspassion, BWV 244/马太受难曲",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "宗教声乐作品/1765916444.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 163,
+        "title": "Gebt mir meinen Jesum wieder",
+        "composer": "J.S. Bach/巴赫",
+        "work": "Matthäuspassion, BWV 244/马太受难曲",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass/男低音或Bass-Baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "宗教声乐作品/1765916400.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
+    {
+        "id": 162,
+        "title": "Et in Spritm Sanctum",
+        "composer": "J.S. Bach/巴赫",
+        "work": "Mass in B minor, BWV 232",
+        "language": "德语",
+        "category": "宗教声乐作品",
+        "voice_count": "",
+        "voice_types": "Bass-Baritone/低男中音或Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "宗教声乐作品/1765916249.pdf",
+        "date": "2025-12-16",
+        "has_lyrics": false
+    },
     {
         "id": 161,
         "title": "Belsazar, Op.57",
@@ -17,15 +617,15 @@ const musicData = [
     },
     {
         "id": 160,
-        "title": "Die beiden Grenadiere/两个禁卫军/两个掷弹兵",
+        "title": "Die beiden Grenadiere, WWV 60/两个禁卫军/两个掷弹兵",
         "composer": "Richard Wagner/瓦格纳",
         "work": "Les deux grenadiers, WWV 60",
         "language": "德语",
-        "category": "歌剧咏叹调",
+        "category": "艺术歌曲",
         "voice_count": "",
         "voice_types": "",
         "tonality": "",
-        "description": "",
+        "description": "原为法语：Les deux grenadiers，后改为德语，据表述该作品的发表早于舒曼的版本。",
         "filename": "歌剧咏叹调/1765904235.pdf",
         "date": "2025-12-16",
         "has_lyrics": false
@@ -34,9 +634,9 @@ const musicData = [
         "id": 159,
         "title": "Am meer/在海边",
         "composer": "Franz Schubert/舒伯特",
-        "work": "Schwanengesang, D.957",
+        "work": "Schwanengesang, D.957/天鹅之歌",
         "language": "德语",
-        "category": "歌剧咏叹调",
+        "category": "艺术歌曲",
         "voice_count": "",
         "voice_types": "",
         "tonality": "降A大调",
@@ -2163,253 +2763,253 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-16 10:07",
-        "type": "update",
-        "msg": "更新: Belsazar, Op.57"
-    },
-    {
-        "date": "2025-12-16 10:01",
+        "date": "2025-12-16 14:46",
         "type": "add",
-        "msg": "添加: Belsazar"
+        "msg": "添加: Lieben, Hassen, Hoffen, Zagen / 爱着、恨着、希望着、恐惧着/哈莱金的咏叹调"
     },
     {
-        "date": "2025-12-16 09:57",
+        "date": "2025-12-16 14:44",
+        "type": "update",
+        "msg": "更新: Mir ist die Ehre widerfahren/我荣幸地承担了这使命/献玫瑰"
+    },
+    {
+        "date": "2025-12-16 14:43",
+        "type": "add",
+        "msg": "添加: Mir ist die Ehre widerfahren/我荣幸地承担了这使命/献玫瑰"
+    },
+    {
+        "date": "2025-12-16 14:40",
+        "type": "add",
+        "msg": "添加: The trumpet shall sound/号角响起/号角将鸣响"
+    },
+    {
+        "date": "2025-12-16 14:38",
+        "type": "add",
+        "msg": "添加: Si, tra i ceppi/在牢笼中"
+    },
+    {
+        "date": "2025-12-16 14:36",
+        "type": "add",
+        "msg": "添加: Ombra mai fu/绿树成荫"
+    },
+    {
+        "date": "2025-12-16 14:35",
+        "type": "add",
+        "msg": "添加: Ombra mai fu/绿树成荫"
+    },
+    {
+        "date": "2025-12-16 14:26",
+        "type": "add",
+        "msg": "添加: Turn not, O Queen, thy face away/王后啊，请不要转过脸去"
+    },
+    {
+        "date": "2025-12-16 14:25",
+        "type": "add",
+        "msg": "添加: Tu sei il cor di questo core"
+    },
+    {
+        "date": "2025-12-16 14:23",
+        "type": "add",
+        "msg": "添加: Sorge infausta una procella/刮起一阵不祥的暴风雨/起了一阵不祥的飓风"
+    },
+    {
+        "date": "2025-12-16 14:22",
+        "type": "add",
+        "msg": "添加: Tra caligini profonde/在浓浓的黑暗中"
+    },
+    {
+        "date": "2025-12-16 14:19",
+        "type": "add",
+        "msg": "添加: Tears, such as tender fathers shed/泪水，正如慈父所流/慈父的眼泪"
+    },
+    {
+        "date": "2025-12-16 14:18",
+        "type": "add",
+        "msg": "添加: Sibilar gli angui d'Aletto/听那复仇女神的蛇在嘶鸣/复仇女神的嘶鸣"
+    },
+    {
+        "date": "2025-12-16 14:15",
+        "type": "add",
+        "msg": "添加: Shall I in Mamre's fertile plain/我要在幔利肥沃的平原上"
+    },
+    {
+        "date": "2025-12-16 14:14",
+        "type": "add",
+        "msg": "添加: See the raging flames arise / 看那烈火升腾"
+    },
+    {
+        "date": "2025-12-16 14:12",
+        "type": "add",
+        "msg": "添加: Bacchus, ever fair and young/酒神永远青春而美丽"
+    },
+    {
+        "date": "2025-12-16 14:11",
+        "type": "add",
+        "msg": "添加: Revenge, Timotheus cries/复仇，提摩太在呼唤"
+    },
+    {
+        "date": "2025-12-16 14:09",
+        "type": "delete",
+        "msg": "删除: O ruddier than the cherry/比樱桃更红"
+    },
+    {
+        "date": "2025-12-16 14:09",
+        "type": "add",
+        "msg": "添加: O ruddier than the cherry/比樱桃更红"
+    },
+    {
+        "date": "2025-12-16 14:08",
+        "type": "update",
+        "msg": "更新: O ruddier than the cherry/比樱桃更红"
+    },
+    {
+        "date": "2025-12-16 14:08",
+        "type": "update",
+        "msg": "更新: Cease to beauty to be suing"
+    },
+    {
+        "date": "2025-12-16 14:08",
+        "type": "add",
+        "msg": "添加: O ruddier than the cherry/比樱桃更红"
+    },
+    {
+        "date": "2025-12-16 14:06",
+        "type": "add",
+        "msg": "添加: Leave me loathsome light"
+    },
+    {
+        "date": "2025-12-16 14:03",
+        "type": "add",
+        "msg": "添加: Thy glorious deeds inspired my tongue"
+    },
+    {
+        "date": "2025-12-16 14:03",
+        "type": "add",
+        "msg": "添加: How willing my paternal love"
+    },
+    {
+        "date": "2025-12-16 14:02",
+        "type": "update",
+        "msg": "更新: Loathsome urns disclose your treasure"
+    },
+    {
+        "date": "2025-12-16 14:02",
+        "type": "add",
+        "msg": "添加: Honor and Arms/荣誉与武装"
+    },
+    {
+        "date": "2025-12-16 14:00",
+        "type": "add",
+        "msg": "添加: Loathsome urns disclose your treasure"
+    },
+    {
+        "date": "2025-12-16 13:59",
+        "type": "add",
+        "msg": "添加: False destructive ways of pleasure"
+    },
+    {
+        "date": "2025-12-16 13:55",
+        "type": "add",
+        "msg": "添加: Cease to beauty to be suing"
+    },
+    {
+        "date": "2025-12-16 13:53",
+        "type": "add",
+        "msg": "添加: O del mio dolce ardor/我怀着满腔热情"
+    },
+    {
+        "date": "2025-12-16 13:50",
+        "type": "add",
+        "msg": "添加: An jenem Tag"
+    },
+    {
+        "date": "2025-12-16 13:48",
+        "type": "delete",
+        "msg": "删除: Dein ist mein ganzes Herz"
+    },
+    {
+        "date": "2025-12-16 13:47",
+        "type": "add",
+        "msg": "添加: Dein ist mein ganzes Herz"
+    },
+    {
+        "date": "2025-12-16 13:46",
+        "type": "add",
+        "msg": "添加: Schweig'! damit dich Niemand warnt/保持沉默"
+    },
+    {
+        "date": "2025-12-16 13:42",
+        "type": "add",
+        "msg": "添加: Ha! Welch ein Augenblick"
+    },
+    {
+        "date": "2025-12-16 13:39",
+        "type": "add",
+        "msg": "添加: Ich Bin Ein Vielgereister Mann/I am a roamer bold and gay"
+    },
+    {
+        "date": "2025-12-16 13:34",
+        "type": "add",
+        "msg": "添加: So wahr der Herr, der Gott Israels lebet/As God the Lord of Israel Liveth"
+    },
+    {
+        "date": "2025-12-16 13:32",
+        "type": "add",
+        "msg": "添加: Es ist genug/It is enough"
+    },
+    {
+        "date": "2025-12-16 13:30",
+        "type": "update",
+        "msg": "更新: Die beiden Grenadiere, WWV 60/两个禁卫军/两个掷弹兵"
+    },
+    {
+        "date": "2025-12-16 13:29",
         "type": "update",
         "msg": "更新: Am meer/在海边"
     },
     {
-        "date": "2025-12-16 09:57",
-        "type": "add",
-        "msg": "添加: Die beiden Grenadiere/两个禁卫军/两个掷弹兵"
-    },
-    {
-        "date": "2025-12-16 09:54",
-        "type": "add",
-        "msg": "添加: Am meer/在海边"
-    },
-    {
-        "date": "2025-12-14 23:41",
+        "date": "2025-12-16 13:29",
         "type": "update",
-        "msg": "更新: Songs of Travel/旅行之歌"
+        "msg": "更新: Die beiden Grenadiere, WWV 60/两个禁卫军/两个掷弹兵"
     },
     {
-        "date": "2025-12-14 23:40",
+        "date": "2025-12-16 13:28",
         "type": "update",
-        "msg": "更新: A Young Man's Exhortation"
+        "msg": "更新: Seht auf die breiten"
     },
     {
-        "date": "2025-12-14 23:37",
+        "date": "2025-12-16 13:28",
         "type": "update",
-        "msg": "更新: Ten Blake Songs"
+        "msg": "更新: Schon eilet froh der ackersmann"
     },
     {
-        "date": "2025-12-14 23:37",
+        "date": "2025-12-16 13:28",
+        "type": "add",
+        "msg": "添加: Seht auf die breiten"
+    },
+    {
+        "date": "2025-12-16 13:27",
         "type": "update",
-        "msg": "更新: The House of Life/生命之屋"
+        "msg": "更新: And God Made The Firmament"
     },
     {
-        "date": "2025-12-14 23:36",
+        "date": "2025-12-16 13:27",
         "type": "update",
-        "msg": "更新: A Shropshire Lad/什罗普郡小伙子"
+        "msg": "更新: Rolling in foaming"
     },
     {
-        "date": "2025-12-14 23:35",
-        "type": "update",
-        "msg": "更新: A Shropshire Lad/什罗普郡小伙子"
-    },
-    {
-        "date": "2025-12-14 23:21",
+        "date": "2025-12-16 13:26",
         "type": "add",
-        "msg": "添加: The House of Life/生命之屋"
+        "msg": "添加: Schon eilet froh der ackersmann"
     },
     {
-        "date": "2025-12-14 23:20",
+        "date": "2025-12-16 13:25",
         "type": "add",
-        "msg": "添加: Ten Blake Songs"
+        "msg": "添加: Rolling in foaming"
     },
     {
-        "date": "2025-12-14 23:18",
+        "date": "2025-12-16 13:24",
         "type": "add",
-        "msg": "添加: A Shropshire Lad/什罗普郡小伙子"
-    },
-    {
-        "date": "2025-12-14 23:11",
-        "type": "add",
-        "msg": "添加: Henry Purcell Songs/普赛尔歌曲集"
-    },
-    {
-        "date": "2025-12-14 23:09",
-        "type": "add",
-        "msg": "添加: A Young Man's Exhortation"
-    },
-    {
-        "date": "2025-12-14 23:06",
-        "type": "add",
-        "msg": "添加: Baber歌曲集"
-    },
-    {
-        "date": "2025-12-14 23:01",
-        "type": "add",
-        "msg": "添加: Let us garlands bring"
-    },
-    {
-        "date": "2025-12-14 22:59",
-        "type": "add",
-        "msg": "添加: Ives 114 Songs"
-    },
-    {
-        "date": "2025-12-14 22:58",
-        "type": "add",
-        "msg": "添加: Songs of Travel/旅行之歌"
-    },
-    {
-        "date": "2025-12-14 22:50",
-        "type": "update",
-        "msg": "更新: Or sei pago, o ciel tremendo"
-    },
-    {
-        "date": "2025-12-14 22:50",
-        "type": "add",
-        "msg": "添加: Sono all'ara…barriera tremenda…Ciel pietoso, in sì crudo momento"
-    },
-    {
-        "date": "2025-12-14 22:50",
-        "type": "add",
-        "msg": "添加: Or sei pago, o ciel tremendo"
-    },
-    {
-        "date": "2025-12-14 22:49",
-        "type": "add",
-        "msg": "添加: Sventurata, anch'io deliro"
-    },
-    {
-        "date": "2025-12-14 22:49",
-        "type": "add",
-        "msg": "添加: Lo sognai ferito, esangue"
-    },
-    {
-        "date": "2025-12-14 22:49",
-        "type": "add",
-        "msg": "添加: Col sorriso d'innocenza"
-    },
-    {
-        "date": "2025-12-14 22:48",
-        "type": "add",
-        "msg": "添加: La mia scelta a voi sia grata… Contenta appien quest'alma"
-    },
-    {
-        "date": "2025-12-14 22:48",
-        "type": "add",
-        "msg": "添加: Deh! Non ferir… Alla gioia ed al piacer"
-    },
-    {
-        "date": "2025-12-14 22:48",
-        "type": "add",
-        "msg": "添加: Oh! Mie fedeli!...Ma la sola, ohimè! son io…Ah! La pena in lor piombò"
-    },
-    {
-        "date": "2025-12-14 22:47",
-        "type": "add",
-        "msg": "添加: Dopo l'oscuro nembo"
-    },
-    {
-        "date": "2025-12-14 22:46",
-        "type": "add",
-        "msg": "添加: È serbato, a questo acciaro"
-    },
-    {
-        "date": "2025-12-14 22:45",
-        "type": "add",
-        "msg": "添加: Ah! Se non m'ami piu"
-    },
-    {
-        "date": "2025-12-14 22:45",
-        "type": "add",
-        "msg": "添加: Tu sola… Deh! Tu, deh! Tu, bell'anima"
-    },
-    {
-        "date": "2025-12-14 22:44",
-        "type": "add",
-        "msg": "添加: Se Romeo l'uccise un figlio"
-    },
-    {
-        "date": "2025-12-14 22:43",
-        "type": "add",
-        "msg": "添加: Tutto è gioia, tutto è festa"
-    },
-    {
-        "date": "2025-12-14 22:43",
-        "type": "add",
-        "msg": "添加: De' lieti auguri a voi"
-    },
-    {
-        "date": "2025-12-14 22:42",
-        "type": "add",
-        "msg": "添加: Sovra il sen la man mi posa"
-    },
-    {
-        "date": "2025-12-14 22:42",
-        "type": "add",
-        "msg": "添加: Care compagne… Come per me serena"
-    },
-    {
-        "date": "2025-12-14 22:42",
-        "type": "add",
-        "msg": "添加: Ah! Non giunge uman pensiero"
-    },
-    {
-        "date": "2025-12-14 22:41",
-        "type": "add",
-        "msg": "添加: Ah! non credea mirarti"
-    },
-    {
-        "date": "2025-12-14 22:41",
-        "type": "add",
-        "msg": "添加: Son vergin vezzosa"
-    },
-    {
-        "date": "2025-12-14 22:40",
-        "type": "add",
-        "msg": "添加: Qui la voce… Vien, diletto"
-    },
-    {
-        "date": "2025-12-14 22:39",
-        "type": "add",
-        "msg": "添加: Morte io non temo"
-    },
-    {
-        "date": "2025-12-14 22:39",
-        "type": "add",
-        "msg": "添加: Eccomi in lieta vesta…Oh quante volte ti chiedo"
-    },
-    {
-        "date": "2025-12-14 22:33",
-        "type": "add",
-        "msg": "添加: Vi ravviso, o luoghi ameni"
-    },
-    {
-        "date": "2025-12-14 22:33",
-        "type": "add",
-        "msg": "添加: Tu non sai conquei begli occhi"
-    },
-    {
-        "date": "2025-12-14 22:32",
-        "type": "add",
-        "msg": "添加: Cinta di fiori"
-    },
-    {
-        "date": "2025-12-14 22:30",
-        "type": "add",
-        "msg": "添加: Vieni, vieni fra questa braccia"
-    },
-    {
-        "date": "2025-12-14 22:29",
-        "type": "add",
-        "msg": "添加: Sprezzo, audace, il tuo furore"
-    },
-    {
-        "date": "2025-12-14 22:29",
-        "type": "add",
-        "msg": "添加: Son salvo...La mia canzon d'amore…Ad altro lato"
+        "msg": "添加: And God Made The Firmament"
     }
 ];
