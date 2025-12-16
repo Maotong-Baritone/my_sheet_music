@@ -1,20 +1,5 @@
-// 最后更新于 2025-12-16 10:01:56
+// 最后更新于 2025-12-16 09:57:24
 const musicData = [
-    {
-        "id": 161,
-        "title": "Belsazar",
-        "composer": "舒曼",
-        "work": "",
-        "language": "德语",
-        "category": "艺术歌曲",
-        "voice_count": "",
-        "voice_types": "",
-        "tonality": "降A大调",
-        "description": "",
-        "filename": "艺术歌曲/1765904516.pdf",
-        "date": "2025-12-16",
-        "has_lyrics": false
-    },
     {
         "id": 160,
         "title": "Die beiden Grenadiere/两个禁卫军/两个掷弹兵",
@@ -2163,11 +2148,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-16 10:01",
-        "type": "add",
-        "msg": "添加: Belsazar"
-    },
-    {
         "date": "2025-12-16 09:57",
         "type": "update",
         "msg": "更新: Am meer/在海边"
@@ -2411,5 +2391,10 @@ const changeLog = [
         "date": "2025-12-14 22:28",
         "type": "add",
         "msg": "添加: Credeasi, misera"
+    },
+    {
+        "date": "2025-12-14 22:28",
+        "type": "add",
+        "msg": "添加: A te, o cara, amor talora"
     }
 ];
