@@ -55,10 +55,6 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
         }
-        .icon-box {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
         
         /* 社交媒体徽章 */
         .social-item {
@@ -68,6 +64,10 @@
             background-color: #f8f9fa;
             border-radius: 12px;
             margin-bottom: 1rem;
+            transition: background 0.2s;
+        }
+        .social-item:hover {
+            background-color: #f1f3f5;
         }
         .social-icon {
             width: 48px;
@@ -79,11 +79,15 @@
             font-size: 1.5rem;
             margin-right: 1rem;
             color: white;
+            flex-shrink: 0;
         }
+        
+        /* 颜色定义 */
         .douyin-bg { background: linear-gradient(45deg, #000000, #25F4EE, #FE2C55); }
         .xhs-bg { background-color: #FF2442; }
         .wechat-bg { background-color: #07C160; }
         .email-bg { background-color: #2a9d8f; }
+        .web-bg { background-color: #457b9d; } /* 个人网站颜色 */
 
         footer { 
             background-color: #264653; color: #a8b2d1; padding: 3rem 0; margin-top: 5rem; font-family: 'Noto Serif SC', serif;
@@ -113,7 +117,7 @@
 
     <div class="page-header shadow-sm">
         <div class="container">
-            <h1 class="font-serif fw-bold mb-2">联系方式</h1>
+            <h1 class="font-serif fw-bold mb-2">保持联系</h1>
             <p class="text-white-50 font-serif fst-italic">Contact & Social Media</p>
         </div>
     </div>
@@ -124,25 +128,37 @@
             <div class="col-lg-5">
                 <div class="contact-card">
                     <div class="d-flex align-items-center mb-4">
-                        <div class="social-icon email-bg">📧</div>
-                        <h4 class="mb-0 fw-bold font-serif">电子邮箱</h4>
+                        <div class="social-icon email-bg">📬</div>
+                        <h4 class="mb-0 fw-bold font-serif">联系方式</h4>
                     </div>
-                    <p class="text-muted">欢迎交流学术、乐谱互换或商务合作。</p>
                     
+                    <div class="mb-4">
+                        <h6 class="text-uppercase text-muted small fw-bold mb-3">官方网站</h6>
+                        <a href="https://maotong.me" target="_blank" class="social-item text-decoration-none border border-primary bg-primary bg-opacity-10">
+                            <div class="social-icon web-bg">🌐</div>
+                            <div class="flex-grow-1 text-dark">
+                                <h6 class="mb-0 fw-bold">Maotong.me</h6>
+                                <p class="mb-0 text-muted small">访问个人主页</p>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">Visit ↗</span>
+                        </a>
+                    </div>
+
+                    <h6 class="text-uppercase text-muted small fw-bold mb-3">电子邮箱</h6>
                     <div class="list-group list-group-flush">
-                        <a href="mailto:435970608@qq.com" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                        <a href="mailto:435970608@qq.com" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 border-0 bg-light rounded mb-2">
                             <div>
-                                <span class="d-block text-muted small">常用邮箱 (QQ)</span>
+                                <span class="d-block text-muted small">QQ邮箱</span>
                                 <span class="fw-bold text-dark">435970608@qq.com</span>
                             </div>
-                            <span class="badge bg-light text-secondary">发送邮件 ↗</span>
+                            <span class="badge bg-white text-secondary border">写信 ↗</span>
                         </a>
-                        <a href="mailto:yumaotong0613@gmail.com" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3">
+                        <a href="mailto:yumaotong0613@gmail.com" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3 border-0 bg-light rounded">
                             <div>
                                 <span class="d-block text-muted small">Gmail</span>
                                 <span class="fw-bold text-dark">yumaotong0613@gmail.com</span>
                             </div>
-                            <span class="badge bg-light text-secondary">发送邮件 ↗</span>
+                            <span class="badge bg-white text-secondary border">写信 ↗</span>
                         </a>
                     </div>
                 </div>
@@ -166,18 +182,20 @@
 
                     <div class="social-item">
                         <div class="social-icon douyin-bg">🎵</div>
-                        <div>
+                        <div class="flex-grow-1">
                             <h6 class="mb-0 fw-bold">非著名旅美男中音MT</h6>
                             <p class="mb-0 text-muted small">抖音号: 2188213618</p>
                         </div>
+                        <a href="https://v.douyin.com/YKihJCHDbcY/" target="_blank" class="btn btn-sm btn-dark rounded-pill px-3">主页 ↗</a>
                     </div>
 
                     <div class="social-item">
                         <div class="social-icon xhs-bg">📕</div>
-                        <div>
+                        <div class="flex-grow-1">
                             <h6 class="mb-0 fw-bold">非著名旅美男中音MT</h6>
-                            <p class="mb-0 text-muted small">小红书号: 1030083808</p>
+                            <p class="mb-0 text-muted small">号: 1030083808</p>
                         </div>
+                        <a href="https://xhslink.com/m/77DPjGWvGwF" target="_blank" class="btn btn-sm btn-danger rounded-pill px-3">主页 ↗</a>
                     </div>
 
                 </div>
