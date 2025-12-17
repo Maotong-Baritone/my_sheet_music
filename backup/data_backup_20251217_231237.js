@@ -1,8 +1,8 @@
-// 最后更新于 2025-12-17 23:12:37
+// 最后更新于 2025-12-17 23:12:19
 const musicData = [
     {
         "id": 233,
-        "title": "Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲",
+        "title": "Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲 op.1",
         "composer": "Niccolò Paganini/尼科罗·帕格尼尼",
         "work": "",
         "language": "English",
@@ -3315,11 +3315,6 @@ const changeLog = [
     {
         "date": "2025-12-17 23:12",
         "type": "update",
-        "msg": "更新: Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲"
-    },
-    {
-        "date": "2025-12-17 23:12",
-        "type": "update",
         "msg": "更新: Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲 op.1"
     },
     {
@@ -3561,5 +3556,10 @@ const changeLog = [
         "date": "2025-12-16 20:50",
         "type": "add",
         "msg": "添加: Winterreise, D. 911/冬之旅"
+    },
+    {
+        "date": "2025-12-16 20:46",
+        "type": "add",
+        "msg": "添加: Die schöne Müllerin/美丽的磨坊女"
     }
 ];

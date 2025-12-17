@@ -1,15 +1,15 @@
-// 最后更新于 2025-12-17 23:12:37
+// 最后更新于 2025-12-17 23:03:35
 const musicData = [
     {
         "id": 233,
-        "title": "Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲",
-        "composer": "Niccolò Paganini/尼科罗·帕格尼尼",
+        "title": "Paganini Caprice No. 24 in A minor/帕格尼尼第24号随想曲，A小调",
+        "composer": "Niccolò Paganini",
         "work": "",
         "language": "English",
         "category": "器乐独奏",
         "sub_category": "随想曲",
         "voice_count": "独奏",
-        "voice_types": "小提琴独奏",
+        "voice_types": "violin",
         "tonality": "a小调",
         "description": "1 e小调随想曲:行板\r\n2 b小调随想曲:中庸\r\n3 e小调随想曲:急板\r\n4 c小调随想曲\r\n5 a小调随想曲:激动地\r\n6 g小调随想曲:柔板\r\n7 a小调随想曲\r\n8 bE大调随想曲:庄严地\r\n9 E大调随想曲:小快板\r\n10 g小调随想曲:优雅地\r\n11 C大调随想曲:行板,急板\r\n12 bA大调随想曲:小快板\r\n13 bB大调随想曲:小快板\r\n14 bE大调随想曲:中速\r\n15 e小调随想曲\r\n16 g小调随想曲:急板\r\n17 bE大调随想曲:延续的行板\r\n18 C大调随想曲:库朗特舞曲:小行板\r\n19 bE大调随想曲:缓慢的小快板\r\n20 D大调随想曲:小快板\r\n21 A大调随想曲:激情地急板\r\n22 F大调随想曲:庄严的\r\n23 bE大调随想曲\r\n24 a小调随想曲:急板",
         "filename": "器乐独奏/1765983815.pdf",
@@ -3313,26 +3313,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-17 23:12",
-        "type": "update",
-        "msg": "更新: Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲"
-    },
-    {
-        "date": "2025-12-17 23:12",
-        "type": "update",
-        "msg": "更新: Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲 op.1"
-    },
-    {
-        "date": "2025-12-17 23:08",
-        "type": "update",
-        "msg": "更新: Paganini Caprice No. 24 in A minor/帕格尼尼第24号随想曲，A小调"
-    },
-    {
-        "date": "2025-12-17 23:07",
-        "type": "update",
-        "msg": "更新: Paganini Caprice No. 24 in A minor/帕格尼尼第24号随想曲，A小调"
-    },
-    {
         "date": "2025-12-17 23:03",
         "type": "add",
         "msg": "添加: Paganini Caprice No. 24 in A minor/帕格尼尼第24号随想曲，A小调"
@@ -3561,5 +3541,25 @@ const changeLog = [
         "date": "2025-12-16 20:50",
         "type": "add",
         "msg": "添加: Winterreise, D. 911/冬之旅"
+    },
+    {
+        "date": "2025-12-16 20:46",
+        "type": "add",
+        "msg": "添加: Die schöne Müllerin/美丽的磨坊女"
+    },
+    {
+        "date": "2025-12-16 20:40",
+        "type": "add",
+        "msg": "添加: 亨德尔清唱剧著名咏叹调选集（中低音用）"
+    },
+    {
+        "date": "2025-12-16 15:17",
+        "type": "update",
+        "msg": "更新: Ein deutsches Requiem/德意志安魂曲"
+    },
+    {
+        "date": "2025-12-16 15:17",
+        "type": "update",
+        "msg": "更新: Cantata BWV 82/Ich habe genug"
     }
 ];
