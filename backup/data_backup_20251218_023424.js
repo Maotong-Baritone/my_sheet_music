@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-18 02:34:24
+// 最后更新于 2025-12-18 02:30:26
 const musicData = [
     {
         "id": 234,
@@ -7,11 +7,11 @@ const musicData = [
         "work": "",
         "language": "",
         "category": "器乐独奏",
-        "sub_category": "舞曲",
+        "sub_category": "狂想曲",
         "voice_count": "独奏",
         "voice_types": "小提琴独奏",
         "tonality": "d小调转D大调",
-        "description": "查尔达什是维托里奥·蒙蒂最著名的曲子。于1904年基于一首著名的匈牙利查尔达什所写成的",
+        "description": "查尔达什是维托里奥·蒙蒂最著名的曲子。于1904年基于一首著名的匈牙利查尔达什所写成的狂想曲",
         "filename": "器乐独奏/1765995994.pdf",
         "date": "2025-12-18",
         "has_lyrics": false
@@ -3329,11 +3329,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-18 02:34",
-        "type": "update",
-        "msg": "更新: CZARDAS/Csárdás/查尔达什"
-    },
-    {
         "date": "2025-12-18 02:30",
         "type": "update",
         "msg": "更新: CZARDAS/Csárdás/查尔达什"
@@ -3577,5 +3572,10 @@ const changeLog = [
         "date": "2025-12-16 21:06",
         "type": "add",
         "msg": "添加: Eichendorff-Lieder, Volume I/艾兴多夫艺术歌曲集，第一卷"
+    },
+    {
+        "date": "2025-12-16 21:03",
+        "type": "add",
+        "msg": "添加: Schwanengesang, D. 957/天鹅之歌"
     }
 ];
