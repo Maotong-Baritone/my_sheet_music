@@ -324,7 +324,7 @@ def index():
             # 不再依赖 safe_name 去分割，因为 safe_name 可能没有后缀
             # 既然 allowed_file 过了，说明原始 file.filename 一定有点号
             ext = file.filename.rsplit('.', 1)[1].lower()
-            filename = f"{int(time.time())}.{ext}"
+            filename = f"{int(time.time() * 1000)}_{secure_filename(file.filename)}"
             
             cat_dir = os.path.join(SCORES_DIR, request.form['category'])
             if not os.path.exists(cat_dir): os.makedirs(cat_dir)
@@ -332,7 +332,7 @@ def index():
             
             has_lyrics = save_lyrics(new_id, request.form.get('lyrics_og', ''), request.form.get('lyrics_cn', ''))
 
-            music_data.append({
+            item = {
                 "id": new_id, "title": request.form['title'], "composer": request.form['composer'],
                 "work": request.form.get('work',''), "language": request.form.get('language',''),
                 "category": request.form['category'], 
@@ -343,7 +343,9 @@ def index():
                 "filename": f"{request.form['category']}/{filename}", 
                 "date": datetime.date.today().strftime("%Y-%m-%d"),
                 "has_lyrics": has_lyrics
-            })
+            }
+            item['filename'] = os.path.join(request.form['category'], filename).replace('\\', '/')
+            music_data.append(item)
             add_log(change_log, 'add', f"添加: {request.form['title']}")
             save_all(music_data, change_log)
             flash('成功')
