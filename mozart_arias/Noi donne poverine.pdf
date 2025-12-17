@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2W3F2205D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2W3F2205D6');
+</script>
+<link rel="icon" type="image/png" href="/DME/img/logo-ism-black.png"
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta name="author" content="ISM">
+<meta name="generator" content="VIM">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pdf print</title>
+<link rel="stylesheet" type="text/css" media="screen" href="../stylesheet/stylesheet.css.php">
+<link rel="stylesheet" type="text/css" media="print, embossed" href="../stylesheet/print.css.php">
+<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/98ae84ed4a.js" crossorigin="anonymous"></script>
+<script src='../JS/hlrows.js' type='application/javascript'></script>
+<script src='../objs/raradocs/transcr/pyparser/radoc.js' type='application/javascript'></script>
+<script type="text/javascript">
+    if(typeof parent.setLightRoomNavbar != "undefined")
+    {
+        parent.setLightRoomNavbar(0,'Table of Contents','js:openLightRoom("nma_toc.php?vsep=303&l=2",1024);');
+    }
+</script>
+</head>
+<body style='overflow:hidden;'>
+<table id="splash" width="100%">
+    <tr>
+      <td style="font-size:16px; font-family:Arial;" align="center" valign="middle">Generating PDF file ...</td>
+    </tr>
+</table>
+<iframe style="position:absolute; z-index:10; top:0px; left:0px; width:100%; height:100%;" frameborder=0 src="/DME/nma/nma_pdf.php?c=dnNlcD0zMDMmcDE9OTUmcDI9MTAzJmw9MiZ0aXRsZT1OTUErSUklMkY1JTJGOCUyRjElM0ErSyUzQSsxOTYlMkYwNA==&amp;cc=914f724387b84799c0e64820057bd203&pdf=1"></iframe>
+</body>
+</html>
