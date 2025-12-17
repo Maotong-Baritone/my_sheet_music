@@ -1,11 +1,11 @@
-// 最后更新于 2025-12-17 23:29:42
+// 最后更新于 2025-12-17 23:12:37
 const musicData = [
     {
         "id": 233,
         "title": "Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲",
         "composer": "Niccolò Paganini/尼科罗·帕格尼尼",
         "work": "",
-        "language": "",
+        "language": "English",
         "category": "器乐独奏",
         "sub_category": "随想曲",
         "voice_count": "独奏",
@@ -3313,11 +3313,6 @@ const musicData = [
 ];
 const changeLog = [
     {
-        "date": "2025-12-17 23:29",
-        "type": "update",
-        "msg": "更新: Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲"
-    },
-    {
         "date": "2025-12-17 23:12",
         "type": "update",
         "msg": "更新: Paganini 24 Caprices,Op.1/帕格尼尼24首随想曲"
@@ -3559,6 +3554,11 @@ const changeLog = [
     },
     {
         "date": "2025-12-16 20:51",
+        "type": "add",
+        "msg": "添加: Winterreise, D. 911/冬之旅"
+    },
+    {
+        "date": "2025-12-16 20:50",
         "type": "add",
         "msg": "添加: Winterreise, D. 911/冬之旅"
     }
