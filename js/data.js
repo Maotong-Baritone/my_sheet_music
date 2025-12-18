@@ -1,5 +1,261 @@
-// 最后更新于 2025-12-18 00:40:18
+// 最后更新于 2025-12-19 01:27:37
 const musicData = [
+    {
+        "id": 1898,
+        "title": "ABRSM Violin Grade 8 2024/英皇小提琴八级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版 伴奏谱\r\n",
+        "filename": "乐谱书/曲集/1766078857614_ABRSM_Grade8_.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1897,
+        "title": "ABRSM Violin Grade 8 2024/英皇小提琴八级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版",
+        "filename": "乐谱书/曲集/1766078823953_ABRSMGrade8.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1896,
+        "title": "ABRSM Violin Grade 7 2024/英皇小提琴七级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版 伴奏谱\r\n",
+        "filename": "乐谱书/曲集/1766078770162_ABRSM_Grade7_.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1895,
+        "title": "ABRSM Violin Grade 7 2024/英皇小提琴七级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版",
+        "filename": "乐谱书/曲集/1766078739635_ABRSMGrade7.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1894,
+        "title": "ABRSM Violin Grade 6 2024/英皇小提琴六级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版 伴奏谱",
+        "filename": "乐谱书/曲集/1766078674179_ABRSM_Grade6_.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1893,
+        "title": "ABRSM Violin Grade 6 2024/英皇小提琴六级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版本",
+        "filename": "乐谱书/曲集/1766078514513_ABRSMGrade6.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1892,
+        "title": "ABRSM Violin Grade 5 2024/英皇小提琴五级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书伴奏谱 2024版",
+        "filename": "乐谱书/曲集/1766078461223_ABRSM_Grade5_.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1891,
+        "title": "ABRSM Violin Grade 5 2024/英皇小提琴五级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴考级书 2024版",
+        "filename": "乐谱书/曲集/1766078397587_ABRSMGrade5.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1890,
+        "title": "ABRSM Violin Grade 4 2024/英皇小提琴四级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴四级考级书伴奏谱 2024版",
+        "filename": "乐谱书/曲集/1766078233283_ABRSMGrade4.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1889,
+        "title": "ABRSM Violin Grade 4 2024/英皇小提琴四级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴四级考级书 2024版",
+        "filename": "乐谱书/曲集/1766078143121_ABRSMGrade4.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1888,
+        "title": "ABRSM Violin Grade 3 2024/英皇小提琴三级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴三级考级书伴奏谱 2024版",
+        "filename": "乐谱书/曲集/1766078011426_ABRSMGrade3.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1887,
+        "title": "ABRSM Violin Grade 3 2024/英皇小提琴三级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴三级考级书 2024版 ",
+        "filename": "乐谱书/曲集/1766077814092_ABRSMGrade3.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1886,
+        "title": "ABRSM Violin Grade 2 2024/英皇小提琴二级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴二级考级书伴奏谱 2024版 ",
+        "filename": "乐谱书/曲集/1766077714303_ABRSMGrade2.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1885,
+        "title": "ABRSM Violin Grade 2 2024/英皇小提琴二级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴二级考级书 2024版 ",
+        "filename": "乐谱书/曲集/1766077563800_ABRSMGrade2.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1884,
+        "title": "ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024 伴奏谱",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴一级考级伴奏谱 2024版 ",
+        "filename": "乐谱书/曲集/1766077438197_ABRSMGrade1.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
+    {
+        "id": 1883,
+        "title": "ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024",
+        "composer": "ABRSM",
+        "work": "",
+        "language": "English",
+        "category": "乐谱书/曲集",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "小提琴",
+        "tonality": "",
+        "description": "英皇小提琴一级考级书 2024版 ",
+        "filename": "乐谱书/曲集/1766077238755_ABRSMGrade1.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
     {
         "id": 1882,
         "title": "Pietoso al lungo pianto… Deh lasciate a un alma amante/请怜悯这长久的哭泣… 啊，让一颗爱恋的心",
@@ -27098,6 +27354,116 @@ const musicData = [
 ];
 const changeLog = [
     {
+        "date": "2025-12-19 01:27",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 8 2024/英皇小提琴八级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:27",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 8 2024/英皇小提琴八级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:26",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 7 2024/英皇小提琴七级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:25",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 7 2024/英皇小提琴七级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:24",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 6 2024/英皇小提琴六级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:21",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 6 2024/英皇小提琴六级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:21",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 5 2024/英皇小提琴五级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:19",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 5 2024/英皇小提琴五级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:17",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 4 2024/英皇小提琴四级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:15",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 4 2024/英皇小提琴四级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:13",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 3 2024/英皇小提琴三级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:12",
+        "type": "update",
+        "msg": "更新: ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:12",
+        "type": "update",
+        "msg": "更新: ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:11",
+        "type": "update",
+        "msg": "更新: ABRSM Violin Grade 2 2024/英皇小提琴二级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:11",
+        "type": "update",
+        "msg": "更新: ABRSM Violin Grade 2 2024/英皇小提琴二级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:10",
+        "type": "update",
+        "msg": "更新: ABRSM Violin Grade 3 2024/英皇小提琴三级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:10",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 3 2024/英皇小提琴三级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:08",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 2 2024/英皇小提琴二级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:06",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 2 2024/英皇小提琴二级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:04",
+        "type": "update",
+        "msg": "更新: ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024"
+    },
+    {
+        "date": "2025-12-19 01:03",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024 伴奏谱"
+    },
+    {
+        "date": "2025-12-19 01:00",
+        "type": "add",
+        "msg": "添加: ABRSM Violin Grade 1 2024/英皇小提琴一级考级书 2024"
+    },
+    {
         "date": "2025-12-18 00:40",
         "type": "update",
         "msg": "更新: O Patria Mia/啊，我亲爱的祖国"
@@ -27936,115 +28302,5 @@ const changeLog = [
         "date": "2025-12-17 23:21",
         "type": "add",
         "msg": "添加: Ah, sì ben mio... Di quella pira/啊，我亲爱的……从那可怕的柴堆"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Tacea la notte... Di tale amor che dirsi/万籁俱寂……这爱情难以言喻"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: D'amor sull'ali rosee... Tu vedrai che amore in terra/在爱情玫瑰色的翅膀上... 你将见证人间真爱"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Stride la vampa!/火焰在燃烧！"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Condotta ell'era in ceppi/她戴着镣铐被押来"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Di due figli vivea/双生之子"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "update",
-        "msg": "更新: Ma quando un suon terrible/但可怕的号角声响起"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Il balen del suo sorriso... Per me ora fatale/她的微笑光辉灿烂... 对我致命的时刻"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Tutto parea sorridere/万物皆含笑"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Sì, di Corsari il fulmine/是的，海盗的闪电"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "update",
-        "msg": "更新: Sciagurata, ed hai creduto...O speranza di vendetta/不幸的人，你竟相信……哦，复仇的希望"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Non so le tetre immagini/我不知道那阴暗的景象"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Vola talor dal carcere/飞出牢笼"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "update",
-        "msg": "更新: Non fu sogno/并非梦境"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Ah conforto è sol la speme/啊，安慰唯有希望"
-    },
-    {
-        "date": "2025-12-17 23:21",
-        "type": "add",
-        "msg": "添加: Salve, Allah! Tutta quanta/《致敬，阿拉！全然如此》"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "add",
-        "msg": "添加: S'avvicina il tuo momento/你的时刻即将来临"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "update",
-        "msg": "更新: Salve Maria/万福玛利亚"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "add",
-        "msg": "添加: Alfin questo Corsaro… Cento leggiadre vergini/终于，这个海盗……百位娇美的少女"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "add",
-        "msg": "添加: O mio castel paterno/啊，我父亲的城堡"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "update",
-        "msg": "更新: Se vano è il pregare...No giusta causa non è d'Iddio/倘若祈祷是徒劳……不，上帝行事无偏私"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "add",
-        "msg": "添加: Nell'argilla maledetta/在可诅咒的泥土中"
-    },
-    {
-        "date": "2025-12-17 23:20",
-        "type": "add",
-        "msg": "添加: Di ladroni attorniato/被强盗包围"
     }
 ];
