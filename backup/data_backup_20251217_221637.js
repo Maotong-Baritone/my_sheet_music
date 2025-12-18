@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-17 22:18:49
+// 最后更新于 2025-12-17 22:07:59 (Oratorio Fix)
 const musicData = [
     {
         "id": 1669,
@@ -269,6 +269,22 @@ const musicData = [
         "tonality": "",
         "description": "",
         "filename": "歌剧咏叹调/1766012407963_Non_so_piu_cosa_son_cosa_faccio.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
+        "id": 1605,
+        "title": "Tutto è disposto...Aprite un po'quegli occhi/一切就绪……睁开你们的眼睛",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Le nozze di Figaro, K.492/费加罗的婚礼",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Bass-baritone/低男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012407824_Tutto_e_dispostoAprite_un_poquegli_occhi.pdf",
         "date": "2025-12-17",
         "has_lyrics": false
     },
@@ -961,6 +977,38 @@ const musicData = [
         "has_lyrics": false
     },
     {
+        "id": 1491,
+        "title": "Fin ch'han dal vino/当美酒斟满",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Don Giovanni, K.527/唐璜",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012390952_Fin_chhan_dal_vino.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
+        "id": 1490,
+        "title": "Deh, vieni alla finestra/请到窗前来",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Don Giovanni, K.527/唐璜",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012390836_Deh_vieni_alla_finestra.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
         "id": 1489,
         "title": "Wie stark ist nicht dein Zauberton/你的魔力声音多么强烈",
         "composer": "Wolfgang Amadeus Mozart/莫扎特",
@@ -1101,6 +1149,22 @@ const musicData = [
         "tonality": "",
         "description": "",
         "filename": "歌剧咏叹调/1766012389731_Papagena_Papagena_Papagena_Papagenos_Suicide_Aria.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
+        "id": 1480,
+        "title": "Ein Mädchen oder Weibchen/一个姑娘或女人",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Die Zauberflöte, K.620/魔笛",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012389548_Ein_Madchen_oder_Weibchen.pdf",
         "date": "2025-12-17",
         "has_lyrics": false
     },
@@ -1537,6 +1601,22 @@ const musicData = [
         "has_lyrics": false
     },
     {
+        "id": 1451,
+        "title": "Rivolgete a lui lo sguardo/请将目光转向他",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Così fan tutte, K.588/女人心",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012385430_Rivolgete_a_lui_lo_sguardo.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
         "id": 1450,
         "title": "Non siate ritrosi/莫要羞怯",
         "composer": "Wolfgang Amadeus Mozart/莫扎特",
@@ -1549,6 +1629,22 @@ const musicData = [
         "tonality": "",
         "description": "",
         "filename": "歌剧咏叹调/1766012385289_Non_siate_ritrosi.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
+        "id": 1449,
+        "title": "Donne mie, le fate a tanti/女人们啊，你们总是如此",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Così fan tutte, K.588/女人心",
+        "language": "意大利语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012385141_Donne_mie_le_fate_a_tanti.pdf",
         "date": "2025-12-17",
         "has_lyrics": false
     },
@@ -22887,6 +22983,19 @@ const musicData = [
         "date": "2025-12-14"
     },
     {
+        "id": 63,
+        "title": "Papagena Papagena Papagena!",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Die Zauberflöte, K.620/魔笛",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "filename": "歌剧咏叹调/PapagenaPapagenaPapagena-Die_Zauberflote.pdf",
+        "date": "2025-12-14"
+    },
+    {
         "id": 62,
         "title": "O vin dissipe la tristesse/美酒驱散悲伤（饮酒歌）",
         "composer": "Ambroise Thomas/托玛",
@@ -23705,41 +23814,6 @@ const musicData = [
     }
 ];
 const changeLog = [
-    {
-        "date": "2025-12-17 22:18",
-        "type": "delete",
-        "msg": "删除: Ein Mädchen oder Weibchen/一个姑娘或女人"
-    },
-    {
-        "date": "2025-12-17 22:18",
-        "type": "delete",
-        "msg": "删除: Tutto è disposto...Aprite un po'quegli occhi/一切就绪……睁开你们的眼睛"
-    },
-    {
-        "date": "2025-12-17 22:18",
-        "type": "delete",
-        "msg": "删除: Deh, vieni alla finestra/请到窗前来"
-    },
-    {
-        "date": "2025-12-17 22:17",
-        "type": "delete",
-        "msg": "删除: Fin ch'han dal vino/当美酒斟满"
-    },
-    {
-        "date": "2025-12-17 22:17",
-        "type": "delete",
-        "msg": "删除: Papagena Papagena Papagena!"
-    },
-    {
-        "date": "2025-12-17 22:16",
-        "type": "delete",
-        "msg": "删除: Donne mie, le fate a tanti/女人们啊，你们总是如此"
-    },
-    {
-        "date": "2025-12-17 22:16",
-        "type": "delete",
-        "msg": "删除: Rivolgete a lui lo sguardo/请将目光转向他"
-    },
     {
         "date": "2025-12-17 22:07",
         "type": "update",
@@ -24639,5 +24713,40 @@ const changeLog = [
         "date": "2025-12-17 16:00",
         "type": "add",
         "msg": "添加: Già di pietà mi spoglio/我已抛弃怜悯之心"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Se di regnar sei vago/若你渴望统治"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Soffre il mio cor con pace/我心平静地忍受痛苦"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Se il rigor d'ingrata sorte/若命运无情严苛"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Parto: nel gran cimento/出发：在伟大的考验中"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Lungi da te, mio bene/远离你，我的爱人"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Tu sai per che m'accese/你可知我为何燃烧"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: So quanto a te dispiace/我深知你多么痛苦"
     }
 ];

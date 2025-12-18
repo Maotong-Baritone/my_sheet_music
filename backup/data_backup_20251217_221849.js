@@ -1,4 +1,4 @@
-// 最后更新于 2025-12-17 22:18:49
+// 最后更新于 2025-12-17 22:18:18
 const musicData = [
     {
         "id": 1669,
@@ -1101,6 +1101,22 @@ const musicData = [
         "tonality": "",
         "description": "",
         "filename": "歌剧咏叹调/1766012389731_Papagena_Papagena_Papagena_Papagenos_Suicide_Aria.pdf",
+        "date": "2025-12-17",
+        "has_lyrics": false
+    },
+    {
+        "id": 1480,
+        "title": "Ein Mädchen oder Weibchen/一个姑娘或女人",
+        "composer": "Wolfgang Amadeus Mozart/莫扎特",
+        "work": "Die Zauberflöte, K.620/魔笛",
+        "language": "德语",
+        "category": "歌剧咏叹调",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "Baritone/男中音",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧咏叹调/1766012389548_Ein_Madchen_oder_Weibchen.pdf",
         "date": "2025-12-17",
         "has_lyrics": false
     },
@@ -23708,11 +23724,6 @@ const changeLog = [
     {
         "date": "2025-12-17 22:18",
         "type": "delete",
-        "msg": "删除: Ein Mädchen oder Weibchen/一个姑娘或女人"
-    },
-    {
-        "date": "2025-12-17 22:18",
-        "type": "delete",
         "msg": "删除: Tutto è disposto...Aprite un po'quegli occhi/一切就绪……睁开你们的眼睛"
     },
     {
@@ -24639,5 +24650,10 @@ const changeLog = [
         "date": "2025-12-17 16:00",
         "type": "add",
         "msg": "添加: Già di pietà mi spoglio/我已抛弃怜悯之心"
+    },
+    {
+        "date": "2025-12-17 16:00",
+        "type": "add",
+        "msg": "添加: Se di regnar sei vago/若你渴望统治"
     }
 ];
