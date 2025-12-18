@@ -7,6 +7,10 @@ import time
 from functools import wraps
 from flask import Flask, render_template_string, request, redirect, url_for, flash, session
 from werkzeug.utils import secure_filename
+from dotenv import load_dotenv
+
+# 加载 .env 文件中的环境变量
+load_dotenv()
 
 # ===⚙️ 配置区域 ===
 SCORES_DIR = 'scores'
@@ -16,7 +20,7 @@ BACKUP_DIR = 'backup'
 ALLOWED_EXTENSIONS = {'pdf', 'midi', 'mp3', 'sib', 'musx'}
 
 ADMIN_USER = 'admin'
-ADMIN_PASS = 'maotong2025'
+ADMIN_PASS = os.environ.get('ADMIN_PASS', 'maotong2025')
 
 app = Flask(__name__)
 app.secret_key = "maotong_secret_key_2025"
@@ -43,11 +47,11 @@ def load_data_and_log():
         match_data = re.search(r'const musicData = (\[.*?\]);', content, re.DOTALL)
         if match_data:
             try: music_data = json.loads(match_data.group(1))
-            except: pass
+            except json.JSONDecodeError as e: print(f"Error decoding musicData: {e}")
         match_log = re.search(r'const changeLog = (\[.*?\]);', content, re.DOTALL)
         if match_log:
             try: change_log = json.loads(match_log.group(1))
-            except: pass
+            except json.JSONDecodeError as e: print(f"Error decoding changeLog: {e}")
     return music_data, change_log
 
 def save_all(music_data, change_log):
@@ -98,6 +102,7 @@ def load_lyrics(item_id):
     return {"original": "", "translation": ""}
 
 # --- HTML Templates ---
+# 建议：为防止暴力破解，可以引入 flask-limiter 库对 /login 路由进行速率限制
 LOGIN_HTML = """
 <!doctype html>
 <html lang="zh">
@@ -323,7 +328,6 @@ def index():
             # --- 修复核心：安全获取扩展名 ---
             # 不再依赖 safe_name 去分割，因为 safe_name 可能没有后缀
             # 既然 allowed_file 过了，说明原始 file.filename 一定有点号
-            ext = file.filename.rsplit('.', 1)[1].lower()
             filename = f"{int(time.time() * 1000)}_{secure_filename(file.filename)}"
             
             cat_dir = os.path.join(SCORES_DIR, request.form['category'])
@@ -414,8 +418,14 @@ def delete(item_id):
     item = next((i for i in data if i['id'] == item_id), None)
     if item:
         data = [i for i in data if i['id'] != item_id]
+        
+        # 删除歌词文件
         lyric_path = os.path.join(LYRICS_DIR, f"{item_id}.json")
         if os.path.exists(lyric_path): os.remove(lyric_path)
+
+        # 删除乐谱文件
+        score_path = os.path.join(SCORES_DIR, item['filename'])
+        if os.path.exists(score_path): os.remove(score_path)
         
         add_log(log, 'delete', f"删除: {item['title']}")
         save_all(data, log)
@@ -423,4 +433,6 @@ def delete(item_id):
     return redirect(url_for('manage'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # 启动时请使用 waitress-serve --host=0.0.0.0 --port=5000 admin_tool:app
+    # 为安全起见，默认关闭debug模式
+    app.run(debug=False)
