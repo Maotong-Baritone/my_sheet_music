@@ -1,5 +1,21 @@
-// 最后更新于 2025-12-18 17:43:24
+// 最后更新于 2025-12-19 14:35:23
 const musicData = [
+    {
+        "id": 2481,
+        "title": "The Tempest/暴风雨",
+        "composer": "Thomas adès",
+        "work": "",
+        "language": "英语",
+        "category": "歌剧总谱",
+        "sub_category": "",
+        "voice_count": "",
+        "voice_types": "",
+        "tonality": "",
+        "description": "",
+        "filename": "歌剧总谱/1766180123651_Thomas_ades.pdf",
+        "date": "2025-12-19",
+        "has_lyrics": false
+    },
     {
         "id": 2480,
         "title": "Fuor del mar ho un mar in seno/我胸中翻腾着另一片海洋（带花腔/跑花）",
@@ -36586,16 +36602,6 @@ const musicData = [
         "has_lyrics": false
     },
     {
-        "id": 5,
-        "title": "The Tempest/暴风雨",
-        "composer": "Thomas adès",
-        "work": "",
-        "language": "英语",
-        "category": "歌剧总谱",
-        "filename": "歌剧总谱/Thomas_ades_.pdf",
-        "date": "2025-12-12"
-    },
-    {
         "id": 4,
         "title": "When I Fly",
         "composer": "Rachel Portman",
@@ -36649,6 +36655,16 @@ const musicData = [
     }
 ];
 const changeLog = [
+    {
+        "date": "2025-12-19 14:35",
+        "type": "add",
+        "msg": "添加: The Tempest/暴风雨"
+    },
+    {
+        "date": "2025-12-19 14:34",
+        "type": "delete",
+        "msg": "删除: The Tempest/暴风雨"
+    },
     {
         "date": "2025-12-18 17:43",
         "type": "add",
@@ -37608,15 +37624,5 @@ const changeLog = [
         "date": "2025-12-18 15:51",
         "type": "add",
         "msg": "添加: La morale in tutto questo/这其中一切的道理"
-    },
-    {
-        "date": "2025-12-18 15:51",
-        "type": "add",
-        "msg": "添加: Ah, un foco insolita/啊，一团奇异的火焰"
-    },
-    {
-        "date": "2025-12-18 15:51",
-        "type": "add",
-        "msg": "添加: Bella siccome un angelo/美如天使"
     }
 ];
