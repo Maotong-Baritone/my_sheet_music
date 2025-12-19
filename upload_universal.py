@@ -5,36 +5,34 @@ import json
 import re
 
 # === 配置区域 ===
-# 你的 DeepSeek Key (从你之前的代码里提取的)
 API_KEY = "sk-8b158d13c0a64d97ac903bc0a8a975e3" 
 API_URL = "https://api.deepseek.com/chat/completions"
 
-# 网站配置
 BASE_URL = "http://127.0.0.1:5000"
 LOGIN_URL = f"{BASE_URL}/login"
 UPLOAD_URL = BASE_URL
 ADMIN_USER = "admin"
 ADMIN_PASS = "maotong2025"
 
-def find_target_folder():
-    """自动寻找最近生成的 _Arias 文件夹"""
-    dirs = [d for d in os.listdir('.') if os.path.isdir(d) and d.lower().endswith('_arias')]
-    if not dirs:
-        return None, None
-    
-    # 找到修改时间最近的一个
-    latest_dir = max(dirs, key=os.path.getmtime)
-    
-    # 找里面的清单文件
-    list_files = [f for f in os.listdir(latest_dir) if f == 'Verdi_aria_list.txt']
-    if not list_files:
-        return latest_dir, None
-        
-    return latest_dir, os.path.join(latest_dir, list_files[0])
+# === 任务配置 ===
+TASKS = [
+    {
+        "folder": "Rossini_Arias",
+        "list_file": "Rossini_upload_list.txt",
+        "composer_std": "Gioachino Rossini/罗西尼",
+        "default_lang": "意大利语"
+    },
+    {
+        "folder": "Donizetti_Arias",
+        "list_file": "Donizetti_upload_list.txt",
+        "composer_std": "Gaetano Donizetti/多尼采蒂",
+        "default_lang": "意大利语"
+    }
+]
 
 def translate_text(text, type="aria"):
     if not text or text == "N/A": return text
-    # 简单的缓存机制，防止重复翻译同一个歌剧名
+    # 简单的缓存
     if hasattr(translate_text, "cache"):
         if text in translate_text.cache: return translate_text.cache[text]
     else:
@@ -52,42 +50,31 @@ def translate_text(text, type="aria"):
         }, timeout=10)
         if resp.status_code == 200:
             res = resp.json()['choices'][0]['message']['content'].strip()
+            # 清洗一下可能的 markdown
+            res = res.replace("**", "").replace("`", "").strip()
             translate_text.cache[text] = res
             return res
     except:
         pass
     return text
 
-def main():
-    print("🔍 正在寻找刚才下载的乐谱文件夹...")
-    target_dir, list_file = find_target_folder()
+def process_folder(task_config, session):
+    folder = task_config["folder"]
+    list_name = task_config["list_file"]
+    composer_std = task_config["composer_std"]
     
-    if not target_dir:
-        print("❌ 未找到以 '_Arias' 结尾的文件夹。请确认你在正确的目录下运行脚本。")
-        print(f"当前目录: {os.getcwd()}")
-        return
-    
-    if not list_file:
-        print(f"❌ 在文件夹 {target_dir} 里没找到清单文件 (txt)。无法上传。")
+    if not os.path.exists(folder):
+        print(f"⚠️ 文件夹不存在: {folder} (跳过)")
         return
 
-    print(f"✅ 锁定目标: {target_dir}")
-    print(f"📄 读取清单: {list_file}")
-    
-    # 登录
-    session = requests.Session()
-    try:
-        r = session.post(LOGIN_URL, data={"username": ADMIN_USER, "password": ADMIN_PASS})
-        if r.status_code != 200:
-            print("❌ 登录后台失败，请确保 '启动管理工具.bat' 正在运行！")
-            return
-    except:
-        print("❌ 连接失败，请先运行网站后台！")
+    list_path = os.path.join(folder, list_name)
+    if not os.path.exists(list_path):
+        print(f"⚠️ 清单文件不存在: {list_path} (跳过)")
         return
 
-    print("🚀 开始批量处理...")
+    print(f"\n📂 正在处理: {folder} ({composer_std})")
     
-    with open(list_file, "r", encoding="utf-8") as f:
+    with open(list_path, "r", encoding="utf-8") as f:
         lines = f.readlines()[2:] # 跳过表头
         total = len(lines)
         
@@ -95,41 +82,58 @@ def main():
             parts = [p.strip() for p in line.split("|")]
             if len(parts) < 5: continue
             
-            aria, composer, opera, voice, filename = parts
+            aria, raw_composer, opera, voice, filename = parts
             
-            # 翻译
-            title_cn = translate_text(aria, "aria")
-            opera_cn = translate_text(opera, "opera")
-            
-            # 检查文件
-            file_path = os.path.join(target_dir, filename)
+            file_path = os.path.join(folder, filename)
             if not os.path.exists(file_path):
-                print(f"⚠️ 文件丢失跳过: {filename}")
+                print(f"⚠️ 文件丢失: {filename}")
                 continue
 
-            # 准备数据
+            # 翻译标题和作品名
+            title_cn = translate_text(aria, "aria")
+            work_cn = translate_text(opera, "opera")
+            
             data = {
                 'title': title_cn,
-                'composer': f"{composer} (AI Upload)", # 标记一下
-                'work': opera_cn,
+                'composer': composer_std,
+                'work': work_cn,
                 'category': "歌剧咏叹调",
-                'voice_types': voice,
-                'description': f"原文: {aria}\n出处: {opera}\n(批量上传)"
+                'voice_types': voice, # 已经在下载时清洗过了
+                'language': task_config["default_lang"],
+                'description': f"原文: {aria}\n出处: {opera}\nVoice: {voice}"
             }
             
-            # 上传
             try:
                 with open(file_path, 'rb') as pdf:
                     files = {'file': (filename, pdf, 'application/pdf')}
                     r = session.post(UPLOAD_URL, data=data, files=files)
                     if r.status_code == 200:
-                        print(f"[{i+1}/{total}] ✅ 上传成功: {title_cn[:20]}...")
+                        print(f"[{i+1}/{total}] ✅ {title_cn[:20]}... -> {work_cn}")
                     else:
-                        print(f"[{i+1}/{total}] ❌ 上传失败")
+                        print(f"[{i+1}/{total}] ❌ 上传失败: {r.status_code}")
             except Exception as e:
                 print(f"❌ 错误: {e}")
                 
             time.sleep(0.5)
+
+def main():
+    print("🚀 启动美声歌剧批量上传 (Rossini & Donizetti)...")
+    
+    # 登录
+    session = requests.Session()
+    try:
+        r = session.post(LOGIN_URL, data={"username": ADMIN_USER, "password": ADMIN_PASS})
+        if r.status_code != 200:
+            print("❌ 登录失败，请检查服务器！")
+            return
+    except:
+        print("❌ 连接服务器失败！")
+        return
+
+    for task in TASKS:
+        process_folder(task, session)
+
+    print("\n🎉 所有任务完成！")
 
 if __name__ == "__main__":
     main()
